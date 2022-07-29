@@ -1,7 +1,5 @@
-import { Home } from "./pages/Home"
 import { Header } from "./components/Header"
 import { Upload } from "./components/Upload"
-import { Sidebar } from "./components/Sidebar"
 import { RouteComponent } from "./route"
 import { BrowserRouter } from "react-router-dom"
 
@@ -16,7 +14,6 @@ function App() {
           <Upload />
         </RouteComponent>
         </BrowserRouter>
-        <Sidebar />
       </main>
     </div>
 

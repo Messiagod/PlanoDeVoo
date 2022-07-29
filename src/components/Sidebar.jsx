@@ -6,36 +6,42 @@ import { useState } from "react";
 export function Sidebar(){
 
     const [arquivo, setArquivo] = useState(
-        {
-          "id": 2324325325,
-          "nome": 'matheus',
+        [{
+          "rota": 'TransacaoTeste-TI',
+          "nome": 'Transação - Teste TI - Sistemas',
           "liberado": true,
-          "tipo": 'csv',
-          "date": '22/07/2022'
+          "tipo": 'CSV',
+          "date": 'Sexta • 22 de julho'
         },
         {
-          "id": 523235,
-          "nome": 'fernanda',
-          "liberado": true,
-          "tipo": 'csv',
-          "date": '22/07/2022'
+          "rota": 'Financeiro1',
+          "nome": 'Financeiro1',
+          "liberado": false,
+          "tipo": 'CSV',
+          "date": 'Sexta • 22 de julho'
         },
-       {
-          "id": 52332,
-          "nome": 'ivan',
-          "liberado": true,
-          "tipo": 'csv',
-          "date": '22/07/2022'
-        }
+        {
+          "rota": 'Financeiro2',
+          "nome": 'Financeiro2',
+          "liberado": false,
+          "tipo": 'CSV',
+          "date": 'Sexta • 22 de julho'
+        },
+        
+      ]
       )
     
     return (
         <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600">
             <span className="font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block">
-                Transações Disponiveis 
+                  Financeiro 
             </span>
             <div className="flex flex-col gap-8">
-                <Transacoes data={arquivo}/>             
+              {
+                arquivo.map(data =>(
+                  <Transacoes data={data}/>             
+                ))
+              }
             </div>
         </aside>
     )

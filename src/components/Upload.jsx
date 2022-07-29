@@ -1,115 +1,182 @@
 import { Cloud, CloudCheck, FileArrowDown, CaretRight } from 'phosphor-react'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../config/api';
+import sucessLoad from '../assets/sucessGif.gif'
+import errorLoad from '../assets/errorGif.gif'
 
-export function Upload() {
+export function Upload({ data }) {
+
+    const [sucessArquivo, setSucessArquivo] = useState(true)
+    const [processArquivo, setProcessArquivo] = useState(false)
+    const [button, setButton] = useState(true)
+    const [atualizarBase, setAtualizarBase] = useState(false)
     const [file, setFile] = useState('');
 
-    async function handleSubmit(e) {
+    const [uploadSucess, setUploadSucess] = useState('')
+    const [rowsSucess, setRowsSucess] = useState('')
+    const [divUploadSucess, setDivUploadSucess] = useState(false)
+
+    const [errorUpload, setErrorUpload] = useState('')
+    const [divErrorUpload, setDivErrorUpload] = useState(false)
+
+    const uploadFile = async e => {
         e.preventDefault()
-        console.log("Upload Arquivo")
-        await api.post('/upload', file)
-        .then((response) => {
-            console.log(response);
-        }).catch((err) => {
-            if(err.response){
-                console.log(err.response)
-            }else{
-                console.log("Erro back off")
-            }
-        })
-        console.log(file)
+        const formData = new FormData();
+        formData.append('file', file);
+        setButton(false)
+        setSucessArquivo(false)
+        setProcessArquivo(true)
+
+
+        await api.post(data.rotaApi, formData)
+            .then((response) => {
+                console.log(response)
+                setUploadSucess(response.data.message)
+                setRowsSucess(response.data.rows)
+                setFile('');
+                setDivUploadSucess(true)
+                setProcessArquivo(false)
+                /*                 setAtualizarBase(true)
+                 */
+            }).catch((err) => {
+                if (err) {
+                    setProcessArquivo(false)
+                    setDivErrorUpload(true)
+                    console.log(err)
+                    console.log(err.response.data.error)
+                    setErrorUpload(err.response.data.error)
+
+                } else {
+                    console.log("back off")
+                }
+            })
+
     }
 
+
     return (
-        <div className="flex-1">
-            <div className="bg-black ">
-                <div className="w-full max-w-[1100px] max-h-[60vh] h-96 py-2 mx-2 ">
-                                 
-                        <div className="rounded border border-gray-500 p-4 m-4">
-                            <header className="flex items-center justify-between ">
-                                <span className=" text-blue-500 text-4xl font-bold flex items-center">
-                                    Carregar Arquivo
-                                </span>
-                                <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                                    1 ARQUIVO CSV
-                                </span>
-                            </header>
-                            <strong className="text-gray-200">
-                                Transação - Financeiro 2.0
-                            </strong>
-                            <form action="/upload" onSubmit={handleSubmit} className='flex flex-col gap-2 w-full mt-4' encType='multipart/form-data'>
-                            <input
-                            className='bg-gray-900 rounded px-5 h-14' 
-                            type="text" 
-                            placeholder="Seu nome completo"/>
-                            <input class="bg-gray-900 rounded h-8 " id="small_size" type="file" name='file'  onChange={e => setFile(e.target.files[0])}></input>
-                            <button type='submit' value="upload" className='mt-4 bg-blue-600 uppercase py-4 rounded font-bold text-sm hover:bg-blue-700 transition-colors'>
-                                Carregar Arquivo
+
+        <div className="bg-black w-full h-full">
+            {sucessArquivo ?
+                <div className="">
+                    <div className=" rounded border border-gray-500 p-4 m-4">
+                        <header className="flex items-center justify-between ">
+                            <span className=" text-blue-500 text-4xl font-bold flex items-center">
+                                {data.nome}
+                            </span>
+                            <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
+                                ARQUIVO CSV
+                            </span>
+                        </header>
+                        <form onSubmit={uploadFile} className='flex flex-col gap-2 mt-4'>
+                            <div class="flex justify-center items-center w-auto">
+                                <label for="dropzone-file" class="flex flex-col justify-center items-center w-full h-64 bg-gray-700 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer  hover:bg-gray-600">
+                                    <div class="flex flex-col justify-center items-center pt-5 pb-6">
+                                        <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                        <p class="mb-2 text-sm text-white-500 dark:text-gray-400"><span class="font-semibold">Clique para inserir o arquivo </span> ou arraste e solte</p>
+                                        <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold mt-10">
+                                            SOMENTE ARQUIVOS COM EXTENSÃO CSV
+                                        </span>
+                                    </div>
+                                    <input id="dropzone-file" type="file" class="hidden " accept='.csv' onChange={e => setFile(e.target.files[0])} />
+                                </label>
+                            </div>
+                            {file ? <button type='submit' className='w-28 h-14 p-3 mt-10 text-sm bg-blue-600   rounded font-bold uppercase gap-2  hover:bg-blue-700 transition-colors'>
+                                Enviar dados
+                            </button> : null}
+
+                        </form>
+                    </div>
+                </div>
+                :
+                null
+            }
+            {processArquivo ?
+                <div className="">
+                    <div className="rounded border border-gray-500 p-4 m-4">
+                        <div class="">
+                            <h1 className='uppercase font-bold'> Arquivo Carregado, estamos analisando os dados</h1>
+                            <button disabled type="button" class="mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center">
+                                <svg role="status" class="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB" />
+                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor" />
+                                </svg>
+                                Processando Arquivo
                             </button>
-                            </form>
                         </div>
-                    
-                </div>
-            </div>
-
-            <div className="p-8 max-w-[1100px] mx-auto">
-                <div className="flex items-start gap-16">
-                    <div className="flex-1">
-                        <h1 className="text-2xl font-bold">
-                            Transação - Financeiro 2.0
-                        </h1>
-                        <p className="mt-4 text-gray-200 leading-relaxed">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima minus architecto accusamus quaerat dolores, temporibus, qui recusandae nesciunt id, nisi odit! Eum accusantium nisi impedit, aliquam accusamus iure cum. Dolore.
-                        </p>
-
                     </div>
-                    <div className="flex flex-col gap-4">
-                        <a href="" className="p-4 text-sm bg-blue-600 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-blue-700 transition-colors">
-                            <CloudCheck size={24} />
-                            Atualizar Base
-                        </a>
+                </div>
+                :
+                null
+            }
+            {divUploadSucess ?
+                <div className="">
+                    <div className="rounded border border-gray-500 p-4 m-4">
 
-                        <a href="" className="p-4 text-sm border border-blue-600  flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-blue-600 transition-colors">
-                            <Cloud size={24} />
-                            Indicar incidente
-                        </a>
+                        <h1 className='mt-5 mb-5 text-green-400 text-4xl'>{uploadSucess} !!</h1>
+                        <div className='w-60 flex items-center justify-center'>
+                            <img src={sucessLoad} alt="loading..." />
+                        </div>
+                        <p className='mt-5 mb-5 font-medium'>Total de linhas carregadas: {rowsSucess}</p>
+                        <p className='mt-5 mb-5 font-medium'>Total de linhas com erro: 0</p>
 
                     </div>
                 </div>
-                <div className='gap-8 mt-20 grid grid-cols-2'>
-                    <a href='file:///C:/Users/maarmigliat/Downloads/ModelodeCronogramaparaProjetosDiagrama-de-Gantt-1.xlsx' className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
+                :
+                null
+            }
+            {divErrorUpload ?
+                <div className="">
+                    <div className="rounded border border-gray-500 p-4 m-4">
+                        <h1 className='mt-5 mb-5 text-red-400 text-4xl'>Arquivo contem erros!!</h1>
+                        <div className='w-60 flex items-center justify-center'>
+                            <img src={errorLoad} alt="loading..." />
+                        </div>
+                        <p className='mt-5 mb-5 font-medium'>{errorUpload}</p>
+                        <p className='mt-5 mb-5 font-medium'>Total de linhas carregadas: 0</p>
+                    </div>
+                </div>
+                :
+                null
+            }
+
+            <div className="p-5 ">
+                <div className="flex-1">
+                    <h1 className="text-2xl font-bold">
+                        {data.base}
+                    </h1>
+                    <p className="mt-4 text-gray-200 leading-relaxed">
+                        {data.descricao}
+                    </p>
+                </div>
+                {/*    {atualizarBase ?
+                        <div className="flex flex-col ">
+                            <a href="" className="p-5 text-sm bg-blue-600 flex items-center rounded font-bold uppercase gap-4 justify-center hover:bg-blue-700 transition-colors">
+                                <CloudCheck size={24} />
+                                Atualizar Base
+                            </a>
+                        </div>
+                        :
+                        null
+                    } */}
+
+                <div className='gap-10 mt-5 grid grid-cols-2'>
+                    <a href={data.arquivoVazio} className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
                         <div className='bg-blue-700 h-full p-6 flex items-center'>
                             <FileArrowDown size={40} />
                         </div>
                         <div className='py-6 leading-relaxed'>
-                            <strong className='text-2xl'>Material Complementarr</strong>
+                            <strong className='text-2xl'>Planilha Modelo</strong>
                             <p className='text-sm text-gray-200 mt-2'>
-                                Acesse o material planilha modelo
+                                Clique aqui para acessar a planilha.
                             </p>
                         </div>
                         <div className='h-full p-6 flex items-center'>
                             <CaretRight size={24} />
                         </div>
                     </a>
-
-                    <a href='#' className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
-                        <div className='bg-blue-700 h-full p-6 flex items-center'>
-                            <FileArrowDown size={40} />
-                        </div>
-                        <div className='py-6 leading-relaxed'>
-                            <strong className='text-2xl'>Material Complementar</strong>
-                            <p className='text-sm text-gray-200 mt-2'>
-                                Acesse o material planilha modelo
-                            </p>
-                        </div>
-                        <div className='h-full p-6 flex items-center'>
-                            <CaretRight size={24} />
-                        </div>
-                    </a>
                 </div>
             </div>
-
         </div>
     )
 }
