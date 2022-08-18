@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Temas } from '../components/temas';
 import { Link } from 'react-router-dom'
 
-export function Cofins() {
+export function Hierarquia() {
 
     const [arquivos, setArquivos] = useState(
 
         [
             {
-                "rota": 'cofinsArquivoUpload1',
-                "nome": 'Cofins',
+                "rota": 'hierarquiaDeClientesUpload1',
+                "nome": 'Hierarquia de Clientes',
                 "descricao": '1 Arquivo',
                 "ativo": true
             },
@@ -41,7 +41,7 @@ export function Cofins() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                            Cofins
+                            Hierarquia de Clientes
                         </a>
 
                     </li>

@@ -2,18 +2,18 @@ import { useState } from "react";
 import { Temas } from '../components/temas';
 import { Link } from 'react-router-dom'
 
-export function Cofins() {
+export function Frota() {
 
     const [arquivos, setArquivos] = useState(
 
         [
             {
-                "rota": 'cofinsArquivoUpload1',
-                "nome": 'Cofins',
+                "rota": 'frotaArquivoUpload1',
+                "nome": 'Frete Frota',
                 "descricao": '1 Arquivo',
                 "ativo": true
             },
-
+            
         ]
     )
 
@@ -41,14 +41,13 @@ export function Cofins() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                            Cofins
+                            Frete Frota
                         </a>
 
                     </li>
 
                 </ul>
             </div>
-         
             <div className="max-h-96 w-full">
 
                 <div className='gap-8 m-8 grid grid-cols-4'>

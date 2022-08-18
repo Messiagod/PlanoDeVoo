@@ -1,25 +1,27 @@
 import React from "react"
-import { Cloud, CloudCheck, FileArrowDown, CaretRight } from 'phosphor-react'
 import { useState } from "react";
 import { Temas } from "../components/temas";
-
-
+import { BookmarksSimple } from 'phosphor-react'
 
 export function Home() {
 
     const [bases, setbases] = useState(
         [
-            {
-                "rota": false,
-                "nome": 'Processamento CTS',
-                "descricao": 'Desabilitado - Em breve'
-            },
+           
             {
                 "rota": 'consolidadoDRE',
                 "nome": 'Plano de Voo',
-                "descricao": '10 Transações',
-
-            }
+                "descricao": '11 Transações',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": false,
+                "nome": 'Processamento CTS',
+                "descricao": 'Em breve',
+                "ativo": false,
+                "icon": <BookmarksSimple size={40} />
+            },
         ]
     )
 

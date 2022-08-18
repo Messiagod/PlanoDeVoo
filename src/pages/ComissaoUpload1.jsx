@@ -3,20 +3,20 @@ import { Upload } from "../components/Upload"
 import { useState } from "react"
 
 
-export function CofinsUpload1() {
+export function ComissaoUpload1() {
 
 
     const [dados, setDados] = useState(
 
         [
             {
-                "nome": 'Cofins',
-                "rotaApi": 'uploadCofins',
-                "nomeArquivo": 'base_cofins_modelo.csv',
-                "descricao": 'Descrição Cofins',
-                "base": 'Cofins',
+                "nome": 'Comissão',
+                "rotaApi": 'uploadComissao',
+                "nomeArquivo": 'base_comissao_modelo.csv',
+                "descricao": 'Descrição Comissão',
+                "base": 'Comissão',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/cofinsArquivo"
+                "navigate": "/consolidadoDRE/comissaoArquivo"
             }
         ]
 

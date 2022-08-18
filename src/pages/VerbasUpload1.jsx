@@ -3,20 +3,20 @@ import { Upload } from "../components/Upload"
 import { useState } from "react"
 
 
-export function CofinsUpload1() {
+export function VerbasUpload1() {
 
 
     const [dados, setDados] = useState(
 
         [
             {
-                "nome": 'Cofins',
-                "rotaApi": 'uploadCofins',
-                "nomeArquivo": 'base_cofins_modelo.csv',
-                "descricao": 'Descrição Cofins',
-                "base": 'Cofins',
+                "nome": 'Verbas',
+                "rotaApi": 'uploadVerbas',
+                "nomeArquivo": 'base_verbas_modelo.csv',
+                "descricao": 'Descrição Verbas',
+                "base": 'Verbas',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/cofinsArquivo"
+                "navigate": "/consolidadoDRE/verbasArquivo"
             }
         ]
 

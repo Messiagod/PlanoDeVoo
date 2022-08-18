@@ -3,20 +3,20 @@ import { Upload } from "../components/Upload"
 import { useState } from "react"
 
 
-export function CofinsUpload1() {
+export function HierarquiaUpload1() {
 
 
     const [dados, setDados] = useState(
 
         [
             {
-                "nome": 'Cofins',
-                "rotaApi": 'uploadCofins',
-                "nomeArquivo": 'base_cofins_modelo.csv',
-                "descricao": 'Descrição Cofins',
-                "base": 'Cofins',
+                "nome": 'Hierarquia de Clientes',
+                "rotaApi": 'uploadHierarquiaDeClientes',
+                "nomeArquivo": 'base_hierarquia_clientes_modelo.csv',
+                "descricao": 'Descrição Hierarquia de Clientes',
+                "base": 'Hierarquia de Clientes',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/cofinsArquivo"
+                "navigate": "/consolidadoDRE/hierarquiaDeClientesArquivo"
             }
         ]
 

@@ -1,8 +1,10 @@
-import { Cloud, CloudCheck, FileArrowDown, CaretRight } from 'phosphor-react'
-import { useEffect, useState } from 'react';
+import { FileArrowDown, CaretRight } from 'phosphor-react'
+import { useState } from 'react';
 import api from '../config/api';
 import sucessLoad from '../assets/sucessGif.gif'
 import errorLoad from '../assets/errorGif.gif'
+import { Link } from 'react-router-dom'
+
 
 export function Upload({ data }) {
 
@@ -52,11 +54,45 @@ export function Upload({ data }) {
             })
 
     }
-
+    const downloadArquivo = `http://localhost:3000/${data.nomeArquivo}`
 
     return (
 
         <div className="bg-black w-full h-full">
+            <div className="flex m-9 gap-4">
+                <ul className="flex items-center">
+                    <li className="inline-flex items-center">
+                        <Link to={"/"} className="text-gray-600 hover:text-blue-500">
+                            <svg className="w-8 h-auto fill-current mx-2 text-gray-100" viewBox="0 0 24 24" ><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" /></svg>
+                        </Link>
+
+                        <span className="mx-4 h-auto text-3xl font-bold">/</span>
+                    </li>
+
+                    <li className="inline-flex items-center">
+                        <Link to={"/consolidadoDRE"} className="text-3xl font-bold">
+                            Consolidado DRE
+                        </Link>
+                        <span className="mx-4 h-auto text-3xl font-bold">/</span>
+
+                    </li>
+
+                    <li className="inline-flex items-center">
+                        <Link to={data.navigate} className="text-3xl font-bold ">
+                            {data.base}
+                        </Link>
+                        <span className="mx-4 h-auto text-3xl font-bold">/</span>
+                    </li>
+
+                    <li className="inline-flex items-center">
+                        <a className='text-3xl font-bold underline'>
+                            Carregar Arquivo
+                        </a>
+
+                    </li>
+
+                </ul>
+            </div>
             {sucessArquivo ?
                 <div className="">
                     <div className=" rounded border border-gray-500 p-4 m-4">
@@ -73,7 +109,7 @@ export function Upload({ data }) {
                                 <label for="dropzone-file" class="flex flex-col justify-center items-center w-full h-64 bg-gray-700 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer  hover:bg-gray-600">
                                     <div class="flex flex-col justify-center items-center pt-5 pb-6">
                                         <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                        <p class="mb-2 text-sm text-white-500 dark:text-gray-400"><span class="font-semibold">Clique para inserir o arquivo </span> ou arraste e solte</p>
+                                        <p class="mb-2 text-sm text-white-500 dark:text-gray-400"><span class="font-semibold">Clique aqui para inserir o arquivo </span></p>
                                         <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold mt-10">
                                             SOMENTE ARQUIVOS COM EXTENSÃO CSV
                                         </span>
@@ -149,23 +185,13 @@ export function Upload({ data }) {
                         {data.descricao}
                     </p>
                 </div>
-                {/*    {atualizarBase ?
-                        <div className="flex flex-col ">
-                            <a href="" className="p-5 text-sm bg-blue-600 flex items-center rounded font-bold uppercase gap-4 justify-center hover:bg-blue-700 transition-colors">
-                                <CloudCheck size={24} />
-                                Atualizar Base
-                            </a>
-                        </div>
-                        :
-                        null
-                    } */}
-
                 <div className='gap-10 mt-5 grid grid-cols-2'>
-                    <a href={data.arquivoVazio} className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
+                    <a href={downloadArquivo} className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
                         <div className='bg-blue-700 h-full p-6 flex items-center'>
                             <FileArrowDown size={40} />
                         </div>
                         <div className='py-6 leading-relaxed'>
+
                             <strong className='text-2xl'>Planilha Modelo</strong>
                             <p className='text-sm text-gray-200 mt-2'>
                                 Clique aqui para acessar a planilha.

@@ -3,20 +3,20 @@ import { Upload } from "../components/Upload"
 import { useState } from "react"
 
 
-export function CofinsUpload1() {
+export function FrotaUpload1() {
 
 
     const [dados, setDados] = useState(
 
         [
             {
-                "nome": 'Cofins',
-                "rotaApi": 'uploadCofins',
-                "nomeArquivo": 'base_cofins_modelo.csv',
-                "descricao": 'Descrição Cofins',
-                "base": 'Cofins',
+                "nome": 'Frete Frota',
+                "rotaApi": 'uploadFreteFrotaPropria',
+                "nomeArquivo": 'base_frete_frota_propria_modelo.csv',
+                "descricao": 'Descrição Frete Frota',
+                "base": 'Frete Frota',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/cofinsArquivo"
+                "navigate": "/consolidadoDRE/frotaArquivo"
             }
         ]
 

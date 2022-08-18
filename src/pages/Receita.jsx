@@ -1,19 +1,42 @@
 import { useState } from "react";
 import { Temas } from '../components/temas';
 import { Link } from 'react-router-dom'
+import { BookmarksSimple, FileArrowDown  } from 'phosphor-react'
 
-export function Cofins() {
+
+export function Receita() {
 
     const [arquivos, setArquivos] = useState(
 
         [
             {
-                "rota": 'cofinsArquivoUpload1',
-                "nome": 'Cofins',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "rota": 'impostosExtraçãoDeDadosArquivoUpload1',
+                "nome": 'Impostos - Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": true,
+                "icon": <FileArrowDown size={40} />
             },
-
+            {
+                "rota": 'impostosCargaDeDadosUpload1',
+                "nome": 'Impostos - Carga de Dados',
+                "descricao": '1 Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": 'calculoDeImpostosArquivoUpload1',
+                "nome": 'Calculo de Impostos',
+                "descricao": 'Botão para realizar calculo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": 'calculoDeImpostosArquivoUpload1',
+                "nome": 'Receita Líquida',
+                "descricao": 'Botão SQL - Cópia',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
         ]
     )
 
@@ -33,7 +56,7 @@ export function Cofins() {
 
                     <li className="inline-flex items-center">
                         <Link to={"/consolidadoDRE"} className="text-3xl font-bold">
-                            Consolidado DRE
+                            Plano de Voo
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
 
@@ -41,14 +64,13 @@ export function Cofins() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                            Cofins
+                            Receita
                         </a>
 
                     </li>
 
                 </ul>
             </div>
-         
             <div className="max-h-96 w-full">
 
                 <div className='gap-8 m-8 grid grid-cols-4'>

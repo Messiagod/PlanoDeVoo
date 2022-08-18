@@ -10,17 +10,19 @@ export function IcmsUpload1() {
         [
             {
                 "nome": 'ICMS',
-                "rotaApi": 'uploadICMS',
-                "arquivoVazio": false,
+                "rotaApi": 'uploadIcms',
+                "nomeArquivo": 'base_icms_modelo.csv',
                 "descricao": 'Descrição ICMS',
-                "base": 'ICMS'
+                "base": 'ICMS',
+                "ativo": true,
+                "navigate": "/consolidadoDRE/icmsArquivo"
             }
         ]
 
     )
 
     return (
-
+        
         <main className="flex flex-1">
             {
                 dados.map(data => (

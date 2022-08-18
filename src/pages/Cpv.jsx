@@ -2,18 +2,18 @@ import { useState } from "react";
 import { Temas } from '../components/temas';
 import { Link } from 'react-router-dom'
 
-export function Cofins() {
+export function Cpv() {
 
     const [arquivos, setArquivos] = useState(
 
         [
             {
-                "rota": 'cofinsArquivoUpload1',
-                "nome": 'Cofins',
+                "rota": 'cpvArquivoUpload1',
+                "nome": 'Cpv',
                 "descricao": '1 Arquivo',
                 "ativo": true
             },
-
+            
         ]
     )
 
@@ -21,7 +21,7 @@ export function Cofins() {
 
     return (
         <main className="">
-            <div className="flex m-9 gap-4">
+           <div className="flex m-9 gap-4">
                 <ul className="flex items-center">
                     <li className="inline-flex items-center">
                         <Link to={"/"} className="text-gray-600 hover:text-blue-500">
@@ -41,14 +41,13 @@ export function Cofins() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                            Cofins
+                            CPV
                         </a>
 
                     </li>
 
                 </ul>
             </div>
-         
             <div className="max-h-96 w-full">
 
                 <div className='gap-8 m-8 grid grid-cols-4'>

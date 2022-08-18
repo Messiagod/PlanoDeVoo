@@ -3,6 +3,7 @@ import { Upload } from "../components/Upload"
 import { useState } from "react"
 
 
+
 export function PisUpload1() {
 
     const [dados, setDados] = useState(
@@ -10,10 +11,12 @@ export function PisUpload1() {
         [
             {
                 "nome": 'PIS',
-                "rotaApi": 'uploadPIS',
-                "arquivoVazio": false,
+                "rotaApi": 'uploadPis',
+                "nomeArquivo": 'base_pis_modelo.csv',
                 "descricao": 'Descrição PIS',
-                "base": 'PIS'
+                "base": 'PIS',
+                "ativo": true,
+                "navigate": "/consolidadoDRE/pisArquivo"
             }
         ]
 
