@@ -10,61 +10,61 @@ export function Demanda() {
         [
             
             {
-                "rota": 'incotermExtracaoDeDadosArquivoUpload1',
+                "rota": '',
                 "nome": 'Incoterm Extração de Dados',
                 "descricao": 'Extrair dados',
-                "ativo": true,
+                "ativo": false,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": 'incotermCargaDeDadosArquivoUpload1',
+                "rota": '',
                 "nome": 'Incoterm Carga de Dados',
-                "descricao": '1 Arquivo',
-                "ativo": true,
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": 'definicaoUpExtracaoDeDadosArquivoUpload1',
+                "rota": '',
                 "nome": 'Definição UP Extração de Dados',
                 "descricao": 'Extrair dados',
-                "ativo": true,
+                "ativo": false,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": 'definicaoUpCargaDeDadosArquivoUpload1',
+                "rota": '',
                 "nome": 'Definição UP Carga de Dados',
-                "descricao": '1 Arquivo',
-                "ativo": true,
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
 
             // BOTÕES
             {
-                "rota": 'incotermExtracaoDeDadosArquivoUpload1',
+                "rota": '',
                 "nome": 'Volume Demanda Vendas',
                 "descricao": 'Botão SQL - Cópia',
-                "ativo": true,
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": 'incotermExtracaoDeDadosArquivoUpload1',
+                "rota": '',
                 "nome": 'Calculo Conversão',
                 "descricao": 'Botão para realizar calculo',
-                "ativo": true,
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": 'incotermExtracaoDeDadosArquivoUpload1',
+                "rota": '',
                 "nome": 'Calculo Incoterms',
                 "descricao": 'Botão para realizar calculo',
-                "ativo": true,
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": 'incotermExtracaoDeDadosArquivoUpload1',
+                "rota": '',
                 "nome": 'Calculo UP',
                 "descricao": 'Botão para realizar calculo',
-                "ativo": true,
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
         ]

@@ -11,7 +11,7 @@ export function Home() {
             {
                 "rota": 'consolidadoDRE',
                 "nome": 'Plano de Voo',
-                "descricao": '11 Transações',
+                "descricao": '3 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },

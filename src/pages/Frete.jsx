@@ -9,65 +9,65 @@ export function Frete() {
 
         [
             {
-                "rota": 'freteArquivoUpload1',
+                "rota": '',
                 "nome": 'Entrega Proprio Extração',
                 "descricao": 'Extrair dados',
-                "ativo": true,
+                "ativo": false,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": 'freteArquivoUpload1',
+                "rota": '',
                 "nome": 'Entrega Terceiros Extração ',
                 "descricao": 'Extrair dados',
-                "ativo": true,
+                "ativo": false,
                 "icon": <FileArrowDown size={40} />
 
             },
             {
-                "rota": 'freteArquivoUpload1',
+                "rota": '',
                 "nome": 'Entrega Proprio Carga Dados',
-                "descricao": '1 Arquivo',
-                "ativo": true,
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
 
             },
             {
-                "rota": 'freteArquivoUpload1',
+                "rota": '',
                 "nome": 'Entrega Terceiros Carga Dados',
-                "descricao": '1 Arquivo',
-                "ativo": true,
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
 
             },
             {
-                "rota": 'freteArquivoUpload1',
+                "rota": '',
                 "nome": 'Transferência Proprio Extração',
                 "descricao": 'Extrair dados',
-                "ativo": true,
+                "ativo": false,
                 "icon": <FileArrowDown size={40} />
 
             },
             {
-                "rota": 'freteArquivoUpload1',
+                "rota": '',
                 "nome": 'Transferência Terceiros Extração',
                 "descricao": 'Extrair dados',
-                "ativo": true,
+                "ativo": false,
                 "icon": <FileArrowDown size={40} />
 
             },
             {
-                "rota": 'freteArquivoUpload1',
+                "rota": '',
                 "nome": 'Transferência Proprio Carga',
-                "descricao": '1 Arquivo',
-                "ativo": true,
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
 
             },
             {
-                "rota": 'freteArquivoUpload1',
+                "rota": '',
                 "nome": 'Transferência Terceiros Carga',
-                "descricao": '1 Arquivo',
-                "ativo": true,
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
 
             },

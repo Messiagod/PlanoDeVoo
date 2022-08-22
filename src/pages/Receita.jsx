@@ -9,32 +9,32 @@ export function Receita() {
     const [arquivos, setArquivos] = useState(
 
         [
-            {
-                "rota": 'impostosExtraçãoDeDadosArquivoUpload1',
+            {   /* impostosExtraçãoDeDadosArquivoUpload1 */
+                "rota": '',
                 "nome": 'Impostos - Extração de Dados',
                 "descricao": 'Extrair dados',
-                "ativo": true,
+                "ativo": false,
                 "icon": <FileArrowDown size={40} />
             },
-            {
-                "rota": 'impostosCargaDeDadosUpload1',
+            {/* impostosCargaDeDadosUpload1 */
+                "rota": '',
                 "nome": 'Impostos - Carga de Dados',
-                "descricao": '1 Arquivo',
-                "ativo": true,
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
-            {
-                "rota": 'calculoDeImpostosArquivoUpload1',
+            {/* calculoDeImpostosArquivoUpload1 */
+                "rota": '',
                 "nome": 'Calculo de Impostos',
                 "descricao": 'Botão para realizar calculo',
-                "ativo": true,
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
-            {
-                "rota": 'calculoDeImpostosArquivoUpload1',
+            {/* calculoDeImpostosArquivoUpload1 */
+                "rota": '',
                 "nome": 'Receita Líquida',
                 "descricao": 'Botão SQL - Cópia',
-                "ativo": true,
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
         ]
