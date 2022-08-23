@@ -37,12 +37,15 @@ import { HierarquiaUpload1 } from "./pages/HierarquiaDeClientesUpload";
 import { Demanda } from "./pages/Demanda";
 import { ProcessamentoCTS } from "./pages/ProcessamentoCTS";
 import { InvestimentoVendas } from "./pages/InvestimentoVendas";
+import { TesteButton } from "./pages/TesteButton";
 
 
 export function RouteComponent() {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+{/*             <Route path="/" element={<Home />} />
+ */}            <Route path="/" element={<TesteButton/>} />
+
 
             {/* CONSOLIDADO DRE */}
             <Route path="/planoDeVoo" element={<PlanoDeVoo/>} />

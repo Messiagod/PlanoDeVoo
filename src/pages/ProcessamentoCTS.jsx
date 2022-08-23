@@ -95,8 +95,8 @@ export function ProcessamentoCTS() {
                 "nome": '11 - Hierarquia de Clientes',
                 "descricao": 'Carregar Arquivo',
                 "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-
+                "icon": <BookmarksSimple size={40} />,
+                
             },
 
         ]
