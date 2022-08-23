@@ -3,74 +3,26 @@ import { Temas } from '../components/temas';
 import { Link } from 'react-router-dom'
 import { BookmarksSimple, FileArrowDown  } from 'phosphor-react'
 
-export function Frete() {
+export function InvestimentoVendas() {
 
     const [arquivos, setArquivos] = useState(
 
         [
             {
                 "rota": '',
-                "nome": '1 - Entrega Próprio Extração',
-                "descricao": 'Extrair dados',
-                "ativo": false,
-                "icon": <FileArrowDown size={40} />
-            },
-            {
-                "rota": '',
-                "nome": '2 - Entrega Terceiros Extração ',
-                "descricao": 'Extrair dados',
-                "ativo": false,
-                "icon": <FileArrowDown size={40} />
-
-            },
-            {
-                "rota": '',
-                "nome": '3 - Entrega Próprio Carga Dados',
-                "descricao": 'Carregar Arquivo',
+                "nome": '1 - Verbas Contratuais',
+                "descricao": 'Botão SQL - Cópia',
                 "ativo": false,
                 "icon": <BookmarksSimple size={40} />
-
             },
             {
                 "rota": '',
-                "nome": '4 - Entrega Terceiros Carga Dados',
-                "descricao": 'Carregar Arquivo',
+                "nome": '2 - Verbas Pontuais',
+                "descricao": 'Botão SQL - Cópia',
                 "ativo": false,
                 "icon": <BookmarksSimple size={40} />
-
             },
-            {
-                "rota": '',
-                "nome": '5 - Transferência Próprio Extração',
-                "descricao": 'Extrair dados',
-                "ativo": false,
-                "icon": <FileArrowDown size={40} />
 
-            },
-            {
-                "rota": '',
-                "nome": '6 - Transferência Terceiros Extração',
-                "descricao": 'Extrair dados',
-                "ativo": false,
-                "icon": <FileArrowDown size={40} />
-
-            },
-            {
-                "rota": '',
-                "nome": '7 - Transferência Próprio Carga',
-                "descricao": 'Carregar Arquivo',
-                "ativo": false,
-                "icon": <BookmarksSimple size={40} />
-
-            },
-            {
-                "rota": '',
-                "nome": '8 - Transferência Terceiros Carga',
-                "descricao": 'Carregar Arquivo',
-                "ativo": false,
-                "icon": <BookmarksSimple size={40} />
-
-            },
         ]
     )
 
@@ -78,7 +30,7 @@ export function Frete() {
 
     return (
         <main className="">
-           <div className="flex m-9 gap-4">
+            <div className="flex m-9 gap-4">
                 <ul className="flex items-center">
                     <li className="inline-flex items-center">
                         <Link to={"/"} className="text-gray-600 hover:text-blue-500">
@@ -98,13 +50,14 @@ export function Frete() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                            Frete 
+                            InvestimentoVendas
                         </a>
 
                     </li>
 
                 </ul>
             </div>
+         
             <div className="max-h-96 w-full">
 
                 <div className='gap-8 m-8 grid grid-cols-4'>

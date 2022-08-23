@@ -16,7 +16,7 @@ export function FrotaUpload1() {
                 "descricao": 'Descrição Frete Frota',
                 "base": 'Frete Frota',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/frotaArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

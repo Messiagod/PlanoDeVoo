@@ -15,7 +15,7 @@ export function IcmsUpload1() {
                 "descricao": 'Descrição ICMS',
                 "base": 'ICMS',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/icmsArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

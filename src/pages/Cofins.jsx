@@ -32,8 +32,8 @@ export function Cofins() {
                     </li>
 
                     <li className="inline-flex items-center">
-                        <Link to={"/consolidadoDRE"} className="text-3xl font-bold">
-                            Consolidado DRE
+                        <Link to={"/planoDeVoo"} className="text-3xl font-bold">
+                            Plano de Voo
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
 

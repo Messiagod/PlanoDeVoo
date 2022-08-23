@@ -54,7 +54,7 @@ export function Upload({ data }) {
             })
 
     }
-    const downloadArquivo = `http://localhost:3000/${data.nomeArquivo}`
+    const downloadArquivo = `http://brampwsapp002:5050/${data.nomeArquivo}`
 
     return (
 
@@ -70,8 +70,8 @@ export function Upload({ data }) {
                     </li>
 
                     <li className="inline-flex items-center">
-                        <Link to={"/consolidadoDRE"} className="text-3xl font-bold">
-                            Consolidado DRE
+                        <Link to={"/planoDeVoo/processamentoCts"} className="text-3xl font-bold">
+                        Processamento CTS
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
 

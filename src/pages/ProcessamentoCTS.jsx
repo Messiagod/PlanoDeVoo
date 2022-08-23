@@ -5,116 +5,100 @@ import { BookmarksSimple } from 'phosphor-react'
 
 
 
-export function PlanoDeVoo() {
+export function ProcessamentoCTS() {
 
     const [transacao, setTransacao] = useState(
 
         [
-            /* {
+            {
                 "rota": 'cofinsArquivo',
-                "nome": 'Cofins',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "nome": '1 - Cofins',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
                 "rota": 'icmsArquivo',
-                "nome": 'ICMS',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "nome": '2 - ICMS',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
                 "rota": 'pisArquivo',
-                "nome": 'PIS',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "nome": '3- PIS',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
-                "rota": 'freteArquivo',
-                "nome": 'Frete Terceiros ',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "rota": 'freteArquivoUpload',
+                "nome": '4- Frete Terceiros ',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
                 "rota": 'comissaoArquivo',
-                "nome": 'Comissão',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "nome": '5 - Comissão',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
-                "rota": 'receitaArquivo',
-                "nome": 'Receita',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "rota": 'receitaArquivoUpload',
+                "nome": '6 - Receita',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
                 "rota": 'verbasArquivo',
-                "nome": 'Verbas',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "nome": '7 - Verbas',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
                 "rota": 'volumeArquivo',
-                "nome": 'Volume',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "nome": '8 - Volume',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
                 "rota": "cpvArquivo",
-                "nome": 'CPV',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "nome": '9 - CPV',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
                 "rota": "frotaArquivo",
-                "nome": 'Frete Frota',
-                "descricao": '1 Arquivo',
-                "ativo": true
+                "nome": '10 - Frete Frota',
+                "descricao": 'Carregar Arquivo',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
             },
             {
                 "rota": "hierarquiaDeClientesArquivo",
-                "nome": 'Hierarquia de Clientes',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            }, */
-            // ATUALIZAÇÃO
-            {
-                "rota": 'processamentoCts/receitaArquivo',
-                "nome": 'Receita',
-                "descricao": '4 Itens',
+                "nome": '11 - Hierarquia de Clientes',
+                "descricao": 'Carregar Arquivo',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
 
             },
-            {
-                "rota": 'processamentoCts/demandaArquivo',
-                "nome": 'Demanda',
-                "descricao": '8 Itens',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
 
-
-            },
-            {
-                "rota": 'processamentoCts/FreteArquivo',
-                "nome": 'Frete',
-                "descricao": '8 Itens',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-            },
-            {
-                "rota": 'investimentoVendas',
-                "nome": 'Investimento Vendas',
-                "descricao": '2 Itens',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-            },
-            {
-                "rota": 'processamentoCts',
-                "nome": 'Processamento CTS',
-                "descricao": '11 Itens',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-            },
         ]
     )
 
@@ -132,8 +116,17 @@ export function PlanoDeVoo() {
                     </li>
 
                     <li className="inline-flex items-center">
-                        <a className="text-3xl font-bold underline">
+                        <Link to={"/planoDeVoo"} className="text-3xl font-bold ">
                             Plano de Voo
+                        </Link>
+                    </li>
+
+                    <span className="mx-4 h-auto text-3xl font-bold">/</span>
+
+
+                    <li className="inline-flex items-center">
+                        <a className="text-3xl font-bold underline">
+                            Processamento CTS
                         </a>
                     </li>
 

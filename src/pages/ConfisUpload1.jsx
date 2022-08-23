@@ -16,7 +16,7 @@ export function CofinsUpload1() {
                 "descricao": 'Descrição Cofins',
                 "base": 'Cofins',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/cofinsArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

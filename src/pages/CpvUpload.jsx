@@ -16,7 +16,7 @@ export function CpvUpload1() {
                 "descricao": 'Descrição CPV',
                 "base": 'CPV',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/cpvArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

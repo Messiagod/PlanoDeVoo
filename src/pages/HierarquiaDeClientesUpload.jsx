@@ -16,7 +16,7 @@ export function HierarquiaUpload1() {
                 "descricao": 'Descrição Hierarquia de Clientes',
                 "base": 'Hierarquia de Clientes',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/hierarquiaDeClientesArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

@@ -3,7 +3,7 @@ import { Upload } from "../components/Upload"
 import { useState } from "react"
 
 
-export function ReceitaUpload1() {
+export function ReceitaPlanoDeVooUpload() {
 
 
     const [dados, setDados] = useState(
@@ -16,7 +16,7 @@ export function ReceitaUpload1() {
                 "descricao": 'Descrição Receita',
                 "base": 'Receita',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/receitaArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

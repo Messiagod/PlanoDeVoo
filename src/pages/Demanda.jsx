@@ -1,68 +1,75 @@
 import { useState } from "react";
 import { Temas } from '../components/temas';
 import { Link } from 'react-router-dom'
-import { BookmarksSimple, FileArrowDown  } from 'phosphor-react'
+import { BookmarksSimple, FileArrowDown } from 'phosphor-react'
 
 export function Demanda() {
 
     const [arquivos, setArquivos] = useState(
 
         [
-            
             {
                 "rota": '',
-                "nome": 'Incoterm Extração de Dados',
-                "descricao": 'Extrair dados',
-                "ativo": false,
-                "icon": <FileArrowDown size={40} />
-            },
-            {
-                "rota": '',
-                "nome": 'Incoterm Carga de Dados',
-                "descricao": 'Carregar Arquivo',
-                "ativo": false,
-                "icon": <BookmarksSimple size={40} />
-            },
-            {
-                "rota": '',
-                "nome": 'Definição UP Extração de Dados',
-                "descricao": 'Extrair dados',
-                "ativo": false,
-                "icon": <FileArrowDown size={40} />
-            },
-            {
-                "rota": '',
-                "nome": 'Definição UP Carga de Dados',
-                "descricao": 'Carregar Arquivo',
-                "ativo": false,
-                "icon": <BookmarksSimple size={40} />
-            },
-
-            // BOTÕES
-            {
-                "rota": '',
-                "nome": 'Volume Demanda Vendas',
+                "nome": '1 - Volume Demanda Vendas',
                 "descricao": 'Botão SQL - Cópia',
                 "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
             {
                 "rota": '',
-                "nome": 'Calculo Conversão',
+                "nome": '2 - Fator Conversão',
+                "descricao": 'SAP',
+                "ativo": false,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": '',
+                "nome": '3 - Calculo Conversão',
                 "descricao": 'Botão para realizar calculo',
                 "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
             {
                 "rota": '',
-                "nome": 'Calculo Incoterms',
+                "nome": '4 - Incoterm Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": false,
+                "icon": <FileArrowDown size={40} />
+            },
+            {
+                "rota": '',
+                "nome": '5 - Incoterm Carga de Dados',
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": '',
+                "nome": '6 - Calculo Incoterms',
                 "descricao": 'Botão para realizar calculo',
                 "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
             {
                 "rota": '',
-                "nome": 'Calculo UP',
+                "nome": '7 - Definição UP Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": false,
+                "icon": <FileArrowDown size={40} />
+            },
+            {
+                "rota": '',
+                "nome": '8 - Definição UP Carga de Dados',
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
+                "icon": <BookmarksSimple size={40} />
+            },
+
+            // BOTÕES
+
+            {
+                "rota": '',
+                "nome": '9 -Calculo UP',
                 "descricao": 'Botão para realizar calculo',
                 "ativo": false,
                 "icon": <BookmarksSimple size={40} />
@@ -85,7 +92,7 @@ export function Demanda() {
                     </li>
 
                     <li className="inline-flex items-center">
-                        <Link to={"/consolidadoDRE"} className="text-3xl font-bold">
+                        <Link to={"/planoDeVoo"} className="text-3xl font-bold">
                             Plano de Voo
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>

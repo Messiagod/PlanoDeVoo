@@ -16,7 +16,7 @@ export function VerbasUpload1() {
                 "descricao": 'Descrição Verbas',
                 "base": 'Verbas',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/verbasArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

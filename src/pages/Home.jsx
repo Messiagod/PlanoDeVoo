@@ -9,19 +9,13 @@ export function Home() {
         [
            
             {
-                "rota": 'consolidadoDRE',
+                "rota": 'planoDeVoo',
                 "nome": 'Plano de Voo',
-                "descricao": '3 Itens',
+                "descricao": '5 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
-            {
-                "rota": false,
-                "nome": 'Processamento CTS',
-                "descricao": 'Em breve',
-                "ativo": false,
-                "icon": <BookmarksSimple size={40} />
-            },
+       
         ]
     )
 

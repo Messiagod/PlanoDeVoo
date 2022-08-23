@@ -16,7 +16,7 @@ export function FreteUpload1() {
                 "descricao": 'Descrição Frete Terceiros',
                 "base": 'Frete Terceiros',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/freteArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

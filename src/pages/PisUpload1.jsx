@@ -16,7 +16,7 @@ export function PisUpload1() {
                 "descricao": 'Descrição PIS',
                 "base": 'PIS',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/pisArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

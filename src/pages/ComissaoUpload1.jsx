@@ -16,7 +16,7 @@ export function ComissaoUpload1() {
                 "descricao": 'Descrição Comissão',
                 "base": 'Comissão',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/comissaoArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

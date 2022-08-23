@@ -9,31 +9,31 @@ export function Receita() {
     const [arquivos, setArquivos] = useState(
 
         [
+            {/* calculoDeImpostosArquivoUpload1 */
+                "rota": '',
+                "nome": '1 - Receita Líquida',
+                "descricao": 'Botão SQL - Cópia',
+                "ativo": false,
+                "icon": <BookmarksSimple size={40} />
+            },
             {   /* impostosExtraçãoDeDadosArquivoUpload1 */
                 "rota": '',
-                "nome": 'Impostos - Extração de Dados',
+                "nome": '2 - Impostos - Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": false,
                 "icon": <FileArrowDown size={40} />
             },
             {/* impostosCargaDeDadosUpload1 */
                 "rota": '',
-                "nome": 'Impostos - Carga de Dados',
+                "nome": '3 - Impostos - Carga de Dados',
                 "descricao": 'Carregar Arquivo',
                 "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
             {/* calculoDeImpostosArquivoUpload1 */
                 "rota": '',
-                "nome": 'Calculo de Impostos',
+                "nome": '4 - Calculo de Impostos',
                 "descricao": 'Botão para realizar calculo',
-                "ativo": false,
-                "icon": <BookmarksSimple size={40} />
-            },
-            {/* calculoDeImpostosArquivoUpload1 */
-                "rota": '',
-                "nome": 'Receita Líquida',
-                "descricao": 'Botão SQL - Cópia',
                 "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
@@ -55,7 +55,7 @@ export function Receita() {
                     </li>
 
                     <li className="inline-flex items-center">
-                        <Link to={"/consolidadoDRE"} className="text-3xl font-bold">
+                        <Link to={"/planoDeVoo"} className="text-3xl font-bold">
                             Plano de Voo
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>

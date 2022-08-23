@@ -16,7 +16,7 @@ export function VolumeUpload1() {
                 "descricao": 'Descrição Volume',
                 "base": 'Volume',
                 "ativo": true,
-                "navigate": "/consolidadoDRE/volumeArquivo"
+                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

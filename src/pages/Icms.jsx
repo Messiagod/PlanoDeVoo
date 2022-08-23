@@ -33,7 +33,7 @@ export function Icms() {
                     </li>
 
                     <li className="inline-flex items-center">
-                        <Link to={"/consolidadoDRE"} className="text-3xl font-bold">
+                        <Link to={"/planoDeVoo/processamentoCts"} className="text-3xl font-bold">
                             Consolidado DRE
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
