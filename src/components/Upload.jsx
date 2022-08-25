@@ -54,7 +54,7 @@ export function Upload({ data }) {
             })
 
     }
-    const downloadArquivo = `http://brampwsapp002:5050/${data.nomeArquivo}`
+    const downloadArquivo = `http://brampwsapp001:3000/${data.nomeArquivo}`
 
     return (
 

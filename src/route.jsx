@@ -38,15 +38,17 @@ import { Demanda } from "./pages/Demanda";
 import { ProcessamentoCTS } from "./pages/ProcessamentoCTS";
 import { InvestimentoVendas } from "./pages/InvestimentoVendas";
 import { TesteButton } from "./pages/TesteButton";
+import { VolumeDemandaVendas } from "./pages/volumeDemandaVendas";
+import { DemandaFatorConversao} from "./pages/demandaFatorConversao";
+import { CalculoConversao } from "./pages/calculoConversao";
 
 
 export function RouteComponent() {
     return (
         <Routes>
-{/*             <Route path="/" element={<Home />} />
- */}            <Route path="/" element={<TesteButton/>} />
-
-
+             <Route path="/" element={<Home />} />
+{/*            <Route path="/" element={<TesteButton/>} />
+ */}
             {/* CONSOLIDADO DRE */}
             <Route path="/planoDeVoo" element={<PlanoDeVoo/>} />
             {/* CONSOLIDADO DRE - BASE COFINS */}
@@ -76,14 +78,13 @@ export function RouteComponent() {
             <Route path="planoDeVoo/processamentoCts/hierarquiaDeClientesArquivo" element={<HierarquiaUpload1 />} />
             {/* CONSOLIDADO DRE - DEMANDA */}
             <Route path="planoDeVoo/processamentoCts/demandaArquivo" element={<Demanda/>} />
+            <Route path="planoDeVoo/processamentoCts/demandaArquivo/volumeDemandaVenda" element={<VolumeDemandaVendas/>} />
+            <Route path="planoDeVoo/processamentoCts/demandaArquivo/fatorConversao" element={<DemandaFatorConversao/>} />
+            <Route path="planoDeVoo/processamentoCts/demandaArquivo/calculoConversao" element={<CalculoConversao/>} />
             {/* CONSOLIDADO DRE - PROCESSAMENTO CTS */}
             <Route path="planoDeVoo/processamentoCts" element={<ProcessamentoCTS/>} />
             {/*  */}
             <Route path="planoDeVoo/investimentoVendas" element={<InvestimentoVendas/>} />
-
-
-            
-
         </Routes>
     )
 }

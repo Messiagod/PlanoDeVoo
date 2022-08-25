@@ -1,8 +1,22 @@
 import React from "react"
-import { useState } from "react"
 import api from '../config/api';
+import { useState } from "react"
+import { Link } from 'react-router-dom'
 
-export function TesteButton() {
+
+
+export function CalculoConversao() {
+
+    const buttons =
+    {
+        "nome": 'Calculo Conversão',
+        "rotaApi": '/PlanoDeVoo/demandaCalculoConversao',
+        "descricao": 'Descrição Comissão',
+        "base": 'Demanda',
+        "ativo": true,
+        "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
+    }
+
 
     const [etapa1, setEtapa1] = useState(false)
     const [etapa2, setEtapa2] = useState(false)
@@ -27,9 +41,9 @@ export function TesteButton() {
             const HoraInicioMeio = new Date().toLocaleTimeString();
             setHoraEtapa2(HoraInicioMeio)
             setEtapa2(true)
-        }, 60000)
+        }, 50 * 1000)
 
-        await api.get("/PlanoDeVoo/volumeDemandaVendas")
+        await api.get(buttons.rotaApi)
             .then((response) => {
                 console.log(response.data)
                 setRespostas(response.data)
@@ -45,11 +59,11 @@ export function TesteButton() {
                     setProcess(false)
                     const HoraInicioFimError = new Date().toLocaleTimeString();
                     setHoraEtapa4Error(HoraInicioFimError)
-                    console.log(err)
-                    alert("ERROO")
                 } else {
-                    console.log("back off")
-                    alert("back off")
+                    setEtapa2(false)
+                    setEtapa4Error(true)
+                    const HoraInicioFimError = new Date().toLocaleTimeString();
+                    setHoraEtapa4Error(HoraInicioFimError)
                 }
             })
     }
@@ -59,51 +73,50 @@ export function TesteButton() {
             <div className="flex m-9 gap-4">
                 <ul className="flex items-center">
                     <li className="inline-flex items-center">
-                        <a className="text-gray-600 hover:text-blue-500">
+                        <Link to={"/"} className="text-gray-600 hover:text-blue-500">
                             <svg className="w-8 h-auto fill-current mx-2 text-gray-100" viewBox="0 0 24 24" ><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" /></svg>
-                        </a>
-
+                        </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
                     </li>
 
                     <li className="inline-flex items-center">
-                        <a className="text-3xl font-bold">
-                            Processamento CTS
-                        </a>
+                        <Link to={"/planoDeVoo"} className="text-3xl font-bold">
+                            Plano de Voo
+                        </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
 
                     </li>
 
                     <li className="inline-flex items-center">
-                        <a className="text-3xl font-bold ">
-                            a
-                        </a>
+                        <Link to={buttons.navigate} className="text-3xl font-bold ">
+                            {buttons.base}
+                        </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
                     </li>
 
                     <li className="inline-flex items-center">
                         <a className='text-3xl font-bold underline'>
-                            Carregar Arquivo
+                            {buttons.nome}
                         </a>
 
                     </li>
 
                 </ul>
             </div>
-            <div className="h-full rounded border border-gray-500 p-4 m-4">
+            <div className="rounded border border-gray-500 p-4 m-4">
                 <header className="flex items-center justify-between ">
                     <span className=" text-blue-500 text-4xl font-bold flex items-center">
-                        Botão para realizar Cópia - SQL
+                        {buttons.nome}
                     </span>
                     <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                        Botão SQL
+                        Botão
                     </span>
                 </header>
 
                 {button ? <div className="flex">
                     <div className="flex bg-black mt-10">
                         <button onClick={uploadButton} className='w-64 h-14 text-sm bg-blue-600   rounded font-bold uppercase   hover:bg-blue-700 transition-colors'>
-                            Realizar cópia
+                            Realizar calculo
                         </button>
                     </div>
                 </div> : null}
@@ -129,8 +142,8 @@ export function TesteButton() {
                                 <div className="hidden sm:flex w-full bg-green-300 h-0.5 "></div>
                             </div>
                             <div className="mt-5 sm:pr-8">
-                                <h3 className="text-lg font-semibold text-white-900 ">Processo  executado - Solicitação de Cópia</h3>
-                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Enviando solicitação de cópia para banco de dados.....</p>
+                                <h3 className="text-lg font-semibold text-white-900 ">Processo solicitado - Calculo de Conversão</h3>
+                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Enviando solicitação de calculo para banco de dados.....</p>
                                 <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Iniciado: {horaEtapa1}</time>
 
                             </div>
@@ -146,7 +159,7 @@ export function TesteButton() {
                                 </div>
                                 <div className="mt-5 sm:pr-8">
                                     <h3 className="text-lg font-semibold text-white-900 ">Banco de dados - Em andamento</h3>
-                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Conexão com banco de dados estabelecida, executando cópia</p>
+                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Conexão com banco de dados estabelecida, executando calculo.....</p>
                                     <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Iniciado: {horaEtapa2}</time>
                                 </div>
                             </li> : null}
@@ -184,37 +197,43 @@ export function TesteButton() {
                     </ol> : null}
 
                 {divRespostas ?
-                    <div class="overflow-x-auto relative m-10">
+                    <div class="overflow-x-auto relative border border-gray-300 m-10">
                         <table class="w-full bg-gray-700 border-gray-600 border-b text-sm text-left text-gray-200">
-                            <thead class="text-x uppercasebg-gray-700 text-blue-500">
+                            <thead class="text-x uppercasebg-gray-700 text-blue-500 ">
                                 <tr>
                                     <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                        Quantidade inserida
+                                        Quantidade calculada
                                     </th>
                                     <th scope="col" class="py-3 px-6">
-                                        Quantidade de Itens
+                                        Soma convertido peso KG
                                     </th>
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Valor soma caixa fisica
+                                        Soma convertido peso KG Líquido
                                     </th>
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Valor soma volume convertido
+                                        Soma convertido peso Tonelada
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Soma convertido peso Tonelada Líquido
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="bg-black border-gray-600 ">
+                                <tr class="bg-black  ">
                                     <th scope="row" class="py-4 px-6 font-medium whitespace-nowraptext-white ">
-                                        {respostas.qd_inserida}
+                                        {respostas.qd_calculada}
                                     </th>
                                     <td class="py-4 px-6">
-                                        {respostas.qd_item}
+                                        {respostas.soma_conv_peso_kg}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.vl_soma_cx_fisica}
+                                        {respostas.soma_conv_peso_kg_liq}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.vl_soma_vol_convertido}
+                                        {respostas.soma_conv_peso_ton}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.soma_conv_peso_ton_liq}
                                     </td>
                                 </tr>
                             </tbody>

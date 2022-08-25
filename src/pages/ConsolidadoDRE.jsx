@@ -78,16 +78,8 @@ export function PlanoDeVoo() {
             }, */
             // ATUALIZAÇÃO
             {
-                "rota": 'processamentoCts/receitaArquivo',
-                "nome": 'Receita',
-                "descricao": '4 Itens',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-
-            },
-            {
                 "rota": 'processamentoCts/demandaArquivo',
-                "nome": 'Demanda',
+                "nome": '1 - Demanda',
                 "descricao": '8 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
@@ -96,21 +88,29 @@ export function PlanoDeVoo() {
             },
             {
                 "rota": 'processamentoCts/FreteArquivo',
-                "nome": 'Frete',
+                "nome": '2 - Frete',
                 "descricao": '8 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
                 "rota": 'investimentoVendas',
-                "nome": 'Investimento Vendas',
+                "nome": '3 - Investimento Vendas',
                 "descricao": '2 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
+                "rota": 'processamentoCts/receitaArquivo',
+                "nome": '4 - Receita',
+                "descricao": '4 Itens',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
+            },
+            {
                 "rota": 'processamentoCts',
-                "nome": 'Processamento CTS',
+                "nome": '5 - Processamento CTS',
                 "descricao": '11 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />

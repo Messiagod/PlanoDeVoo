@@ -9,24 +9,24 @@ export function Demanda() {
 
         [
             {
-                "rota": '',
+                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/volumeDemandaVenda',
                 "nome": '1 - Volume Demanda Vendas',
                 "descricao": 'Botão SQL - Cópia',
-                "ativo": false,
+                "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '',
+                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/fatorConversao',
                 "nome": '2 - Fator Conversão',
                 "descricao": 'SAP',
-                "ativo": false,
+                "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '',
+                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/calculoConversao',
                 "nome": '3 - Calculo Conversão',
                 "descricao": 'Botão para realizar calculo',
-                "ativo": false,
+                "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
