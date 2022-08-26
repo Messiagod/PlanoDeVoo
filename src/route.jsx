@@ -41,14 +41,18 @@ import { TesteButton } from "./pages/TesteButton";
 import { VolumeDemandaVendas } from "./pages/volumeDemandaVendas";
 import { DemandaFatorConversao} from "./pages/demandaFatorConversao";
 import { CalculoConversao } from "./pages/calculoConversao";
+import { IncotermExtracaoDeDados } from "./pages/incotermExtracaoDeDados";
+import { IncotermCargaDeDados } from "./pages/incotermCargaDeDados";
+import { IncotermCalculo } from "./pages/incotermCalculo";
+import { Incoterm } from "./pages/Incoterm";
+import { Up } from "./pages/Up";
+import { Conversao } from "./pages/conversao";
 
 
 export function RouteComponent() {
     return (
         <Routes>
              <Route path="/" element={<Home />} />
-{/*            <Route path="/" element={<TesteButton/>} />
- */}
             {/* CONSOLIDADO DRE */}
             <Route path="/planoDeVoo" element={<PlanoDeVoo/>} />
             {/* CONSOLIDADO DRE - BASE COFINS */}
@@ -78,9 +82,15 @@ export function RouteComponent() {
             <Route path="planoDeVoo/processamentoCts/hierarquiaDeClientesArquivo" element={<HierarquiaUpload1 />} />
             {/* CONSOLIDADO DRE - DEMANDA */}
             <Route path="planoDeVoo/processamentoCts/demandaArquivo" element={<Demanda/>} />
+            <Route path="planoDeVoo/processamentoCts/incotermArquivo" element={<Incoterm/>} />
+            <Route path="planoDeVoo/processamentoCts/upArquivo" element={<Up/>} />
+            <Route path="planoDeVoo/processamentoCts/conversaoArquivo" element={<Conversao/>} />
             <Route path="planoDeVoo/processamentoCts/demandaArquivo/volumeDemandaVenda" element={<VolumeDemandaVendas/>} />
             <Route path="planoDeVoo/processamentoCts/demandaArquivo/fatorConversao" element={<DemandaFatorConversao/>} />
             <Route path="planoDeVoo/processamentoCts/demandaArquivo/calculoConversao" element={<CalculoConversao/>} />
+            <Route path="planoDeVoo/processamentoCts/demandaArquivo/incotermExtracaoDeDados" element={<IncotermExtracaoDeDados/>} />
+            <Route path="/planoDeVoo/processamentoCts/demandaArquivo/incotermCargaDeDados" element={<IncotermCargaDeDados/>} />
+            <Route path="/planoDeVoo/processamentoCts/demandaArquivo/incotermCalculo" element={<IncotermCalculo/>} />
             {/* CONSOLIDADO DRE - PROCESSAMENTO CTS */}
             <Route path="planoDeVoo/processamentoCts" element={<ProcessamentoCTS/>} />
             {/*  */}

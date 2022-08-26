@@ -10,13 +10,17 @@ export function FreteUpload1() {
 
         [
             {
+                "nomeBase": "Processamento CTS",
+                "navigateBase": "/planoDeVoo/processamentoCts",
                 "nome": 'Frete Terceiros',
                 "rotaApi": 'uploadFreteTerceiros',
                 "nomeArquivo": 'base_frete_terceiros_modelo.csv',
                 "descricao": 'Descrição Frete Terceiros',
-                "base": 'Frete Terceiros',
+                "base": 'Processamento CTS',
+                "baseOne": "Plano de Voo",
+                "baseNavigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/processamentoCts",
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

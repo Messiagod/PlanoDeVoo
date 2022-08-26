@@ -15,7 +15,6 @@ export function Upload({ data }) {
     const [file, setFile] = useState('');
 
     const [uploadSucess, setUploadSucess] = useState('')
-    const [rowsSucess, setRowsSucess] = useState('')
     const [divUploadSucess, setDivUploadSucess] = useState(false)
 
     const [errorUpload, setErrorUpload] = useState('')
@@ -32,9 +31,8 @@ export function Upload({ data }) {
 
         await api.post(data.rotaApi, formData)
             .then((response) => {
-                console.log(response)
-                setUploadSucess(response.data.message)
-                setRowsSucess(response.data.rows)
+                console.log(response.data.qd_atualizada)
+                setUploadSucess(response.data)
                 setFile('');
                 setDivUploadSucess(true)
                 setProcessArquivo(false)
@@ -52,8 +50,8 @@ export function Upload({ data }) {
                     console.log("back off")
                 }
             })
-
     }
+
     const downloadArquivo = `http://brampwsapp001:3000/${data.nomeArquivo}`
 
     return (
@@ -70,8 +68,8 @@ export function Upload({ data }) {
                     </li>
 
                     <li className="inline-flex items-center">
-                        <Link to={"/planoDeVoo/processamentoCts"} className="text-3xl font-bold">
-                        Processamento CTS
+                        <Link to={data.baseNavigate} className="text-3xl font-bold">
+                            {data.baseOne}
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
 
@@ -84,9 +82,11 @@ export function Upload({ data }) {
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
                     </li>
 
+                   
+
                     <li className="inline-flex items-center">
                         <a className='text-3xl font-bold underline'>
-                            Carregar Arquivo
+                            {data.nome}
                         </a>
 
                     </li>
@@ -148,14 +148,45 @@ export function Upload({ data }) {
             {divUploadSucess ?
                 <div className="">
                     <div className="rounded border border-gray-500 p-4 m-4">
+                        <h1 className='mt-5 mb-5 text-green-400 text-4xl'>{uploadSucess.message} !!</h1>
+                        <div className=' flex justify-center'>
 
-                        <h1 className='mt-5 mb-5 text-green-400 text-4xl'>{uploadSucess} !!</h1>
-                        <div className='w-60 flex items-center justify-center'>
-                            <img src={sucessLoad} alt="loading..." />
+                            <div className='w-64 flex justify-center'>
+                                <img src={sucessLoad} alt="loading..." />
+                            </div>
+
                         </div>
-                        <p className='mt-5 mb-5 font-medium'>Total de linhas carregadas: {rowsSucess}</p>
-                        <p className='mt-5 mb-5 font-medium'>Total de linhas com erro: 0</p>
+                        <div class="overflow-x-auto relative border border-gray-300 m-10">
+                            <table class="w-full bg-gray-700 border-gray-600 border-b text-sm text-left text-gray-200">
+                                <thead class="text-x uppercasebg-gray-700 text-green-300 ">
+                                    <tr>
+                                        <th scope="col" class="py-3 px-6 rounded-l-lg">
+                                            Quantidade atualizada:
+                                        </th>
+                                        <th scope="col" class="py-3 px-6">
+                                            Quantidade inserida:
+                                        </th>
+                                        <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                            Quantidade total:
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-black  ">
+                                        <th scope="row" class="py-4 px-6 font-medium whitespace-nowraptext-white ">
+                                            {uploadSucess.qd_atualizada}
+                                        </th>
+                                        <td class="py-4 px-6">
+                                            {uploadSucess.qd_inserida}
+                                        </td>
+                                        <td class="py-4 px-6">
+                                            {uploadSucess.qd_total}
+                                        </td>
 
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 :
@@ -165,8 +196,10 @@ export function Upload({ data }) {
                 <div className="">
                     <div className="rounded border border-gray-500 p-4 m-4">
                         <h1 className='mt-5 mb-5 text-red-400 text-4xl'>Arquivo contem erros!!</h1>
-                        <div className='w-60 flex items-center justify-center'>
-                            <img src={errorLoad} alt="loading..." />
+                        <div className=' flex justify-center'>
+                            <div className='w-60 flex items-center justify-center'>
+                                <img src={errorLoad} alt="loading..." />
+                            </div>
                         </div>
                         <p className='mt-5 mb-5 font-medium'>{errorUpload}</p>
                         <p className='mt-5 mb-5 font-medium'>Total de linhas carregadas: 0</p>
@@ -179,7 +212,7 @@ export function Upload({ data }) {
             <div className="p-5 ">
                 <div className="flex-1">
                     <h1 className="text-2xl font-bold">
-                        {data.base}
+                        {data.nome}
                     </h1>
                     <p className="mt-4 text-gray-200 leading-relaxed">
                         {data.descricao}

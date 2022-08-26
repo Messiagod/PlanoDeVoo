@@ -3,40 +3,35 @@ import { Temas } from '../components/temas';
 import { Link } from 'react-router-dom'
 import { BookmarksSimple, FileArrowDown } from 'phosphor-react'
 
-export function Demanda() {
+export function Up() {
 
     const [arquivos, setArquivos] = useState(
 
         [
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/volumeDemandaVenda',
-                "nome": '1 - Volume Demanda Vendas',
-                "descricao": 'Botão SQL - Cópia',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
+                "rota": '',
+                "nome": '5 - Definição UP Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": false,
+                "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/conversaoArquivo',
-                "nome": '2 - Conversão',
-                "descricao": '2 Itens',
-                "ativo": true,
+                "rota": '',
+                "nome": '6 - Definição UP Carga de Dados',
+                "descricao": 'Carregar Arquivo',
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
+
+            // BOTÕES
+
             {
-                "rota": '/planoDeVoo/processamentoCts/incotermArquivo',
-                "nome": '3 - Incoterm',
-                "descricao": '3 Itens',
-                "ativo": true,
+                "rota": '',
+                "nome": '7 -Calculo UP',
+                "descricao": 'Botão para realizar calculo',
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
-            {
-                "rota": '/planoDeVoo/processamentoCts/upArquivo',
-                "nome": '4 - UP',
-                "descricao": '3 Itens',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-            },
-            
         ]
     )
 
@@ -63,14 +58,23 @@ export function Demanda() {
                     </li>
 
                     <li className="inline-flex items-center">
+                        <Link to={"/planoDeVoo/processamentoCts/demandaArquivo"} className="text-3xl font-bold">
+                           Demanda
+                        </Link>
+                        <span className="mx-4 h-auto text-3xl font-bold">/</span>
+
+                    </li>
+
+                    <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                            Demanda
-                        </a>
+                           4 - Up
+                        </a> 
 
                     </li>
 
                 </ul>
             </div>
+         
             <div className="max-h-96 w-full">
 
                 <div className='gap-8 m-8 grid grid-cols-4'>

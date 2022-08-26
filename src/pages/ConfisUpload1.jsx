@@ -10,13 +10,17 @@ export function CofinsUpload1() {
 
         [
             {
+                "nomeBase": "Processamento CTS",
+                "navigateBase": "/planoDeVoo/processamentoCts",
                 "nome": 'Cofins',
                 "rotaApi": 'uploadCofins',
                 "nomeArquivo": 'base_cofins_modelo.csv',
                 "descricao": 'Descrição Cofins',
-                "base": 'Cofins',
+                "base": 'Processamento CTS',
+                "baseOne": "Plano de Voo",
+                "baseNavigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/processamentoCts",
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

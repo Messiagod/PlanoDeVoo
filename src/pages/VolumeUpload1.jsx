@@ -10,13 +10,17 @@ export function VolumeUpload1() {
 
         [
             {
+                "nomeBase": "Processamento CTS",
+                "navigateBase": "/planoDeVoo/processamentoCts",
                 "nome": 'Volume',
                 "rotaApi": 'uploadVolume',
                 "nomeArquivo": 'base_volume_modelo.csv',
                 "descricao": 'Descrição Volume',
-                "base": 'Volume',
+                "base": 'Processamento CTS',
+                "baseOne": "Plano de Voo",
+                "baseNavigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/processamentoCts",
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

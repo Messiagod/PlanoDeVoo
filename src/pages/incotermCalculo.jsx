@@ -5,18 +5,18 @@ import { Link } from 'react-router-dom'
 
 
 
-export function CalculoConversao() {
+export function IncotermCalculo() {
 
     const buttons =
     {
-        "nome": '2 - Calculo Conversão',
-        "nomeBase": "Conversão",
-        "rotaApi": '/PlanoDeVoo/demandaCalculoConversao',
+        "nome": '3 - Calculo Incoterm',
+        "nomeBase": "Incoterm",
+        "rotaApi": '/PlanoDeVoo/demandaCalculoIncoterms',
         "descricao": 'Descrição Comissão',
         "base": 'Demanda',
         "ativo": true,
         "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
-        "navigateBase": "/planoDeVoo/processamentoCts/conversaoArquivo"
+        "navigateBase": "/planoDeVoo/processamentoCts/incotermArquivo",
     }
 
 
@@ -143,7 +143,7 @@ export function CalculoConversao() {
 
                 {etapa1 ?
 
-                    <ol class="items-center sm:flex m-12 ">
+                    <ol class="items-center sm:flex m-8 ">
                         <li class="relative mb-6 sm:mb-0">
                             <div className="flex items-center">
                                 <div className="flex z-10 justify-center items-center w-8 h-8 bg-blue-500 rounded-full ring-0   sm:ring-8  shrink-0">
@@ -206,43 +206,49 @@ export function CalculoConversao() {
                     </ol> : null}
 
                 {divRespostas ?
-                    <div class="overflow-x-auto relative border border-gray-300 m-10">
+                    <div class="overflow-x-auto relative border border-gray-300 m-5">
                         <table class="w-full bg-gray-700 border-gray-600 border-b text-sm text-left text-gray-200">
                             <thead class="text-x uppercasebg-gray-700 text-blue-500 ">
                                 <tr>
                                     <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                        Quantidade calculada
+                                        Quantidade linhas totais
                                     </th>
                                     <th scope="col" class="py-3 px-6">
-                                        Soma convertido peso KG
+                                        Soma caixa física 
                                     </th>
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Soma convertido peso KG Líquido
+                                        Soma  peso KG 
                                     </th>
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Soma convertido peso Tonelada
+                                        Soma  peso KG Líquido
                                     </th>
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Soma convertido peso Tonelada Líquido
+                                        Soma  peso Tonelada
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Soma  peso Tonelada Líquido
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="bg-black  ">
                                     <th scope="row" class="py-4 px-6 font-medium whitespace-nowraptext-white ">
-                                        {respostas.qd_calculada}
+                                        {respostas.qd_linhas_totais}
                                     </th>
                                     <td class="py-4 px-6">
-                                        {respostas.soma_conv_peso_kg}
+                                        {respostas.soma_cx_fisica}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.soma_conv_peso_kg_liq}
+                                        {respostas.soma_peso_kg}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.soma_conv_peso_ton}
+                                        {respostas.soma_peso_kg_liq}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.soma_conv_peso_ton_liq}
+                                        {respostas.soma_peso_ton}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.soma_peso_ton_liq}
                                     </td>
                                 </tr>
                             </tbody>

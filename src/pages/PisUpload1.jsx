@@ -10,13 +10,17 @@ export function PisUpload1() {
 
         [
             {
+                "nomeBase": "Processamento CTS",
+                "navigateBase": "/planoDeVoo/processamentoCts",
                 "nome": 'PIS',
                 "rotaApi": 'uploadPis',
                 "nomeArquivo": 'base_pis_modelo.csv',
                 "descricao": 'Descrição PIS',
-                "base": 'PIS',
+                "base": 'Processamento CTS',
+                "baseOne": "Plano de Voo",
+                "baseNavigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/processamentoCts",
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

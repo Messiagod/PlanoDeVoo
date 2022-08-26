@@ -14,9 +14,11 @@ export function ComissaoUpload1() {
                 "rotaApi": 'uploadComissao',
                 "nomeArquivo": 'base_comissao_modelo.csv',
                 "descricao": 'Descrição Comissão',
-                "base": 'Comissão',
+                "base": 'Processamento CTS',
+                "baseOne": "Plano de Voo",
+                "baseNavigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/processamentoCts",
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

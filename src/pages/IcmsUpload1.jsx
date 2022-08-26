@@ -9,13 +9,17 @@ export function IcmsUpload1() {
 
         [
             {
+                "nomeBase": "Processamento CTS",
+                "navigateBase": "/planoDeVoo/processamentoCts",
                 "nome": 'ICMS',
                 "rotaApi": 'uploadIcms',
                 "nomeArquivo": 'base_icms_modelo.csv',
                 "descricao": 'Descrição ICMS',
-                "base": 'ICMS',
+                "base": 'Processamento CTS',
+                "baseOne": "Plano de Voo",
+                "baseNavigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/processamentoCts",
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

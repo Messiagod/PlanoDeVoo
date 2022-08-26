@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { ButtonSql } from "../components/buttonSql";
+import { ExtracDate } from "../components/extracDate";
 
-export function VolumeDemandaVendas() {
+export function IncotermExtracaoDeDados() {
 
     const [buttons, setButtons] = useState(
 
         
         [
             {
-                "nome": '1 - Volume Demanda Vendas',
-                "rotaApi": '/PlanoDeVoo/volumeDemandaVendas',
+                "nome": '1 - Incoterm Extração de Dados',
+                "rotaApi": '/PlanoDeVoo/demandaIncotermsExtracaoDados',
                 "descricao": 'Descrição Comissão',
                 "base": 'Demanda',
                 "ativo": true,
@@ -25,11 +25,9 @@ export function VolumeDemandaVendas() {
 
         <>
         <main className="flex flex-1">
-        {
-                        buttons.map(data => (
-                            <ButtonSql data={data} />
-                        ))
-                    }
+                    {buttons.map(data => (
+                        <ExtracDate data={data}/>
+                    ))}
         </main>
         </>
         

@@ -10,13 +10,17 @@ export function CpvUpload1() {
 
         [
             {
+                "nomeBase": "Processamento CTS",
+                "navigateBase": "/planoDeVoo/processamentoCts",
                 "nome": 'Cpv',
                 "rotaApi": 'uploadCpv',
                 "nomeArquivo": 'base_cpv_modelo.csv',
                 "descricao": 'Descrição CPV',
-                "base": 'CPV',
+                "base": 'Processamento CTS',
+                "baseOne": "Plano de Voo",
+                "baseNavigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/processamentoCts",
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 

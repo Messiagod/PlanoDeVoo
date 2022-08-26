@@ -9,12 +9,14 @@ export function DemandaFatorConversao() {
 
     const buttons =
             {
-                "nome": 'Fator Conversão',
+                "nome": '1 - Fator Conversão',
+                "nomeBase": "Conversão",
                 "rotaApi": '/PlanoDeVoo/demandaFatorConversao',
                 "descricao": 'Descrição Comissão',
                 "base": 'Demanda',
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
+                "navigateBase": "/planoDeVoo/processamentoCts/conversaoArquivo"
             }
 
 
@@ -90,6 +92,13 @@ export function DemandaFatorConversao() {
                     <li className="inline-flex items-center">
                         <Link to={buttons.navigate} className="text-3xl font-bold ">
                             {buttons.base}
+                        </Link>
+                        <span className="mx-4 h-auto text-3xl font-bold">/</span>
+                    </li>
+
+                    <li className="inline-flex items-center">
+                        <Link to={buttons.navigateBase} className="text-3xl font-bold ">
+                            {buttons.nomeBase}
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
                     </li>

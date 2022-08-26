@@ -10,13 +10,17 @@ export function HierarquiaUpload1() {
 
         [
             {
+                "nomeBase": "Processamento CTS",
+                "navigateBase": "/planoDeVoo/processamentoCts",
                 "nome": 'Hierarquia de Clientes',
                 "rotaApi": 'uploadHierarquiaDeClientes',
                 "nomeArquivo": 'base_hierarquia_clientes_modelo.csv',
                 "descricao": 'Descrição Hierarquia de Clientes',
-                "base": 'Hierarquia de Clientes',
-                "ativo": true,
-                "navigate": "/consolidadoDRE/hierarquiaDeClientesArquivo"
+                "base": 'Processamento CTS',
+                "baseOne": "Plano de Voo",
+                "baseNavigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/processamentoCts",
+                "ativo": true
             }
         ]
 

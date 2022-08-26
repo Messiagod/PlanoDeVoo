@@ -10,13 +10,17 @@ export function FrotaUpload1() {
 
         [
             {
+                "nomeBase": "Processamento CTS",
+                "navigateBase": "/planoDeVoo/processamentoCts",
                 "nome": 'Frete Frota',
                 "rotaApi": 'uploadFreteFrotaPropria',
                 "nomeArquivo": 'base_frete_frota_propria_modelo.csv',
                 "descricao": 'Descrição Frete Frota',
-                "base": 'Frete Frota',
+                "base": 'Processamento CTS',
+                "baseOne": "Plano de Voo",
+                "baseNavigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/processamentoCts",
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts"
             }
         ]
 
