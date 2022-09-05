@@ -1,8 +1,16 @@
 import { CaretRight, BookmarksSimple, Lock } from 'phosphor-react'
 import { Link } from 'react-router-dom'
+import { useState } from "react";
+
 
 
 export function Temas({ data }) {
+   
+  /*   console.log(data.rota)
+
+    const listItems = data.rota.map((data) =>
+    <h1>{data}</h1>
+    ); */
 
     return (
         <>

@@ -8,13 +8,13 @@ export function VolumeDemandaVendas() {
         
         [
             {
-                "nome": '1 - Volume Demanda Vendas',
+                "nome": '2 - Volume Demanda Vendas',
                 "rotaApi": '/PlanoDeVoo/volumeDemandaVendas',
                 "descricao": 'Descrição Comissão',
                 "base": 'Demanda',
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
-                "seconds": 60000,
+                "seconds": 20000,
             }
         ]
     )

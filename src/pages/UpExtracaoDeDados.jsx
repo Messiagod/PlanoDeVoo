@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { ExtracDate } from "../components/extracDate";
 
-export function IncotermExtracaoDeDados() {
+export function UpExtracaoDeDados() {
 
     const [buttons, setButtons] = useState(
 
         
         [
             {
-                "nome": '1 - Incoterm Extração de Dados',
-                "rotaApi": '/PlanoDeVoo/demandaIncotermsExtracaoDados',
-                "rotaApiDownload": '/PlanoDeVoo/demandaIncotermsExtracaoDados/',
-                "baseDois": "Incoterm",
-                "navigateBase": "/planoDeVoo/processamentoCts/incotermArquivo",
-                "descricao": 'Descrição Comissão',
+                "nome": '1 - Definição UP Extração de Dados',
+                "rotaApi": '/PlanoDeVoo/demandaUpExtracaoDados',
+                "rotaApiDownload": '/PlanoDeVoo/demandaUpExtracaoDados/',
+                "descricao": 'Definição UP Extração de Dados',
+                "baseDois": "UP",
+                "navigateBase": "/planoDeVoo/processamentoCts/upArquivo",
                 "base": 'Demanda',
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",

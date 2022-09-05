@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Temas } from '../components/temas';
 import { Link } from 'react-router-dom'
-import { BookmarksSimple, FileArrowDown  } from 'phosphor-react'
+import { BookmarksSimple, FileArrowDown } from 'phosphor-react'
 
 
 export function Receita() {
@@ -10,17 +10,17 @@ export function Receita() {
 
         [
             {/* calculoDeImpostosArquivoUpload1 */
-                "rota": '',
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/receitaLiquida',
                 "nome": '1 - Receita Líquida',
                 "descricao": 'Botão SQL - Cópia',
-                "ativo": false,
+                "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {   /* impostosExtraçãoDeDadosArquivoUpload1 */
-                "rota": '',
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/impostosExtracao',
                 "nome": '2 - Impostos - Extração de Dados',
                 "descricao": 'Extrair dados',
-                "ativo": false,
+                "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {/* impostosCargaDeDadosUpload1 */
@@ -28,14 +28,56 @@ export function Receita() {
                 "nome": '3 - Impostos - Carga de Dados',
                 "descricao": 'Carregar Arquivo',
                 "ativo": false,
-                "icon": <BookmarksSimple size={40} />
+                "icon":  <FileArrowDown size={40} />
             },
             {/* calculoDeImpostosArquivoUpload1 */
                 "rota": '',
                 "nome": '4 - Calculo de Impostos',
                 "descricao": 'Botão para realizar calculo',
                 "ativo": false,
-                "icon": <BookmarksSimple size={40} />
+                "icon":  <FileArrowDown size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/beneficiosCofinsExtract',
+                "nome": '5 - Benefícios Cofins - Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": true,
+                "icon":  <FileArrowDown size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/pisExtract',
+                "nome": '6 - PIS - Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": true,
+                "icon":  <FileArrowDown size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/icmsExtract',
+                "nome": '7 - ICMS - Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": true,
+                "icon":  <FileArrowDown size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/cofinsCalcExtract',
+                "nome": '8 - Cofins Calc - Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": true,
+                "icon":  <FileArrowDown size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/pisCalcExtract',
+                "nome": '9 - PIS Calc - Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": true,
+                "icon":  <FileArrowDown size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/robCalcExtract',
+                "nome": '10 - Rob Calc - Extração de Dados',
+                "descricao": 'Extrair dados',
+                "ativo": true,
+                "icon":  <FileArrowDown size={40} />
             },
         ]
     )

@@ -65,7 +65,7 @@ export function Incoterm() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                           3 - Incoterm
+                           5 - Incoterm
                         </a> 
 
                     </li>

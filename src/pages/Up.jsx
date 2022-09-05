@@ -9,27 +9,27 @@ export function Up() {
 
         [
             {
-                "rota": '',
-                "nome": '5 - Definição UP Extração de Dados',
+                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/upExtracao',
+                "nome": '1 - Definição UP Extração de Dados',
                 "descricao": 'Extrair dados',
-                "ativo": false,
+                "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '',
-                "nome": '6 - Definição UP Carga de Dados',
+                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/upCarga',
+                "nome": '2 - Definição UP Carga de Dados',
                 "descricao": 'Carregar Arquivo',
-                "ativo": false,
+                "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
 
             // BOTÕES
 
             {
-                "rota": '',
-                "nome": '7 -Calculo UP',
+                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/upCalculo',
+                "nome": '3 -Calculo UP',
                 "descricao": 'Botão para realizar calculo',
-                "ativo": false,
+                "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
         ]
@@ -67,7 +67,7 @@ export function Up() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                           4 - Up
+                           6 - Up
                         </a> 
 
                     </li>

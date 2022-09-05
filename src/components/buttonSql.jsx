@@ -17,6 +17,7 @@ export function ButtonSql({ data }) {
     const [horaEtapa4Error, setHoraEtapa4Error] = useState('')
     const [divRespostas, setDivRespostas] = useState(false)
     const [respostas, setRespostas] = useState('')
+    const [respostasError, setRespostasError] = useState('')
     const [button, setButton] = useState(true)
     const [process, setProcess] = useState(false)
 
@@ -43,6 +44,8 @@ export function ButtonSql({ data }) {
                 setProcess(false)
             }).catch((err) => {
                 if (err) {
+                    console.log(err.response.data)
+                    setRespostasError(err.response.data)
                     setEtapa2(false)
                     setEtapa4Error(true)
                     setProcess(false)
@@ -176,8 +179,8 @@ export function ButtonSql({ data }) {
                                     <div className="hidden sm:flex w-full bg-red-500 h-0.5 "></div>
                                 </div>
                                 <div className="mt-5     sm:pr-8">
-                                    <h3 className="text-lg font-semibold text-white-900 ">Erro ao realizar processo!!!</h3>
-                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Erro no banco de dados.....</p>
+                                    <h3 className="text-lg font-semibold text-white-900 ">{respostasError.message}!!!</h3>
+                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> {respostasError.error}</p>
                                     <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Encerrado: {horaEtapa3}</time>
                                 </div>
                             </li> : null}

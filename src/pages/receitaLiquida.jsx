@@ -5,19 +5,20 @@ import { Link } from 'react-router-dom'
 
 
 
-export function CalculoConversao() {
+export function ReceitaLiquida() {
 
     const buttons =
-    {
-        "nome": '3 - Calculo Conversão',
-        "nomeBase": "Conversão",
-        "rotaApi": '/PlanoDeVoo/demandaCalculoConversao',
-        "descricao": 'Descrição Comissão',
-        "base": 'Demanda',
-        "ativo": true,
-        "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
-        "navigateBase": "/planoDeVoo/processamentoCts/conversaoArquivo"
-    }
+            {
+                "nome": '1 - Receita Líquida',
+                "nomeBase": "Receita",
+                "rotaApi": '/PlanoDeVoo/receita/receitaLiquida',
+                "descricao": 'Descrição Receita Líquida',
+                "base": 'Demanda',
+                "ativo": true,
+                "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
+                "navigateBase": "/planoDeVoo/processamentoCts/receitaArquivo"
+            }
+
 
     const [etapa1, setEtapa1] = useState(false)
     const [etapa2, setEtapa2] = useState(false)
@@ -42,7 +43,7 @@ export function CalculoConversao() {
             const HoraInicioMeio = new Date().toLocaleTimeString();
             setHoraEtapa2(HoraInicioMeio)
             setEtapa2(true)
-        },  10000)
+        }, 1000)
 
         await api.get(buttons.rotaApi)
             .then((response) => {
@@ -88,12 +89,7 @@ export function CalculoConversao() {
 
                     </li>
 
-                    <li className="inline-flex items-center">
-                        <Link to={buttons.navigate} className="text-3xl font-bold ">
-                            {buttons.base}
-                        </Link>
-                        <span className="mx-4 h-auto text-3xl font-bold">/</span>
-                    </li>
+                 
 
                     <li className="inline-flex items-center">
                         <Link to={buttons.navigateBase} className="text-3xl font-bold ">
@@ -124,7 +120,7 @@ export function CalculoConversao() {
                 {button ? <div className="flex">
                     <div className="flex bg-black mt-10">
                         <button onClick={uploadButton} className='w-64 h-14 text-sm bg-blue-600   rounded font-bold uppercase   hover:bg-blue-700 transition-colors'>
-                            Realizar calculo
+                            Realizar Cópia
                         </button>
                     </div>
                 </div> : null}
@@ -146,12 +142,12 @@ export function CalculoConversao() {
                         <li class="relative mb-6 sm:mb-0">
                             <div className="flex items-center">
                                 <div className="flex z-10 justify-center items-center w-8 h-8 bg-blue-500 rounded-full ring-0   sm:ring-8  shrink-0">
-                                    <img src="https://img.icons8.com/color/48/000000/send-letter--v1.png" />                          </div>
+                                    <img src="https://img.icons8.com/color/48/000000/send-letter--v1.png" /></div>
                                 <div className="hidden sm:flex w-full bg-green-300 h-0.5 "></div>
                             </div>
                             <div className="mt-5 sm:pr-8">
-                                <h3 className="text-lg font-semibold text-white-900 ">Processo solicitado - Calculo de Conversão</h3>
-                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Enviando solicitação de calculo para banco de dados.....</p>
+                                <h3 className="text-lg font-semibold text-white-900 ">Processo solicitado - Solicitação de Conversão</h3>
+                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Enviando solicitação de conversão para banco de dados.....</p>
                                 <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Iniciado: {horaEtapa1}</time>
 
                             </div>
@@ -167,7 +163,7 @@ export function CalculoConversao() {
                                 </div>
                                 <div className="mt-5 sm:pr-8">
                                     <h3 className="text-lg font-semibold text-white-900 ">Banco de dados - Em andamento</h3>
-                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Conexão com banco de dados estabelecida, executando calculo.....</p>
+                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Conexão com banco de dados estabelecida, executando conversão.....</p>
                                     <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Iniciado: {horaEtapa2}</time>
                                 </div>
                             </li> : null}
@@ -196,7 +192,7 @@ export function CalculoConversao() {
                                 </div>
                                 <div className="mt-5     sm:pr-8">
                                     <h3 className="text-lg font-semibold text-white-900 ">Erro ao realizar processo!!!</h3>
-                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Existem produtos sem fator de conversao......</p>
+                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Erro no banco de dados.....</p>
                                     <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Encerrado: {horaEtapa3}</time>
                                 </div>
                             </li> : null}
@@ -210,38 +206,26 @@ export function CalculoConversao() {
                             <thead class="text-x uppercasebg-gray-700 text-blue-500 ">
                                 <tr>
                                     <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                        Quantidade calculada
+                                        Quantidade atualizada
                                     </th>
                                     <th scope="col" class="py-3 px-6">
-                                        Soma convertido peso KG
+                                        Valor soma volume rol
                                     </th>
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Soma convertido peso KG Líquido
-                                    </th>
-                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Soma convertido peso Tonelada
-                                    </th>
-                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Soma convertido peso Tonelada Líquido
+                                        Valor soma volume rol calculado
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="bg-black  ">
                                     <th scope="row" class="py-4 px-6 font-medium whitespace-nowraptext-white ">
-                                        {respostas.qd_calculada}
+                                        {respostas.qd_atualizada}
                                     </th>
                                     <td class="py-4 px-6">
-                                        {respostas.soma_conv_peso_kg}
+                                        {respostas.vl_soma_vl_rol}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.soma_conv_peso_kg_liq}
-                                    </td>
-                                    <td class="py-4 px-6">
-                                        {respostas.soma_conv_peso_ton}
-                                    </td>
-                                    <td class="py-4 px-6">
-                                        {respostas.soma_conv_peso_ton_liq}
+                                        {respostas.vl_soma_vl_rol_calc}
                                     </td>
                                 </tr>
                             </tbody>

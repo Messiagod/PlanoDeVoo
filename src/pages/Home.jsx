@@ -7,7 +7,7 @@ export function Home() {
 
     const [bases, setbases] = useState(
         [
-           
+
             {
                 "rota": 'planoDeVoo',
                 "nome": 'Plano de Voo',
@@ -15,9 +15,21 @@ export function Home() {
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
-       
         ]
     )
+    /* 
+    
+                            "rota": ['planoDeVoo', 'plano2', 'plano2'],
+    
+    
+        let [value, setValue] = React.useState(localStorage.getItem("myValueInLocalStorage"));
+        console.log(value)
+    
+        const onChange = event => {
+            localStorage.setItem('myValueInLocalStorage', event.target.value);
+    
+            setValue(event.target.value);
+        }; */
 
     return (
 
@@ -36,7 +48,9 @@ export function Home() {
                         ))
                     }
                 </div>
-            </div>
+
+                {/*             <p>{value}</p>
+ */}            </div>
 
         </main>
 

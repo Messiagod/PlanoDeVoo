@@ -87,26 +87,26 @@ export function PlanoDeVoo() {
 
             },
             {
+                "rota": 'processamentoCts/receitaArquivo',
+                "nome": '2 - Receita',
+                "descricao": '4 Itens',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+
+            },
+            {
                 "rota": 'processamentoCts/FreteArquivo',
-                "nome": '2 - Frete',
+                "nome": '3 - Frete',
                 "descricao": '8 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
                 "rota": 'investimentoVendas',
-                "nome": '3 - Investimento Vendas',
+                "nome": '4 - Investimento Vendas',
                 "descricao": '2 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
-            },
-            {
-                "rota": 'processamentoCts/receitaArquivo',
-                "nome": '4 - Receita',
-                "descricao": '4 Itens',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-
             },
             {
                 "rota": 'processamentoCts',

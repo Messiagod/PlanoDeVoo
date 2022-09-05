@@ -6,7 +6,7 @@ import { FileArrowDown } from 'phosphor-react'
 
 
 
-export function ExtracDate({data}) {
+export function ExtracDate({ data }) {
 
     const [loading, setLoading] = useState(false)
     const [button, setButton] = useState(true)
@@ -18,6 +18,7 @@ export function ExtracDate({data}) {
     const [etapa3, setEtapa3] = useState(false)
     const [etapa4Error, setEtapa4Error] = useState(false)
     const [respostas, setRespostas] = useState('')
+    const [respostasError, setRespostasError] = useState('')
     const [divDownload, setDivDownload] = useState(false)
 
     const extractButton = async e => {
@@ -39,6 +40,9 @@ export function ExtracDate({data}) {
                 setDivDownload(true)
             }).catch((err) => {
                 if (err) {
+                    setLoading(false)
+                    console.log(err.response.data)
+                    setRespostasError(err.response.data)
                     setEtapa4Error(true)
                 } else {
                     alert("Conexão failed")
@@ -46,7 +50,7 @@ export function ExtracDate({data}) {
             })
     }
 
-     const downloadArquivo = `http://brampwsapp001:3000/PlanoDeVoo/demandaIncotermsExtracaoDados/${respostas.fileName}`
+    const downloadArquivo = `http://brampwsapp001:3000${data.rotaApiDownload}${respostas.fileName}`
 
     return (
         <div className="bg-black w-full h-full">
@@ -67,16 +71,16 @@ export function ExtracDate({data}) {
 
                     </li>
 
-                    <li className="inline-flex items-center">
+                   {data.base ? <li className="inline-flex items-center">
                         <Link to={data.navigate} className="text-3xl font-bold ">
                             {data.base}
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
-                    </li>
+                    </li> : null}
 
                     <li className="inline-flex items-center">
-                        <Link to={"/planoDeVoo/processamentoCts/incotermArquivo"} className="text-3xl font-bold ">
-                            Incoterm
+                        <Link to={data.navigateBase} className="text-3xl font-bold ">
+                            {data.baseDois}
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
                     </li>
@@ -86,7 +90,7 @@ export function ExtracDate({data}) {
                             {data.nome}
                         </a>
                     </li>
-                    
+
 
                 </ul>
             </div>
@@ -165,36 +169,36 @@ export function ExtracDate({data}) {
                         : null}
 
                     {etapa4Error ?
-                        <li class="relative mb-6 sm:mb-0">
+                        <li class="mb-6 relative">
                             <div className="flex items-center">
                                 <div className="flex z-10 justify-center items-center w-8 h-8 bg-red-500 rounded-full ring-0   sm:ring-8  shrink-0">
                                     <img src="https://img.icons8.com/color/48/000000/cancel--v1.png" />                      </div>
                                 <div className="hidden sm:flex w-full bg-red-500 h-0.5 "></div>
                             </div>
                             <div className="mt-5     sm:pr-8">
-                                <h3 className="text-lg font-semibold text-white-900 ">Erro ao realizar processo!!!</h3>
-                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Falha na extração.....</p>
-                                <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Encerrado!!</time>
+                                <h3 className="text-lg font-semibold text-white-900 ">{respostasError.message}!!!</h3>
+                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> {respostasError.error}</p>
+                                <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Encerrado!!!</time>
                             </div>
                         </li> : null}
                 </ol>
 
-               {divDownload ?
-                <div className='grid grid-cols-3'>
-                    <a href={downloadArquivo} className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
-                        <div className='bg-blue-700  p-6 flex items-center'>
-                            <FileArrowDown size={40} />
-                        </div>
-                        <div className='py-6 leading-relaxed'>
-                            <strong className='text-2xl'>
-                                Incoterm 
-                            </strong>
-                            <p className='text-sm text-gray-200 mt-2'>
-                                Clique aqui para baixar o arquivo.
-                            </p>
-                        </div>
-                    </a>
-                </div> : null}
+                {divDownload ?
+                    <div className='grid grid-cols-3'>
+                        <a href={downloadArquivo} className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
+                            <div className='bg-blue-700  p-6 flex items-center'>
+                                <FileArrowDown size={40} />
+                            </div>
+                            <div className='py-6 leading-relaxed'>
+                                <strong className='text-2xl'>
+                                    {data.nome}
+                                </strong>
+                                <p className='text-sm text-gray-200 mt-2'>
+                                    Clique aqui para baixar o arquivo.
+                                </p>
+                            </div>
+                        </a>
+                    </div> : null}
 
             </div>
         </div>

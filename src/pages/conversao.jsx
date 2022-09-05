@@ -8,16 +8,30 @@ export function Conversao() {
     const [arquivos, setArquivos] = useState(
 
         [
-            {
+            /* {
                 "rota": '/planoDeVoo/processamentoCts/demandaArquivo/fatorConversao',
                 "nome": '1 - Fator Conversão',
                 "descricao": 'SAP',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
+            }, */
+            {
+                "rota": '/planoDeVoo/demanda/conversao/extracao',
+                "nome": '1 -  Fator Coversão - Extração de Dados',
+                "descricao": 'Botão para extrair dados',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/demanda/conversao/carga',
+                "nome": '2 - Fator Conversão - Carga de Dados',
+                "descricao": 'Botão para realizar carga de dados',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
             },
             {
                 "rota": '/planoDeVoo/processamentoCts/demandaArquivo/calculoConversao',
-                "nome": '2 - Calculo Conversão',
+                "nome": '3 - Calculo',
                 "descricao": 'Botão para realizar calculo',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
@@ -57,7 +71,7 @@ export function Conversao() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                           2 - Conversão
+                           4 - Conversão
                         </a> 
 
                     </li>
