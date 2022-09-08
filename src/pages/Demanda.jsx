@@ -24,16 +24,16 @@ export function Demanda() {
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '',
+                "rota": '/planoDeVoo/processamentoCts/grandesContas',
                 "nome": '3 - Grandes Contas',
                 "descricao": 'Carga de Dados',
-                "ativo": false,
+                "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
                 "rota": '/planoDeVoo/processamentoCts/conversaoArquivo',
                 "nome": '4 - Conversão',
-                "descricao": '2 Itens',
+                "descricao": '3 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },

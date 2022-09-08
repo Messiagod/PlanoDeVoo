@@ -24,11 +24,11 @@ export function Receita() {
                 "icon": <FileArrowDown size={40} />
             },
             {/* impostosCargaDeDadosUpload1 */
-                "rota": '',
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/impostosCarga',
                 "nome": '3 - Impostos - Carga de Dados',
                 "descricao": 'Carregar Arquivo',
-                "ativo": false,
-                "icon":  <FileArrowDown size={40} />
+                "ativo": true,
+                "icon":  <BookmarksSimple size={40} />
             },
             {/* calculoDeImpostosArquivoUpload1 */
                 "rota": '',

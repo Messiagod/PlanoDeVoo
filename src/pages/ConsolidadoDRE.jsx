@@ -80,7 +80,7 @@ export function PlanoDeVoo() {
             {
                 "rota": 'processamentoCts/demandaArquivo',
                 "nome": '1 - Demanda',
-                "descricao": '8 Itens',
+                "descricao": '6 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
 
@@ -89,7 +89,7 @@ export function PlanoDeVoo() {
             {
                 "rota": 'processamentoCts/receitaArquivo',
                 "nome": '2 - Receita',
-                "descricao": '4 Itens',
+                "descricao": '10 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
 

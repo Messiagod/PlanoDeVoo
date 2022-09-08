@@ -51,10 +51,10 @@ export function ProcessamentoCTS() {
 
             },
             {
-                "rota": 'receitaArquivoUpload',
+                "rota": '',
                 "nome": '6 - Receita',
                 "descricao": 'Carregar Arquivo',
-                "ativo": true,
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
 
             },

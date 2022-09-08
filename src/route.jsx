@@ -61,6 +61,8 @@ import { IcmsExtract } from "./pages/icmsExtract";
 import { CofinsCalcExtract } from "./pages/cofinsCalcExtract";
 import { PisCalcExtract } from "./pages/pisCalcExtract";
 import { RobCalcExtract } from "./pages/robCalcExtract";
+import { ImpostosUpload } from "./pages/impostosUpload";
+import { GrandesContasUpload } from "./pages/grandesContasUpload";
 
 
 export function RouteComponent() {
@@ -83,6 +85,7 @@ export function RouteComponent() {
             <Route path="planoDeVoo/processamentoCts/comissaoArquivo" element={<ComissaoUpload1 />} />
             {/* CONSOLIDADO DRE - BASE COMISSÃO */}
             <Route path="planoDeVoo/processamentoCts/receitaArquivo" element={<Receita />} />
+            <Route path="planoDeVoo/processamentoCts/receitaArquivo/impostosCarga" element={<ImpostosUpload/>} />
             <Route path="planoDeVoo/processamentoCts/receitaArquivo/receitaLiquida" element={<ReceitaLiquida/>} />
             <Route path="planoDeVoo/processamentoCts/receitaArquivo/impostosExtracao" element={<ReceitaImpostoExtract/>} />
             <Route path="planoDeVoo/processamentoCts/receitaArquivo/beneficiosCofinsExtract" element={<BeneficiosCofinsExtract/>} />
@@ -110,6 +113,7 @@ export function RouteComponent() {
             {/* PLANO DE VOO - UP */}
             <Route path="planoDeVoo/processamentoCts/upArquivo" element={<Up/>} />
             <Route path="planoDeVoo/processamentoCts/demandaArquivo/upExtracao" element={<UpExtracaoDeDados/>} />
+            <Route path="planoDeVoo/processamentoCts/grandesContas" element={<GrandesContasUpload/>} />
             <Route path="planoDeVoo/processamentoCts/demandaArquivo/upCarga" element={<UpCargaDeDados/>} />
             <Route path="planoDeVoo/processamentoCts/demandaArquivo/upCalculo" element={<CalculoUp/>} />
 

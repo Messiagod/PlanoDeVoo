@@ -17,7 +17,7 @@ export function Conversao() {
             }, */
             {
                 "rota": '/planoDeVoo/demanda/conversao/extracao',
-                "nome": '1 -  Fator Coversão - Extração de Dados',
+                "nome": '1 -  Fator Conversão - Extração de Dados',
                 "descricao": 'Botão para extrair dados',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />

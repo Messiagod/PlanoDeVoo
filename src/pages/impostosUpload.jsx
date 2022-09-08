@@ -3,25 +3,22 @@ import { Upload } from "../components/Upload"
 import { useState } from "react"
 
 
-export function UpCargaDeDados() {
+export function ImpostosUpload() {
 
 
     const [dados, setDados] = useState(
 
         [
             {
-                "nome": '2 - Definição UP Carga de Dados',
-                "nomeBase": "UP",
-                "rotaApi": '/PlanoDeVoo/uploadDefinicaoUp',
-                "nomeArquivo": 'definicao_up_modelo.csv',
-                "descricao": 'Descrição UP',
-                "base": 'UP',
+                "nome": '3 - Impostos - Carga de Dados',
+                "rotaApi": '/PlanoDeVoo/impostos/uploadImpostos',
+                "nomeArquivo": 'impostos_modelo.csv',
+                "descricao": 'Descrição Impostos',
+                "base": 'Receita',
                 "baseOne": "Plano de Voo",
                 "baseNavigate": "/planoDeVoo",
-                "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
-                "navigateBase": "/planoDeVoo/processamentoCts/upArquivo",
+                "navigate": "/planoDeVoo/processamentoCts/receitaArquivo",
                 "ativo": true,
-
             }
         ]
 

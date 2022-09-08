@@ -117,7 +117,7 @@ export function CalculoConversao() {
                         {buttons.nome}
                     </span>
                     <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                        Botão
+                        Média de Execução: 
                     </span>
                 </header>
 
@@ -224,6 +224,9 @@ export function CalculoConversao() {
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
                                         Soma convertido peso Tonelada Líquido
                                     </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Soma convertido volume caixa fisíca
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -242,6 +245,9 @@ export function CalculoConversao() {
                                     </td>
                                     <td class="py-4 px-6">
                                         {respostas.soma_conv_peso_ton_liq}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.soma_conv_vol_cx_fisica}
                                     </td>
                                 </tr>
                             </tbody>

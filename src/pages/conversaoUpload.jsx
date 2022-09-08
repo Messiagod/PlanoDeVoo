@@ -11,10 +11,10 @@ export function ConversaoUpload() {
         [
             {
                 "nome": '2 - Fator Conversão - Carga de Dados',
-                "rotaApi": '/PlanoDeVoo/uploadIncoterms',
+                "rotaApi": '/PlanoDeVoo/demanda/uploadFatorConversao',
                 "nomeArquivo": 'fator_conversao_modelo.csv',
                 "descricao": 'Descrição Fator Conversão',
-                "base": 'Conversao',
+                "base": 'Conversão',
                 "baseOne": "Plano de Voo",
                 "baseNavigate": "/planoDeVoo",
                 "navigate": "/planoDeVoo/processamentoCts/conversaoArquivo",

@@ -8,7 +8,7 @@ export function ConversaoExtracaodeDados() {
         
         [
             {
-                "nome": '1 -  Fator Coversão - Extração de Dados',
+                "nome": '1 -  Fator Conversão - Extração de Dados',
                 "rotaApi": '/PlanoDeVoo/demanda/extracaoFatorConversao',
                 "rotaApiDownload": '/PlanoDeVoo/demanda/extracaoFatorConversao/',
                 "baseDois": "Conversão",

@@ -67,7 +67,7 @@ export function Up() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                           6 - Up
+                           6 - UP
                         </a> 
 
                     </li>

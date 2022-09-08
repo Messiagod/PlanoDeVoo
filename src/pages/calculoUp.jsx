@@ -59,6 +59,8 @@ export function CalculoUp() {
                     setEtapa2(false)
                     setEtapa4Error(true)
                     setProcess(false)
+                    console.log(err)
+                    setRespostas(err.response.data)
                     const HoraInicioFimError = new Date().toLocaleTimeString();
                     setHoraEtapa4Error(HoraInicioFimError)
                 } else {
@@ -117,8 +119,8 @@ export function CalculoUp() {
                     <span className=" text-blue-500 text-4xl font-bold flex items-center">
                         {buttons.nome}
                     </span>
-                    <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                        Botão
+                    <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
+                        Média de Execução:
                     </span>
                 </header>
 
@@ -196,8 +198,8 @@ export function CalculoUp() {
                                     <div className="hidden sm:flex w-full bg-red-500 h-0.5 "></div>
                                 </div>
                                 <div className="mt-5     sm:pr-8">
-                                    <h3 className="text-lg font-semibold text-white-900 ">Erro ao realizar processo!!!</h3>
-                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Erro no banco de dados.....</p>
+                                    <h3 className="text-lg font-semibold text-white-900 ">{respostas.message}</h3>
+                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> {respostas.error}</p>
                                     <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Encerrado: {horaEtapa3}</time>
                                 </div>
                             </li> : null}
@@ -214,13 +216,13 @@ export function CalculoUp() {
                                         Quantidade linhas totais origem periodo
                                     </th>
                                     <th scope="col" class="py-3 px-6">
-                                    Quantidade linhas totais meta volume origem 
+                                        Quantidade linhas totais meta volume origem
                                     </th>
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
                                         Valor soma caixa convertida
                                     </th>
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                    Valor soma caixa física
+                                        Valor soma caixa física
                                     </th>
                                     <th scope="col" class="py-3 px-6 rounded-r-lg">
                                         Valor soma peso kg

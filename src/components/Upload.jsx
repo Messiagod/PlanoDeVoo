@@ -82,8 +82,6 @@ export function Upload({ data }) {
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
                     </li>
 
-                   
-
                     <li className="inline-flex items-center">
                         <a className='text-3xl font-bold underline'>
                             {data.nome}
@@ -100,8 +98,8 @@ export function Upload({ data }) {
                             <span className=" text-blue-500 text-4xl font-bold flex items-center">
                                 {data.nome}
                             </span>
-                            <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                                ARQUIVO CSV
+                            <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
+                                Média de Execução: 
                             </span>
                         </header>
                         <form onSubmit={uploadFile} className='flex flex-col gap-2 mt-4'>

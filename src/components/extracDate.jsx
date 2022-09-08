@@ -99,8 +99,8 @@ export function ExtracDate({ data }) {
                     <span className=" text-blue-500 text-4xl font-bold flex items-center">
                         {data.nome}
                     </span>
-                    <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                        Extração
+                    <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
+                        Média de Execução:
                     </span>
                 </header>
 
