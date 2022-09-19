@@ -10,7 +10,8 @@ export function Temas({ data }) {
 
     const listItems = data.rota.map((data) =>
     <h1>{data}</h1>
-    ); */
+    ); 
+  */
 
     return (
         <>

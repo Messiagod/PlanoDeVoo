@@ -10,10 +10,10 @@ export function Zsd112Upload() {
 
         [
             {
-                "nome": '1 - ZSD112',
+                "nome": '1 -  Hierarquia de Clientes (ZSD112)',
                 "rotaApi": '/PlanoDeVoo/uploadZSD112',
                 "nomeArquivo": 'ZSD112_modelo.csv',
-                "descricao": 'Descrição ZSD112',
+                "descricao": 'Descrição Hierarquia de Clientes (ZSD112)',
                 "base": 'Demanda',
                 "baseOne": "Plano de Voo",
                 "baseNavigate": "/planoDeVoo",

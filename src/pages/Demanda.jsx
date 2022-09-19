@@ -11,7 +11,7 @@ export function Demanda() {
             
             {
                 "rota": '/planoDeVoo/processamentoCts/demandaArquivo/zsd112',
-                "nome": '1 - ZSD112',
+                "nome": '1 -  Hierarquia de Clientes (ZSD112)',
                 "descricao": 'Carga de Dados',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
@@ -25,7 +25,7 @@ export function Demanda() {
             },
             {
                 "rota": '/planoDeVoo/processamentoCts/grandesContas',
-                "nome": '3 - Grandes Contas',
+                "nome": '3 - Grandes Contas (Kede)',
                 "descricao": 'Carga de Dados',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />

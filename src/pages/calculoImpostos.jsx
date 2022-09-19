@@ -5,17 +5,19 @@ import { Link } from 'react-router-dom'
 
 
 
-export function InvestimentoVendas() {
+export function CalculoImpostos() {
 
     const buttons =
-            {
-                "nome": '4 - Verbas Contratuais Pontuais',
-                "rotaApi": '/PlanoDeVoo/verbas/calculo/verbasContratuaisPontuais',
-                "descricao": 'Descrição Verbas Contratuais Pontuais',
-                "base": 'Demanda',
-                "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
-            }
+    {
+        "nome": '4 - Calculo de Impostos',
+        "nomeBase": "Receita",
+        "rotaApi": '/PlanoDeVoo/receita/calculoImpostos',
+        "descricao": 'Descrição Calculo de Impostos',
+        "base": 'Plano de Voo',
+        "ativo": true,
+        "navigate": "/planoDeVoo",
+        "navigateBase": "/planoDeVoo/processamentoCts/receitaArquivo"
+    }
 
 
     const [etapa1, setEtapa1] = useState(false)
@@ -41,7 +43,7 @@ export function InvestimentoVendas() {
             const HoraInicioMeio = new Date().toLocaleTimeString();
             setHoraEtapa2(HoraInicioMeio)
             setEtapa2(true)
-        }, 1000)
+        }, 50 * 1000)
 
         await api.get(buttons.rotaApi)
             .then((response) => {
@@ -57,6 +59,8 @@ export function InvestimentoVendas() {
                     setEtapa2(false)
                     setEtapa4Error(true)
                     setProcess(false)
+                    console.log(err)
+                    setRespostas(err.response.data)
                     const HoraInicioFimError = new Date().toLocaleTimeString();
                     setHoraEtapa4Error(HoraInicioFimError)
                 } else {
@@ -86,6 +90,20 @@ export function InvestimentoVendas() {
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
 
                     </li>
+                    
+                    {buttons.base ? <li className="inline-flex items-center">
+                        <Link to={buttons.navigate} className="text-3xl font-bold ">
+                            {buttons.base}
+                        </Link>
+                        <span className="mx-4 h-auto text-3xl font-bold">/</span>
+                    </li> : null}
+
+                    <li className="inline-flex items-center">
+                        <Link to={buttons.navigateBase} className="text-3xl font-bold ">
+                            {buttons.nomeBase}
+                        </Link>
+                        <span className="mx-4 h-auto text-3xl font-bold">/</span>
+                    </li>
 
                     <li className="inline-flex items-center">
                         <a className='text-3xl font-bold underline'>
@@ -109,7 +127,7 @@ export function InvestimentoVendas() {
                 {button ? <div className="flex">
                     <div className="flex bg-black mt-10">
                         <button onClick={uploadButton} className='w-64 h-14 text-sm bg-blue-600   rounded font-bold uppercase   hover:bg-blue-700 transition-colors'>
-                            Realizar Cópia
+                            Realizar calculo
                         </button>
                     </div>
                 </div> : null}
@@ -131,12 +149,12 @@ export function InvestimentoVendas() {
                         <li class="relative mb-6 sm:mb-0">
                             <div className="flex items-center">
                                 <div className="flex z-10 justify-center items-center w-8 h-8 bg-blue-500 rounded-full ring-0   sm:ring-8  shrink-0">
-                                    <img src="https://img.icons8.com/color/48/000000/send-letter--v1.png" /></div>
+                                    <img src="https://img.icons8.com/color/48/000000/send-letter--v1.png" />                          </div>
                                 <div className="hidden sm:flex w-full bg-green-300 h-0.5 "></div>
                             </div>
                             <div className="mt-5 sm:pr-8">
-                                <h3 className="text-lg font-semibold text-white-900 ">Processo solicitado - Solicitação de Conversão</h3>
-                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Enviando solicitação de conversão para banco de dados.....</p>
+                                <h3 className="text-lg font-semibold text-white-900 ">Processo solicitado - Calculo de Conversão</h3>
+                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Enviando solicitação de calculo para banco de dados.....</p>
                                 <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Iniciado: {horaEtapa1}</time>
 
                             </div>
@@ -152,7 +170,7 @@ export function InvestimentoVendas() {
                                 </div>
                                 <div className="mt-5 sm:pr-8">
                                     <h3 className="text-lg font-semibold text-white-900 ">Banco de dados - Em andamento</h3>
-                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Conexão com banco de dados estabelecida, executando conversão.....</p>
+                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Conexão com banco de dados estabelecida, executando calculo.....</p>
                                     <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Iniciado: {horaEtapa2}</time>
                                 </div>
                             </li> : null}
@@ -180,8 +198,8 @@ export function InvestimentoVendas() {
                                     <div className="hidden sm:flex w-full bg-red-500 h-0.5 "></div>
                                 </div>
                                 <div className="mt-5     sm:pr-8">
-                                    <h3 className="text-lg font-semibold text-white-900 ">Erro ao realizar processo!!!</h3>
-                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Erro no banco de dados.....</p>
+                                    <h3 className="text-lg font-semibold text-white-900 ">{respostas.message}</h3>
+                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> {respostas.error}</p>
                                     <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Encerrado: {horaEtapa3}</time>
                                 </div>
                             </li> : null}
@@ -195,86 +213,134 @@ export function InvestimentoVendas() {
                             <thead class="text-x uppercasebg-gray-700 text-blue-500 ">
                                 <tr>
                                     <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais
+                                        Quantidade linhas totais origem periodo
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Política 
+                                    <th scope="col" class="py-3 px-6">
+                                        Quantidade linhas totais meta volume origem
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Black
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma caixa convertida
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Fim Ano
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma caixa física
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Casa
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma peso kg
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Tixan
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma peso tonelada
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Digital
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma peso kg líquido
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Premiada
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma peso tonelada líquido
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Recomp Var
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma rol
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Recomp Ata
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma rol calculo
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Diretoria 
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma rob
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Pontuais Brs
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma rob calculo
                                     </th>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                         Total Verbas Contratuais
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma icms base calculo
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma icms
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma pis
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma cofins
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma st
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma ipi
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma verbas pontuais
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma verbas contratuais
+                                    </th>
+                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
+                                        Valor soma verbas comissões
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="bg-black  ">
                                     <th scope="row" class="py-4 px-6 font-medium whitespace-nowraptext-white ">
-                                        {respostas.total_verbas_pontuais}
+                                        {respostas.qd_linhas_totais_origem_periodo}
                                     </th>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_politica}
+                                        {respostas.qd_linhas_totais_meta_vol_origem}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_black}
+                                        {respostas.vl_soma_cx_conv}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_fim_ano}
+                                        {respostas.vl_soma_cx_fisica}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_casa}
+                                        {respostas.vl_soma_peso_kg}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_tixan}
+                                        {respostas.vl_soma_peso_ton}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_digital}
+                                        {respostas.vl_soma_peso_kg_liq}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_premiada}
+                                        {respostas.vl_soma_peso_ton_liq}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_recomp_var}
+                                        {respostas.vl_soma_rol}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_recomp_ata}
+                                        {respostas.vl_soma_rol_calc}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_diretoria}
+                                        {respostas.vl_soma_rob}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_pontuais_brs}
+                                        {respostas.vl_soma_rob_calc}
                                     </td>
                                     <td class="py-4 px-6">
-                                        {respostas.total_verbas_contratuais}
+                                        {respostas.vl_soma_icms_base_calc}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.vl_soma_icms}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.vl_soma_pis}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.vl_soma_cofins}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.vl_soma_st}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.vl_soma_ipi}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.vl_soma_verbas_pontuais}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.vl_soma_verbas_contratuai}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {respostas.vl_soma_comissoes}
                                     </td>
                                 </tr>
                             </tbody>

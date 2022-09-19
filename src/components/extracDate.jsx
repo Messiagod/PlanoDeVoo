@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 import api from '../config/api';
 import { FileArrowDown } from 'phosphor-react'
 
-
-
 export function ExtracDate({ data }) {
 
     const [loading, setLoading] = useState(false)
@@ -32,6 +30,7 @@ export function ExtracDate({ data }) {
 
         await api.get(data.rotaApi)
             .then((response) => {
+                console.log(response.data)
                 setRespostas(response.data)
                 const horaFim = new Date().toLocaleTimeString();
                 setEtapa3(true)
@@ -48,10 +47,10 @@ export function ExtracDate({ data }) {
                     alert("Conexão failed")
                 }
             })
-    }
+        }
 
     const downloadArquivo = `http://brampwsapp001:3000${data.rotaApiDownload}${respostas.fileName}`
-
+        
     return (
         <div className="bg-black w-full h-full">
             <div className="flex m-9 gap-4">

@@ -63,6 +63,12 @@ import { PisCalcExtract } from "./pages/pisCalcExtract";
 import { RobCalcExtract } from "./pages/robCalcExtract";
 import { ImpostosUpload } from "./pages/impostosUpload";
 import { GrandesContasUpload } from "./pages/grandesContasUpload";
+import { CalculoImpostos } from "./pages/calculoImpostos";
+import { FreteEntregaExtract } from "./pages/freteEntregaExtract";
+import { EntregaProprioUpload } from "./pages/entregaProprioUpload";
+import { EntregaTerceirosUpload } from "./pages/freteEntregaTerceirosUpload";
+import { FreteTransferenciaProprioUpload } from "./pages/freteTransferenciaProprioUpload";
+import { FreteTransferenciaTerceirosUpload } from "./pages/FreteTransferenciaTerceirosUpload";
 
 
 export function RouteComponent() {
@@ -79,8 +85,14 @@ export function RouteComponent() {
             <Route path="planoDeVoo/processamentoCts/pisArquivo" element={<PisUpload1 />} />
             {/* CONSOLIDADO DRE - BASE FRETE */}
             <Route path="planoDeVoo/processamentoCts/freteArquivo" element={<Frete />} />
+            <Route path="planoDeVoo/processamentoCts/FreteArquivo/entregaExtract" element={<FreteEntregaExtract/>} />
+            <Route path="planoDeVoo/processamentoCts/FreteArquivo/transferenciaExtract" element={<Frete />} />
+            <Route path="planoDeVoo/processamentoCts/FreteArquivo/entregaProprioExtract" element={<Frete />} />
             <Route path="planoDeVoo/processamentoCts/freteArquivoUpload" element={<FreteUpload1 />} />
-            
+            <Route path="planoDeVoo/processamentoCts/FreteArquivo/entregaProprioCarga" element={<EntregaProprioUpload/>} />
+            <Route path="planoDeVoo/processamentoCts/FreteArquivo/entregaTerceirosCarga" element={<EntregaTerceirosUpload/>} />
+            <Route path="planoDeVoo/processamentoCts/FreteArquivo/transferenciaProprioCarga" element={<FreteTransferenciaProprioUpload/>} />
+            <Route path="planoDeVoo/processamentoCts/FreteArquivo/entregaTransferenciaTerceiros" element={<FreteTransferenciaTerceirosUpload/>} />
             {/* CONSOLIDADO DRE - BASE COMISSÃO */}
             <Route path="planoDeVoo/processamentoCts/comissaoArquivo" element={<ComissaoUpload1 />} />
             {/* CONSOLIDADO DRE - BASE COMISSÃO */}
@@ -94,6 +106,7 @@ export function RouteComponent() {
             <Route path="planoDeVoo/processamentoCts/receitaArquivo/cofinsCalcExtract" element={<CofinsCalcExtract/>} />
             <Route path="planoDeVoo/processamentoCts/receitaArquivo/pisCalcExtract" element={<PisCalcExtract/>} />
             <Route path="planoDeVoo/processamentoCts/receitaArquivo/robCalcExtract" element={<RobCalcExtract/>} />
+            <Route path="planoDeVoo/processamentoCts/receitaArquivo/impostosCalculo" element={<CalculoImpostos/>} />
             {/* CONSOLIDADO DRE - BASE CPV */}
             <Route path="planoDeVoo/processamentoCts/cpvArquivo" element={<CpvUpload1 />} />
             {/* CONSOLIDADO DRE - BASE FROTA */}

@@ -31,10 +31,10 @@ export function Receita() {
                 "icon":  <BookmarksSimple size={40} />
             },
             {/* calculoDeImpostosArquivoUpload1 */
-                "rota": '',
+                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/impostosCalculo',
                 "nome": '4 - Calculo de Impostos',
                 "descricao": 'Botão para realizar calculo',
-                "ativo": false,
+                "ativo": true,
                 "icon":  <FileArrowDown size={40} />
             },
             {

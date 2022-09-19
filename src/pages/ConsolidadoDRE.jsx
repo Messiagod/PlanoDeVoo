@@ -10,72 +10,6 @@ export function PlanoDeVoo() {
     const [transacao, setTransacao] = useState(
 
         [
-            /* {
-                "rota": 'cofinsArquivo',
-                "nome": 'Cofins',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": 'icmsArquivo',
-                "nome": 'ICMS',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": 'pisArquivo',
-                "nome": 'PIS',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": 'freteArquivo',
-                "nome": 'Frete Terceiros ',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": 'comissaoArquivo',
-                "nome": 'Comissão',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": 'receitaArquivo',
-                "nome": 'Receita',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": 'verbasArquivo',
-                "nome": 'Verbas',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": 'volumeArquivo',
-                "nome": 'Volume',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": "cpvArquivo",
-                "nome": 'CPV',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": "frotaArquivo",
-                "nome": 'Frete Frota',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            },
-            {
-                "rota": "hierarquiaDeClientesArquivo",
-                "nome": 'Hierarquia de Clientes',
-                "descricao": '1 Arquivo',
-                "ativo": true
-            }, */
             // ATUALIZAÇÃO
             {
                 "rota": 'processamentoCts/demandaArquivo',
@@ -103,8 +37,8 @@ export function PlanoDeVoo() {
             },
             {
                 "rota": 'investimentoVendas',
-                "nome": '4 - Investimento Vendas',
-                "descricao": '2 Itens',
+                "nome": '4 - Verbas Contratuais Pontuais',
+                "descricao": 'Botão SQL - Cópia',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },

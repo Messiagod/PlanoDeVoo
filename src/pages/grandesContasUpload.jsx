@@ -10,10 +10,10 @@ export function GrandesContasUpload() {
 
         [
             {
-                "nome": '3 - Grandes Contas',
+                "nome": '3 - Grandes Contas (Kede)',
                 "rotaApi": '/PlanoDeVoo/uploadGrandesContas',
                 "nomeArquivo": 'grandes_contas_modelo.csv',
-                "descricao": 'Descrição Grandes Contas',
+                "descricao": 'Descrição Grandes Contas (Kede)',
                 "base": 'Demanda',
                 "baseOne": "Plano de Voo",
                 "baseNavigate": "/planoDeVoo",
