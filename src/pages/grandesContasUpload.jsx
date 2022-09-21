@@ -19,6 +19,7 @@ export function GrandesContasUpload() {
                 "baseNavigate": "/planoDeVoo",
                 "navigate": "/planoDeVoo",
                 "ativo": true,
+                "time": "Grandes Contas Carga Dados"
             }
         ]
 

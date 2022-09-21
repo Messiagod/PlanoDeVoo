@@ -18,6 +18,7 @@ export function PisExtract() {
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts",
                 "seconds": 60000,
+                "time": "Pis - Extração de dados"
             }
         ]
     )

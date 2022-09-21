@@ -19,6 +19,7 @@ export function ConversaoUpload() {
                 "baseNavigate": "/planoDeVoo",
                 "navigate": "/planoDeVoo/processamentoCts/conversaoArquivo",
                 "ativo": true,
+                "time": "Fator Conversao - Carga de Dados"
             }
         ]
 

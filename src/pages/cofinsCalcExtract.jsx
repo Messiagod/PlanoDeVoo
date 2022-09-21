@@ -18,6 +18,7 @@ export function CofinsCalcExtract() {
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts",
                 "seconds": 60000,
+                "time": "Cofins Calc - Extração de dados"
             }
         ]
     )

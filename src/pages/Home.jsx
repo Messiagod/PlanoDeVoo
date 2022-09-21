@@ -9,7 +9,7 @@ export function Home() {
         [
 
             {
-                "rota": 'planoDeVoo',
+                "rota": '/planoDeVoo/themes/Plano De Voo',
                 "nome": 'Plano de Voo',
                 "descricao": '5 Itens',
                 "ativo": true,

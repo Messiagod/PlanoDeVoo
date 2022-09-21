@@ -18,6 +18,7 @@ export function IncotermExtracaoDeDados() {
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
                 "seconds": 60000,
+                "time": "Incoterm Extração de dados"
             }
         ]
     )

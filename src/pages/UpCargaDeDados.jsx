@@ -21,6 +21,7 @@ export function UpCargaDeDados() {
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
                 "navigateBase": "/planoDeVoo/processamentoCts/upArquivo",
                 "ativo": true,
+                "time": "Definição UP Carga Dados"
 
             }
         ]

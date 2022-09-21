@@ -19,6 +19,7 @@ export function Zsd112Upload() {
                 "baseNavigate": "/planoDeVoo",
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
                 "ativo": true,
+                "time": "ZSD112 Carga de Dados"
             }
         ]
 

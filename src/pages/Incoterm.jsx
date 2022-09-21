@@ -29,7 +29,6 @@ export function Incoterm() {
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
-
         ]
     )
 

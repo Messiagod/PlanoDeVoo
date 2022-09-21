@@ -19,6 +19,7 @@ export function ImpostosUpload() {
                 "baseNavigate": "/planoDeVoo",
                 "navigate": "/planoDeVoo/processamentoCts/receitaArquivo",
                 "ativo": true,
+                "time": "Impostos - Carga de dados"
             }
         ]
 

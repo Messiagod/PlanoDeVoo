@@ -1,5 +1,5 @@
 import { FileArrowDown, CaretRight } from 'phosphor-react'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../config/api';
 import sucessLoad from '../assets/sucessGif.gif'
 import errorLoad from '../assets/errorGif.gif'
@@ -13,6 +13,7 @@ export function Upload({ data }) {
     const [button, setButton] = useState(true)
     const [atualizarBase, setAtualizarBase] = useState(false)
     const [file, setFile] = useState('');
+    
 
     const [uploadSucess, setUploadSucess] = useState('')
     const [divUploadSucess, setDivUploadSucess] = useState(false)
@@ -31,7 +32,7 @@ export function Upload({ data }) {
 
         await api.post(data.rotaApi, formData)
             .then((response) => {
-                console.log(response.data.qd_atualizada)
+                console.log(response)
                 setUploadSucess(response.data)
                 setFile('');
                 setDivUploadSucess(true)
@@ -43,14 +44,25 @@ export function Upload({ data }) {
                     setProcessArquivo(false)
                     setDivErrorUpload(true)
                     console.log(err)
-                    console.log(err.response.data.error)
-                    setErrorUpload(err.response.data.error)
+                    // console.log(err.response.data.error)
+                    setErrorUpload(err.response.data)
 
                 } else {
                     console.log("back off")
                 }
             })
     }
+    
+    const [time, setTime] = useState('');
+    useEffect(() => {
+         async function getTime() {
+            const response = await api.get(`/PlanoDeVoo/tempoExecucao/${data.time}`)
+            setTime(response.data.time)
+        }
+        getTime()
+    }, [])
+    console.log(time)
+    
 
     const downloadArquivo = `http://brampwsapp001:3000/${data.nomeArquivo}`
 
@@ -98,9 +110,13 @@ export function Upload({ data }) {
                             <span className=" text-blue-500 text-4xl font-bold flex items-center">
                                 {data.nome}
                             </span>
-                            <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                                Média de Execução: 
-                            </span>
+                            {data.time ? 
+                    <>
+                        {time.length > 0 ? <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
+                            Média de Execução: {time}
+                        </span>
+                            : null}
+                    </> : <h1>UNDEFINED</h1>}
                         </header>
                         <form onSubmit={uploadFile} className='flex flex-col gap-2 mt-4'>
                             <div class="flex justify-center items-center w-auto">
@@ -193,14 +209,13 @@ export function Upload({ data }) {
             {divErrorUpload ?
                 <div className="">
                     <div className="rounded border border-gray-500 p-4 m-4">
-                        <h1 className='mt-5 mb-5 text-red-400 text-4xl'>Arquivo contem erros!!</h1>
+                        <h1 className='mt-5 mb-5 text-red-400 text-4xl'>Arquivo contem erros!! {errorUpload.message}</h1>
                         <div className=' flex justify-center'>
                             <div className='w-60 flex items-center justify-center'>
                                 <img src={errorLoad} alt="loading..." />
                             </div>
                         </div>
-                        <p className='mt-5 mb-5 font-medium'>{errorUpload}</p>
-                        <p className='mt-5 mb-5 font-medium'>Total de linhas carregadas: 0</p>
+                        <p className='mt-5 mb-5 font-medium'>{errorUpload.error}</p>
                     </div>
                 </div>
                 :

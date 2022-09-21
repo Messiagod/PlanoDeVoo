@@ -18,6 +18,7 @@ export function PisCalcExtract() {
                 "ativo": true,
                 "navigate": "/planoDeVoo",
                 "seconds": 60000,
+                "time": "Pis Calc - Extração de dados"
             }
         ]
     )

@@ -1,6 +1,6 @@
 import React from "react"
 import api from '../config/api';
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 
 
@@ -17,6 +17,7 @@ export function IncotermCalculo() {
         "ativo": true,
         "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
         "navigateBase": "/planoDeVoo/processamentoCts/incotermArquivo",
+        "time": "Calculo Incoterms"
     }
 
 
@@ -70,6 +71,16 @@ export function IncotermCalculo() {
             })
     }
 
+    const [time, setTime] = useState('');
+    useEffect(() => {
+        async function getTime() {
+            const response = await api.get(`/PlanoDeVoo/tempoExecucao/${buttons.time}`)
+            setTime(response.data.time)
+        }
+        getTime()
+    }, [])
+    console.log(time)
+
     return (
         <div className="bg-black w-full h-full">
             <div className="flex m-9 gap-4">
@@ -117,9 +128,13 @@ export function IncotermCalculo() {
                     <span className=" text-blue-500 text-4xl font-bold flex items-center">
                         {buttons.nome}
                     </span>
-                    <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                        Média de Execução:
-                    </span>
+                    {buttons.time ?
+                        <>
+                            {time.length > 0 ? <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
+                                Média de Execução: {time}
+                            </span>
+                                : null}
+                        </> : <h1>UNDEFINED</h1>}
                 </header>
 
                 {button ? <div className="flex">

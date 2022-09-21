@@ -4,6 +4,9 @@ import { RouteComponent } from "./route"
 import { BrowserRouter } from "react-router-dom"
 
 function App() {
+  
+  const buttons = "Oio"
+  {buttons === "Oi" ? console.log("Oi") : buttons === "Oba" ? console.log("Oba") : buttons === "Tchau" ? console.log("tchau") : null}
 
   return (
     <div className="flex flex-col min-h-screen">

@@ -21,6 +21,7 @@ export function IncotermCargaDeDados() {
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
                 "navigateBase": "/planoDeVoo/processamentoCts/incotermArquivo",
                 "ativo": true,
+                "time": "Incoterm Carga de dados"
 
             }
         ]

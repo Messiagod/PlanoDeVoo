@@ -69,12 +69,19 @@ import { EntregaProprioUpload } from "./pages/entregaProprioUpload";
 import { EntregaTerceirosUpload } from "./pages/freteEntregaTerceirosUpload";
 import { FreteTransferenciaProprioUpload } from "./pages/freteTransferenciaProprioUpload";
 import { FreteTransferenciaTerceirosUpload } from "./pages/FreteTransferenciaTerceirosUpload";
+import { ExtractArchive } from "./pages/extractArchive";
+import { ThemesNavigate } from "./pages/themesNavigate";
 
 
 export function RouteComponent() {
     return (
         <Routes>
-             <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            {/* NOVO ROTEAMENTO */}
+            <Route path="/planoDeVoo/extracao/:slug" element={<ExtractArchive/>}  />
+            <Route path="/planoDeVoo/themes/:slug" element={<ThemesNavigate/>}  />
+            {/* FIM NOVO ROTEAMENTO  */}
+
             {/* CONSOLIDADO DRE */}
             <Route path="/planoDeVoo" element={<PlanoDeVoo/>} />
             {/* CONSOLIDADO DRE - BASE COFINS */}
@@ -121,8 +128,6 @@ export function RouteComponent() {
             <Route path="planoDeVoo/processamentoCts/demandaArquivo" element={<Demanda/>} />
             <Route path="planoDeVoo/processamentoCts/incotermArquivo" element={<Incoterm/>} />
             <Route path="planoDeVoo/processamentoCts/demandaArquivo/zsd112" element={<Zsd112Upload/>} />
-
-
             {/* PLANO DE VOO - UP */}
             <Route path="planoDeVoo/processamentoCts/upArquivo" element={<Up/>} />
             <Route path="planoDeVoo/processamentoCts/demandaArquivo/upExtracao" element={<UpExtracaoDeDados/>} />

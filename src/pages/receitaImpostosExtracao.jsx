@@ -18,6 +18,7 @@ export function ReceitaImpostoExtract() {
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts",
                 "seconds": 60000,
+                "time": "Base de Impostos - Extração de dados"
             }
         ]
     )

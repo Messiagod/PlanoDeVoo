@@ -8,13 +8,7 @@ export function Conversao() {
     const [arquivos, setArquivos] = useState(
 
         [
-            /* {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/fatorConversao',
-                "nome": '1 - Fator Conversão',
-                "descricao": 'SAP',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-            }, */
+
             {
                 "rota": '/planoDeVoo/demanda/conversao/extracao',
                 "nome": '1 -  Fator Conversão - Extração de Dados',
@@ -63,7 +57,7 @@ export function Conversao() {
 
                     <li className="inline-flex items-center">
                         <Link to={"/planoDeVoo/processamentoCts/demandaArquivo"} className="text-3xl font-bold">
-                           Demanda
+                            Demanda
                         </Link>
                         <span className="mx-4 h-auto text-3xl font-bold">/</span>
 
@@ -71,14 +65,14 @@ export function Conversao() {
 
                     <li className="inline-flex items-center">
                         <a className="text-3xl font-bold underline">
-                           4 - Conversão
-                        </a> 
+                            4 - Conversão
+                        </a>
 
                     </li>
 
                 </ul>
             </div>
-         
+
             <div className="max-h-96 w-full">
 
                 <div className='gap-8 m-8 grid grid-cols-4'>

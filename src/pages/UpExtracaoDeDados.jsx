@@ -18,6 +18,7 @@ export function UpExtracaoDeDados() {
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
                 "seconds": 60000,
+                "time": "Definição UP Extração Dados"
             }
         ]
     )

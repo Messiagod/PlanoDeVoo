@@ -5,17 +5,19 @@ import { useState } from "react";
 
 
 export function Temas({ data }) {
-   
-  /*   console.log(data.rota)
 
-    const listItems = data.rota.map((data) =>
-    <h1>{data}</h1>
-    ); 
-  */
+    /*   console.log(data.rota)
+  
+      const listItems = data.rota.map((data) =>
+      <h1>{data}</h1>
+      ); 
+    */
 
     return (
         <>
+               
             {data.ativo ?
+
                 <Link to={data.rota} className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
                     <div className='bg-blue-700 h-full p-4 flex items-center'>
                         {data.icon}
@@ -32,9 +34,9 @@ export function Temas({ data }) {
                     <div className='h-full p-6 flex items-center '>
                         <CaretRight size={24} />
                     </div>
-                    
+
                 </Link>
-                
+
                 :
                 <Link to={data.rota} className='bg-gray-900 rounded overflow-hidden flex items-stretch gap-6 cursor-default hover:bg-gray-900 transition-colors'>
                     <div className='bg-blue-900 h-full p-4 flex items-center'>

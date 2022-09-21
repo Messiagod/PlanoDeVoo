@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import api from '../config/api';
 import { FileArrowDown } from 'phosphor-react'
@@ -48,6 +48,16 @@ export function ExtracDate({ data }) {
                 }
             })
         }
+
+        const [time, setTime] = useState('');
+        useEffect(() => {
+             async function getTime() {
+                const response = await api.get(`/PlanoDeVoo/tempoExecucao/${data.time}`)
+                setTime(response.data.time)
+            }
+            getTime()
+        }, [])
+        console.log(time)
 
     const downloadArquivo = `http://brampwsapp001:3000${data.rotaApiDownload}${respostas.fileName}`
         
@@ -98,9 +108,13 @@ export function ExtracDate({ data }) {
                     <span className=" text-blue-500 text-4xl font-bold flex items-center">
                         {data.nome}
                     </span>
-                    <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                        Média de Execução:
-                    </span>
+                    {data.time ? 
+                    <>
+                        {time.length > 0 ? <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
+                            Média de Execução: {time}
+                        </span>
+                            : null}
+                    </> : <h1>UNDEFINED</h1>}
                 </header>
 
                 <div className="flex">

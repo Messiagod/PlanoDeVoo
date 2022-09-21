@@ -21,6 +21,7 @@ export function EntregaTerceirosUpload() {
                 "baseNavigate": "/planoDeVoo",
                 "navigate": "/planoDeVoo/processamentoCts/FreteArquivo",
                 "ativo": false,
+                "time": "Preço Frete Entrega Terceiros Carga dados"
             }
         ]
 

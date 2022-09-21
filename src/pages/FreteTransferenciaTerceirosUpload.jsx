@@ -21,6 +21,7 @@ export function FreteTransferenciaTerceirosUpload() {
                 "baseNavigate": "/planoDeVoo",
                 "navigate": "/planoDeVoo/processamentoCts/FreteArquivo",
                 "ativo": false,
+                "time": "Preço Frete Transferencia Terceiros Carga"
             }
         ]
 

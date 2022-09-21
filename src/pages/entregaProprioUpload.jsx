@@ -21,6 +21,7 @@ export function EntregaProprioUpload() {
                 "baseNavigate": "/planoDeVoo",
                 "navigate": "/planoDeVoo/processamentoCts/FreteArquivo",
                 "ativo": false,
+                "time": "Preço Frete Entrega Proprio Carga dados"
             }
         ]
 

@@ -15,6 +15,7 @@ export function VolumeDemandaVendas() {
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
                 "seconds": 20000,
+                "time": "Volume Demanda Vendas"
             }
         ]
     )

@@ -18,6 +18,7 @@ export function ConversaoExtracaodeDados() {
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
                 "seconds": 60000,
+                "time": "Fator Conversao - Extração de Dados"
             }
         ]
     )

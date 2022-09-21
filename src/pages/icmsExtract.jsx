@@ -18,6 +18,7 @@ export function IcmsExtract() {
                 "ativo": true,
                 "navigate": "/planoDeVoo/processamentoCts",
                 "seconds": 60000,
+                "time": "Icms - Extração de dados"
             }
         ]
     )

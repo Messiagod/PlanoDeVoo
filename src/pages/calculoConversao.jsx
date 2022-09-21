@@ -1,6 +1,6 @@
 import React from "react"
 import api from '../config/api';
-import { useState } from "react"
+import { useEffect ,useState } from "react"
 import { Link } from 'react-router-dom'
 
 
@@ -16,7 +16,8 @@ export function CalculoConversao() {
         "base": 'Demanda',
         "ativo": true,
         "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
-        "navigateBase": "/planoDeVoo/processamentoCts/conversaoArquivo"
+        "navigateBase": "/planoDeVoo/processamentoCts/conversaoArquivo",
+        "time": "Calculo Conversão"
     }
 
     const [etapa1, setEtapa1] = useState(false)
@@ -42,7 +43,7 @@ export function CalculoConversao() {
             const HoraInicioMeio = new Date().toLocaleTimeString();
             setHoraEtapa2(HoraInicioMeio)
             setEtapa2(true)
-        },  10000)
+        }, 10000)
 
         await api.get(buttons.rotaApi)
             .then((response) => {
@@ -68,6 +69,16 @@ export function CalculoConversao() {
                 }
             })
     }
+
+    const [time, setTime] = useState('');
+    useEffect(() => {
+        async function getTime() {
+            const response = await api.get(`/PlanoDeVoo/tempoExecucao/${buttons.time}`)
+            setTime(response.data.time)
+        }
+        getTime()
+    }, [])
+    console.log(time)
 
     return (
         <div className="bg-black w-full h-full">
@@ -116,9 +127,13 @@ export function CalculoConversao() {
                     <span className=" text-blue-500 text-4xl font-bold flex items-center">
                         {buttons.nome}
                     </span>
-                    <span className="text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                        Média de Execução: 
-                    </span>
+                    {buttons.time ?
+                        <>
+                            {time.length > 0 ? <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
+                                Média de Execução: {time}
+                            </span>
+                                : null}
+                        </> : <h1>UNDEFINED</h1>}
                 </header>
 
                 {button ? <div className="flex">
