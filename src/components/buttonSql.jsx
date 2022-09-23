@@ -20,6 +20,9 @@ export function ButtonSql({ data }) {
     const [respostasError, setRespostasError] = useState('')
     const [button, setButton] = useState(true)
     const [process, setProcess] = useState(false)
+    const [headerTable, setHeader] = useState('')
+    const [tableValues, setTableValues] = useState('')
+
 
     const uploadButton = async e => {
         setProcess(true)
@@ -35,8 +38,11 @@ export function ButtonSql({ data }) {
 
         await api.get(data.rotaApi)
             .then((response) => {
+                console.log("resposta abaixo")
                 console.log(response.data)
                 setRespostas(response.data)
+                setHeader(Object.keys(response.data.tabela))
+                setTableValues(Object.values(response.data.tabela))
                 const horaFim = new Date().toLocaleTimeString();
                 setHoraEtapa3(horaFim)
                 setEtapa3(true)
@@ -59,6 +65,9 @@ export function ButtonSql({ data }) {
                 }
             })
     }
+
+    
+
 
 
     const [time, setTime] = useState('');
@@ -112,13 +121,13 @@ export function ButtonSql({ data }) {
                         {data.nome}
                     </span>
 
-                    {data.time ? 
-                    <>
-                        {time.length > 0 ? <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                            Média de Execução: {time}
-                        </span>
-                            : null}
-                    </> : <h1>UNDEFINED</h1>}
+                    {data.time ?
+                        <>
+                            {time.length > 0 ? <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
+                                Média de Execução: {time}
+                            </span>
+                                : null}
+                        </> : <h1>UNDEFINED</h1>}
 
                 </header>
 
@@ -209,35 +218,25 @@ export function ButtonSql({ data }) {
                     <div class="overflow-x-auto relative border border-gray-300 m-10">
                         <table class="w-full bg-gray-700 border-gray-600 border-b text-sm text-left text-gray-200">
                             <thead class="text-x uppercasebg-gray-700 text-blue-500 ">
-                                <tr>
-                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                        Quantidade inserida
-                                    </th>
-                                    <th scope="col" class="py-3 px-6">
-                                        Quantidade de Itens
-                                    </th>
-                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Valor soma caixa fisica
-                                    </th>
-                                    <th scope="col" class="py-3 px-6 rounded-r-lg">
-                                        Valor soma volume convertido
-                                    </th>
-                                </tr>
+                                {headerTable.length > 0 ? <tr>
+                                    {
+                                        headerTable.map(data => (
+                                            <th scope="col" class="py-3 px-6 rounded-l-lg">
+                                                {data}
+                                            </th>
+                                        ))
+                                    }
+                                </tr> : null}
                             </thead>
                             <tbody>
                                 <tr class="bg-black  ">
-                                    <th scope="row" class="py-4 px-6 font-medium whitespace-nowraptext-white ">
-                                        {respostas.qd_inserida}
-                                    </th>
-                                    <td class="py-4 px-6">
-                                        {respostas.qd_item}
-                                    </td>
-                                    <td class="py-4 px-6">
-                                        {respostas.vl_soma_cx_fisica}
-                                    </td>
-                                    <td class="py-4 px-6">
-                                        {respostas.vl_soma_vol_convertido}
-                                    </td>
+                                    {
+                                        tableValues.map(data => (
+                                            <td class="py-4 px-6">
+                                                {data}
+                                            </td>
+                                        ))
+                                    }
                                 </tr>
                             </tbody>
                         </table>

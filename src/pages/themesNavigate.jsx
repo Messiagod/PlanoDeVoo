@@ -33,17 +33,17 @@ export function ThemesNavigate() {
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '/planoDeVoo/investimentoVendas',
+                "rota": '/planoDeVoo/copia/4 - Verbas Contratuais Pontuais',
                 "nome": '4 - Verbas Contratuais Pontuais',
                 "descricao": 'Botão SQL - Cópia',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '/planoDeVoo/themes/Processamento CTS',
+                "rota": '',
                 "nome": '5 - Processamento CTS',
                 "descricao": '11 Itens',
-                "ativo": true,
+                "ativo": false,
                 "icon": <BookmarksSimple size={40} />
             },
         ]
@@ -51,21 +51,21 @@ export function ThemesNavigate() {
     const demanda =
         [
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/zsd112',
+                "rota": '/planoDeVoo/carga/1 -  Hierarquia de Clientes (ZSD112)',
                 "nome": '1 -  Hierarquia de Clientes (ZSD112)',
                 "descricao": 'Carga de Dados',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/volumeDemandaVenda',
+                "rota": '/planoDeVoo/copia/2 - Volume Demanda Vendas',
                 "nome": '2 - Volume Demanda Vendas',
                 "descricao": 'Botão SQL - Cópia',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/grandesContas',
+                "rota": '/planoDeVoo/carga/3 - Grandes Contas (Kede)',
                 "nome": '3 - Grandes Contas (Kede)',
                 "descricao": 'Carga de Dados',
                 "ativo": true,
@@ -97,22 +97,22 @@ export function ThemesNavigate() {
     const conversao =
         [
             {
-                "rota": '/planoDeVoo/demanda/conversao/extracao',
+                "rota": '/planoDeVoo/extracao/1 -  Fator Conversão - Extração de Dados',
                 "nome": '1 -  Fator Conversão - Extração de Dados',
                 "descricao": 'Botão para extrair dados',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '/planoDeVoo/demanda/conversao/carga',
+                "rota": '/planoDeVoo/carga/2 - Fator Conversão - Carga de Dados',
                 "nome": '2 - Fator Conversão - Carga de Dados',
                 "descricao": 'Botão para realizar carga de dados',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/calculoConversao',
-                "nome": '3 - Calculo',
+                "rota": '/planoDeVoo/copia/3 - Calculo Conversão',
+                "nome": '3 - Calculo Conversão',
                 "descricao": 'Botão para realizar calculo',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
@@ -122,22 +122,22 @@ export function ThemesNavigate() {
     const incoterm =
         [
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/incotermExtracaoDeDados',
+                "rota": '/planoDeVoo/extracao/1 - Incoterm Extração de Dados',
                 "nome": '1 - Incoterm Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/incotermCargaDeDados',
+                "rota": '/planoDeVoo/carga/2 - Incoterm Carga de Dados',
                 "nome": '2 - Incoterm Carga de Dados',
                 "descricao": 'Carregar Arquivo',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/incotermCalculo',
-                "nome": '3 - Calculo Incoterms',
+                "rota": '/planoDeVoo/copia/3 - Calculo Incoterm',
+                "nome": '3 - Calculo Incoterm',
                 "descricao": 'Botão para realizar calculo',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
@@ -148,25 +148,22 @@ export function ThemesNavigate() {
     const up =
         [
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/upExtracao',
+                "rota": '/planoDeVoo/extracao/1 - Definição UP Extração de Dados',
                 "nome": '1 - Definição UP Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/upCarga',
+                "rota": '/planoDeVoo/carga/2 - Definição UP Carga de Dados',
                 "nome": '2 - Definição UP Carga de Dados',
                 "descricao": 'Carregar Arquivo',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
-
-            // BOTÕES
-
             {
-                "rota": '/planoDeVoo/processamentoCts/demandaArquivo/upCalculo',
-                "nome": '3 -Calculo UP',
+                "rota": '/planoDeVoo/copia/3 - Calculo UP',
+                "nome": '3 - Calculo UP',
                 "descricao": 'Botão para realizar calculo',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
@@ -175,71 +172,71 @@ export function ThemesNavigate() {
     /* RECEITA */
     const receita =
         [
-            {/* calculoDeImpostosArquivoUpload1 */
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/receitaLiquida',
+            {
+                "rota": '/planoDeVoo/copia/1 - Receita Líquida',
                 "nome": '1 - Receita Líquida',
                 "descricao": 'Botão SQL - Cópia',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
-            {   /* impostosExtraçãoDeDadosArquivoUpload1 */
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/impostosExtracao',
+            {   
+                "rota": '/planoDeVoo/extracao/2 - Impostos - Extração de Dados',
                 "nome": '2 - Impostos - Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
-            {/* impostosCargaDeDadosUpload1 */
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/impostosCarga',
+            {
+                "rota": '/planoDeVoo/carga/3 - Impostos - Carga de Dados',
                 "nome": '3 - Impostos - Carga de Dados',
                 "descricao": 'Carregar Arquivo',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
-            {/* calculoDeImpostosArquivoUpload1 */
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/impostosCalculo',
+            {
+                "rota": '',
                 "nome": '4 - Calculo de Impostos',
                 "descricao": 'Botão para realizar calculo',
                 "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/beneficiosCofinsExtract',
+                "rota": '/planoDeVoo/extracao/5 - Benefícios Cofins - Extração de Dados',
                 "nome": '5 - Benefícios Cofins - Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/pisExtract',
+                "rota": '/planoDeVoo/extracao/6 - PIS - Extração de Dados',
                 "nome": '6 - PIS - Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/icmsExtract',
+                "rota": '/planoDeVoo/extracao/7 - ICMS - Extração de Dados',
                 "nome": '7 - ICMS - Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/cofinsCalcExtract',
+                "rota": '/planoDeVoo/extracao/8 - Cofins Calculo - Extração de Dados',
                 "nome": '8 - Cofins Calc - Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/pisCalcExtract',
+                "rota": '/planoDeVoo/extracao/9 - PIS Calculo - Extração de Dados',
                 "nome": '9 - PIS Calc - Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/receitaArquivo/robCalcExtract',
+                "rota": '/planoDeVoo/extracao/10 - ROB Calculo - Extração de Dados',
                 "nome": '10 - Rob Calc - Extração de Dados',
                 "descricao": 'Extrair dados',
                 "ativo": true,
@@ -266,7 +263,7 @@ export function ThemesNavigate() {
 
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/FreteArquivo/entregaProprioCarga',
+                "rota": '/planoDeVoo/carga/3 - Preço Frete Entrega Próprio',
                 "nome": '3 - Preço Frete Entrega Próprio',
                 "descricao": 'Carga de dados',
                 "ativo": true,
@@ -274,7 +271,7 @@ export function ThemesNavigate() {
 
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/FreteArquivo/entregaTerceirosCarga',
+                "rota": '/planoDeVoo/carga/4 - Preço Frete Entrega Terceiros',
                 "nome": '4 - Preço Frete Entrega Terceiros',
                 "descricao": 'Carga Dados',
                 "ativo": true,
@@ -282,7 +279,7 @@ export function ThemesNavigate() {
 
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/FreteArquivo/transferenciaProprioCarga',
+                "rota": '/planoDeVoo/carga/5 - Preço Frete Transferência Próprio',
                 "nome": '5 - Preço Frete Transferência Próprio',
                 "descricao": 'Carga Dados',
                 "ativo": true,
@@ -290,7 +287,7 @@ export function ThemesNavigate() {
 
             },
             {
-                "rota": '/planoDeVoo/processamentoCts/FreteArquivo/entregaTransferenciaTerceiros',
+                "rota": '/planoDeVoo/carga/6 - Preço Frete Transferência Terceiros',
                 "nome": '6 - Preço Frete Transferência Terceiros',
                 "descricao": 'Carga Dados',
                 "ativo": true,
@@ -410,18 +407,18 @@ export function ThemesNavigate() {
                     </li>
                     {params.slug === "Demanda" ?
                         <li className="inline-flex items-center">
-                            <a className="text-3xl font-bold underline">
-                                Demanda
-                            </a>
+                             <Link to={"/planoDeVoo/themes/Demanda"}className="text-3xl font-bold underline">
+                                    Demanda
+                                </Link>
                         </li> : params.slug === "Receita" ?
                             <li className="inline-flex items-center">
-                                <a className="text-3xl font-bold underline">
+                                <Link to={"/planoDeVoo/themes/Receita"}className="text-3xl font-bold underline">
                                     Receita
-                                </a>
+                                </Link>
                             </li> : params.slug === "Frete" ?
-                                <a className="text-3xl font-bold underline">
-                                    Frete
-                                </a> : params.slug === "Conversao" ?
+                                 <Link to={"/planoDeVoo/themes/Frete"}className="text-3xl font-bold underline">
+                                 Frete
+                             </Link> : params.slug === "Conversao" ?
                                     <>
                                         <li className="inline-flex items-center">
                                             <Link to={"/planoDeVoo/themes/Demanda"} className="text-3xl font-bold">

@@ -13,11 +13,11 @@ export function ExtractArchive() {
                 "rotaApi": '/PlanoDeVoo/demandaIncotermsExtracaoDados',
                 "rotaApiDownload": '/PlanoDeVoo/demandaIncotermsExtracaoDados/',
                 "baseDois": "Incoterm",
-                "navigateBase": "/planoDeVoo/processamentoCts/incotermArquivo",
+                "navigateBase": "/planoDeVoo/themes/Incoterm",
                 "descricao": 'Descrição Comissão',
                 "base": 'Demanda',
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
+                "navigate": "/planoDeVoo/themes/Demanda",
                 "seconds": 60000,
                 "time": "Incoterm Extração de dados"
             }
@@ -30,10 +30,10 @@ export function ExtractArchive() {
                 "rotaApiDownload": '/PlanoDeVoo/demandaUpExtracaoDados/',
                 "descricao": 'Definição UP Extração de Dados',
                 "baseDois": "UP",
-                "navigateBase": "/planoDeVoo/processamentoCts/upArquivo",
+                "navigateBase": "/planoDeVoo/themes/Up",
                 "base": 'Demanda',
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
+                "navigate": "/planoDeVoo/themes/Demanda",
                 "seconds": 60000,
                 "time": "Definição UP Extração Dados"
             }
@@ -45,11 +45,11 @@ export function ExtractArchive() {
                 "rotaApi": '/PlanoDeVoo/demanda/extracaoFatorConversao',
                 "rotaApiDownload": '/PlanoDeVoo/demanda/extracaoFatorConversao/',
                 "baseDois": "Conversão",
-                "navigateBase": "/planoDeVoo/processamentoCts/conversaoArquivo",
+                "navigateBase": "/planoDeVoo/themes/Conversao",
                 "descricao": 'Descrição Fator Conversão',
                 "base": 'Demanda',
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts/demandaArquivo",
+                "navigate": "/planoDeVoo/themes/Demanda",
                 "seconds": 60000,
                 "time": "Fator Conversao - Extração de Dados"
             }
@@ -62,11 +62,11 @@ export function ExtractArchive() {
                 "rotaApi": '/PlanoDeVoo/receita/extracao/beneficioCofins',
                 "rotaApiDownload": '/PlanoDeVoo/receita/extracao/beneficioCofins/',
                 "baseDois": "Receita",
-                "navigateBase": "/planoDeVoo/processamentoCts/receitaArquivo",
+                "navigateBase": "/planoDeVoo/themes/Receita",
                 "descricao": 'Descrição Impostos',
                 "base": false,
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts",
+                "navigate": "/planoDeVoo/themes/Processamentoo CTS",
                 "seconds": 60000,
                 "time": "Beneficio Cofins - Extração de dados"
             }
@@ -82,7 +82,7 @@ export function ExtractArchive() {
                 "descricao": 'Descrição Impostos',
                 "base": false,
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts",
+                "navigate": "/planoDeVoo/themes/Processamentoo CTS",
                 "seconds": 60000,
                 "time": "Base de Impostos - Extração de dados"
             }
@@ -98,7 +98,7 @@ export function ExtractArchive() {
                 "descricao": 'Descrição Impostos',
                 "base": false,
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts",
+                "navigate": "/planoDeVoo/themes/Processamentoo CTS",
                 "seconds": 60000,
                 "time": "Pis - Extração de dados"
             }
@@ -114,7 +114,7 @@ export function ExtractArchive() {
                 "descricao": 'Descrição Impostos',
                 "base": false,
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts",
+                "navigate": "/planoDeVoo/themes/Processamentoo CTS",
                 "seconds": 60000,
                 "time": "Icms - Extração de dados"
             }
@@ -130,7 +130,7 @@ export function ExtractArchive() {
                 "descricao": 'Descrição Impostos',
                 "base": false,
                 "ativo": true,
-                "navigate": "/planoDeVoo/processamentoCts",
+                "navigate": "/planoDeVoo/themes/Processamentoo CTS",
                 "seconds": 60000,
                 "time": "Cofins Calc - Extração de dados"
             }
@@ -146,7 +146,7 @@ export function ExtractArchive() {
                 "descricao": 'Descrição Impostos',
                 "base": false,
                 "ativo": true,
-                "navigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/themes/Plano De Voo",
                 "seconds": 60000,
                 "time": "Pis Calc - Extração de dados"
             }
@@ -162,7 +162,7 @@ export function ExtractArchive() {
                 "descricao": 'Descrição Impostos',
                 "base": false,
                 "ativo": true,
-                "navigate": "/planoDeVoo",
+                "navigate": "/planoDeVoo/themes/Plano De Voo",
                 "seconds": 60000,
                 "time": "Rob Calc - Extração de dados"
             }
