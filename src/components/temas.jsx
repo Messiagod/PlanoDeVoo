@@ -6,12 +6,6 @@ import { useState } from "react";
 
 export function Temas({ data }) {
 
-    /*   console.log(data.rota)
-  
-      const listItems = data.rota.map((data) =>
-      <h1>{data}</h1>
-      ); 
-    */
 
     return (
         <>

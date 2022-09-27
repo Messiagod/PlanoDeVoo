@@ -39,10 +39,9 @@ export function ButtonSql({ data }) {
         await api.get(data.rotaApi)
             .then((response) => {
                 console.log("resposta abaixo")
-                console.log(response.data)
-                setRespostas(response.data)
-                setHeader(Object.keys(response.data.tabela))
-                setTableValues(Object.values(response.data.tabela))
+                setRespostas(response.data.tabelas)
+                setHeader(Object.keys(response.data.tabelas[0]))
+                setTableValues(Object.values(response.data.tabelas[0]))
                 const horaFim = new Date().toLocaleTimeString();
                 setHoraEtapa3(horaFim)
                 setEtapa3(true)
@@ -66,8 +65,8 @@ export function ButtonSql({ data }) {
             })
     }
 
-    
 
+    console.log(tableValues[0])
 
 
     const [time, setTime] = useState('');
@@ -124,7 +123,7 @@ export function ButtonSql({ data }) {
                     {data.time ?
                         <>
                             {time.length > 0 ? <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                                Média de Execução: {time}
+                                Última Execução: {time}
                             </span>
                                 : null}
                         </> : <h1>UNDEFINED</h1>}
@@ -134,7 +133,7 @@ export function ButtonSql({ data }) {
                 {button ? <div className="flex">
                     <div className="flex bg-black mt-10">
                         <button onClick={uploadButton} className='w-64 h-14 text-sm bg-blue-600   rounded font-bold uppercase   hover:bg-blue-700 transition-colors'>
-                            Realizar cópia
+                            Executar
                         </button>
                     </div>
                 </div> : null}
@@ -160,8 +159,8 @@ export function ButtonSql({ data }) {
                                 <div className="hidden sm:flex w-full bg-green-300 h-0.5 "></div>
                             </div>
                             <div className="mt-5 sm:pr-8">
-                                <h3 className="text-lg font-semibold text-white-900 ">Processo solicitado - Solicitação de Cópia</h3>
-                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Enviando solicitação de cópia para banco de dados.....</p>
+                                <h3 className="text-lg font-semibold text-white-900 ">Processo solicitado - Solicitação</h3>
+                                <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Enviando solicitação para banco de dados.....</p>
                                 <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Iniciado: {horaEtapa1}</time>
 
                             </div>
@@ -177,7 +176,7 @@ export function ButtonSql({ data }) {
                                 </div>
                                 <div className="mt-5 sm:pr-8">
                                     <h3 className="text-lg font-semibold text-white-900 ">Banco de dados - Em andamento</h3>
-                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Conexão com banco de dados estabelecida, executando cópia.....</p>
+                                    <p className="text-base font-normal text-white-500 "> <strong> Status: </strong> Conexão com banco de dados estabelecida, executando.....</p>
                                     <time class="block mb-2 text-base font-normal leading-none text-gray-400">Processo Iniciado: {horaEtapa2}</time>
                                 </div>
                             </li> : null}
@@ -229,15 +228,15 @@ export function ButtonSql({ data }) {
                                 </tr> : null}
                             </thead>
                             <tbody>
-                                <tr class="bg-black  ">
-                                    {
-                                        tableValues.map(data => (
+                                {
+                                    tableValues[0].map(data => (
+                                        <tr class="bg-black  ">
                                             <td class="py-4 px-6">
                                                 {data}
                                             </td>
-                                        ))
-                                    }
-                                </tr>
+                                        </tr>
+                                    ))
+                                }
                             </tbody>
                         </table>
                     </div> : null}
