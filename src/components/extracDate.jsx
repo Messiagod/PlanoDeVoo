@@ -30,8 +30,7 @@ export function ExtracDate({ data }) {
 
         await api.get(data.rotaApi)
             .then((response) => {
-                console.log(response.data)
-                setRespostas(response.data)
+                setRespostas(response.data.fileName)
                 const horaFim = new Date().toLocaleTimeString();
                 setEtapa3(true)
                 setHoraFim3(horaFim)
@@ -48,6 +47,7 @@ export function ExtracDate({ data }) {
                 }
             })
         }
+       
 
         const [time, setTime] = useState('');
         useEffect(() => {
@@ -58,8 +58,6 @@ export function ExtracDate({ data }) {
             getTime()
         }, [])
         console.log(time)
-
-    const downloadArquivo = `http://brampwsapp001:3000${data.rotaApiDownload}${respostas.fileName}`
         
     return (
         <div className="bg-black w-full h-full">
@@ -111,7 +109,7 @@ export function ExtracDate({ data }) {
                     {data.time ? 
                     <>
                         {time.length > 0 ? <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                            Média de Execução: {time}
+                            Ùltima Execução: {time}
                         </span>
                             : null}
                     </> : <h1>UNDEFINED</h1>}
@@ -195,10 +193,10 @@ export function ExtracDate({ data }) {
                             </div>
                         </li> : null}
                 </ol>
-
-                {divDownload ?
+                        
+                {divDownload ?                
                     <div className='grid grid-cols-3'>
-                        <a href={downloadArquivo} className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
+                        <a href={`http://brampwsapp001:3000${data.rotaApiDownload}${respostas}`} className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'>
                             <div className='bg-blue-700  p-6 flex items-center'>
                                 <FileArrowDown size={40} />
                             </div>
@@ -211,6 +209,7 @@ export function ExtracDate({ data }) {
                                 </p>
                             </div>
                         </a>
+                        
                     </div> : null}
 
             </div>

@@ -248,17 +248,17 @@ export function ThemesNavigate() {
 
         [
             {
-                "rota": '',
+                "rota": '/planoDeVoo/extracao/1 - Preço Frete Entrega',
                 "nome": '1 - Preço Frete Entrega',
                 "descricao": 'Extrair dados',
-                "ativo": false,
+                "ativo": true,
                 "icon": <FileArrowDown size={40} />
             },
             {
-                "rota": '',
-                "nome": '2 - Preço Frete Transferência ',
+                "rota": '/planoDeVoo/extracao/2 - Preço Frete Transferência',
+                "nome": '2 - Preço Frete Transferência',
                 "descricao": 'Extrair dados',
-                "ativo": false,
+                "ativo": true,
                 "icon": <FileArrowDown size={40} />
 
             },
@@ -524,7 +524,7 @@ export function ThemesNavigate() {
                                                             <Temas data={data} />
                                                         ))
                                                     }
-                                                </div> : null
+                                                </div>  : null
                 }
 
             </div>

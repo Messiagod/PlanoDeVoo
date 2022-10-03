@@ -113,7 +113,7 @@ export function Upload({ data }) {
                             {data.time ? 
                     <>
                         {time.length > 0 ? <span className="text-sm rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold ">
-                            Média de Execução: {time}
+                            Ùltima Execução: {time}
                         </span>
                             : null}
                     </> : <h1>UNDEFINED</h1>}

@@ -17,6 +17,8 @@ export function ButtonSql({ data }) {
     const [horaEtapa4Error, setHoraEtapa4Error] = useState('')
     const [divRespostas, setDivRespostas] = useState(false)
     const [respostas, setRespostas] = useState('')
+    const [headerTable2, setHeaderTable] = useState('')
+    const [tableValues2, setTableValues2] = useState('')
     const [respostasError, setRespostasError] = useState('')
     const [button, setButton] = useState(true)
     const [process, setProcess] = useState(false)
@@ -39,7 +41,8 @@ export function ButtonSql({ data }) {
         await api.get(data.rotaApi)
             .then((response) => {
                 console.log("resposta abaixo")
-                setRespostas(response.data.tabelas)
+                setRespostas(response.data)
+                console.log(response.data.tabelas)
                 setHeader(Object.keys(response.data.tabelas[0]))
                 setTableValues(Object.values(response.data.tabelas[0]))
                 const horaFim = new Date().toLocaleTimeString();
@@ -64,10 +67,52 @@ export function ButtonSql({ data }) {
                 }
             })
     }
+    console.log("abaixo")
+    console.log(headerTable)
+    console.log(tableValues)
 
+    const uploadButton2 = async e => {
+        setProcess(true)
+        setButton(false)
+        setEtapa1(true)
+        const horaInicio = new Date().toLocaleTimeString();
+        setHoraEtapa1(horaInicio)
+        setTimeout(() => {
+            const HoraInicioMeio = new Date().toLocaleTimeString();
+            setHoraEtapa2(HoraInicioMeio)
+            setEtapa2(true)
+        }, data.seconds)
 
-    console.log(tableValues[0])
-
+        await api.get(data.rotaApi)
+            .then((response) => {
+                console.log("resposta abaixo")
+                setRespostas(response.data.tabelas)
+                setHeaderTable(Object.keys(response.data.tabelas[1]))
+                setHeader(Object.keys(response.data.tabelas[0]))
+                setTableValues(Object.values(response.data.tabelas[0]))
+                setTableValues2(Object.values(response.data.tabelas[1]))
+                const horaFim = new Date().toLocaleTimeString();
+                setHoraEtapa3(horaFim)
+                setEtapa3(true)
+                setDivRespostas(true)
+                setProcess(false)
+            }).catch((err) => {
+                if (err) {
+                    console.log(err.response.data)
+                    setRespostasError(err.response.data)
+                    setEtapa2(false)
+                    setEtapa4Error(true)
+                    setProcess(false)
+                    const HoraInicioFimError = new Date().toLocaleTimeString();
+                    setHoraEtapa4Error(HoraInicioFimError)
+                } else {
+                    setEtapa2(false)
+                    setEtapa4Error(true)
+                    const HoraInicioFimError = new Date().toLocaleTimeString();
+                    setHoraEtapa4Error(HoraInicioFimError)
+                }
+            })
+    }
 
     const [time, setTime] = useState('');
     useEffect(() => {
@@ -132,7 +177,7 @@ export function ButtonSql({ data }) {
 
                 {button ? <div className="flex">
                     <div className="flex bg-black mt-10">
-                        <button onClick={uploadButton} className='w-64 h-14 text-sm bg-blue-600   rounded font-bold uppercase   hover:bg-blue-700 transition-colors'>
+                        <button onClick={data.nome === "3 - Calculo Incoterm" ? uploadButton2 : uploadButton} className='w-64 h-14 text-sm bg-blue-600   rounded font-bold uppercase   hover:bg-blue-700 transition-colors'>
                             Executar
                         </button>
                     </div>
@@ -213,33 +258,112 @@ export function ButtonSql({ data }) {
 
                     </ol> : null}
 
-                {divRespostas ?
-                    <div class="overflow-x-auto relative border border-gray-300 m-10">
-                        <table class="w-full bg-gray-700 border-gray-600 border-b text-sm text-left text-gray-200">
-                            <thead class="text-x uppercasebg-gray-700 text-blue-500 ">
-                                {headerTable.length > 0 ? <tr>
-                                    {
-                                        headerTable.map(data => (
-                                            <th scope="col" class="py-3 px-6 rounded-l-lg">
-                                                {data}
-                                            </th>
-                                        ))
-                                    }
-                                </tr> : null}
-                            </thead>
-                            <tbody>
-                                {
-                                    tableValues[0].map(data => (
-                                        <tr class="bg-black  ">
-                                            <td class="py-4 px-6">
-                                                {data}
-                                            </td>
+                {data.nome === "3 - Calculo Incoterm" ? <>
+                    {divRespostas ?
+                        <>
+
+                            <div class="overflow-x-auto relative border border-gray-300 m-10">
+                                <table class="w-full bg-gray-700 border-gray-600 border-b text-sm text-left text-gray-200">
+                                    <thead class="text-x uppercasebg-gray-700 text-blue-500 ">
+                                        {headerTable.length > 0 ? <tr>
+                                            {
+                                                headerTable.map(data => (
+                                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
+                                                        {data}
+                                                    </th>
+                                                ))
+                                            }
+                                        </tr> : null}
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-black">{
+                                            tableValues.map(column => (
+                                                <td class="py-4 px-6">
+                                                    {column[0]}
+                                                </td>
+                                            ))
+                                        }
                                         </tr>
-                                    ))
-                                }
-                            </tbody>
-                        </table>
-                    </div> : null}
+                                        <tr class="bg-black">{
+                                            tableValues.map(column => (
+                                                <td class="py-4 px-6">
+                                                    {column[1]}
+                                                </td>
+                                            ))
+                                        }
+                                        </tr>
+                                        <tr class="bg-black">{
+                                            tableValues.map(column => (
+                                                <td class="py-4 px-6">
+                                                    {column[2]}
+                                                </td>
+                                            ))
+                                        }
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="overflow-x-auto relative border border-gray-300 m-10">
+                                <table class="w-full bg-gray-700 border-gray-600 border-b text-sm text-left text-gray-200">
+                                    <thead class="text-x uppercasebg-gray-700 text-blue-500 ">
+                                        {headerTable2.length > 0 ? <tr>
+                                            {
+                                                headerTable2.map(data => (
+                                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
+                                                        {data}
+                                                    </th>
+                                                ))
+                                            }
+                                        </tr> : null}
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-black">{
+                                            tableValues2.map(column => (
+                                                <td class="py-4 px-6">
+                                                    {column}
+                                                </td>
+                                            ))
+                                        }
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </>
+                        : null}
+                </>
+                    :
+                    <>
+                        {divRespostas ?
+                            <div class="overflow-x-auto relative border border-gray-300 m-10">
+                                <table class="w-full bg-gray-700 border-gray-600 border-b text-sm text-left text-gray-200">
+                                    <thead class="text-x uppercasebg-gray-700 text-blue-500 ">
+                                        {headerTable.length > 0 ? <tr>
+                                            {
+                                                headerTable.map(data => (
+                                                    <th scope="col" class="py-3 px-6 rounded-l-lg">
+                                                        {data}
+                                                    </th>
+                                                ))
+                                            }
+                                        </tr> : null}
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-black  ">
+                                            {tableValues.map(data => (
+                                                <td class="py-4 px-6">
+                                                    {data}
+                                                </td>
+                                            ))}
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            :
+                            null
+                        }
+                    </>
+                }
+
 
             </div>
         </div>

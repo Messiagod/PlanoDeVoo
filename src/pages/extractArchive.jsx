@@ -168,22 +168,39 @@ export function ExtractArchive() {
             }
         ]
     /* FRETE */
-    /*  const precoFreteEntrega = 
-     [
-         {
-             "nome": '1 - Preço Frete Entrega',
-             "rotaApi": '/PlanoDeVoo/frete/extracao/precoFreteEntrega',
-             "rotaApiDownload": '/PlanoDeVoo/frete/extracao/precoFreteEntrega',
-             "baseDois": "Frete",
-             "navigateBase": "/planoDeVoo/processamentoCts/freteArquivo",
-             "descricao": 'Descrição Frete Entrega',
-             "base": false,
-             "ativo": true,
-             "navigate": "/planoDeVoo/processamentoCts",
-             "seconds": 60000,
-         }
+    const precoFreteEntrega =
+        [
+            {
+                "nome": '1 - Preço Frete Entrega',
+                "rotaApi": '/PlanoDeVoo/frete/extracao/precoFreteEntrega',
+                "rotaApiDownload": '/PlanoDeVoo/frete/extracao/precoFreteEntrega/',
+                "baseDois": "Frete",
+                "navigateBase": "/planoDeVoo/themes/Frete",
+                "descricao": 'Descrição Frete Entrega',
+                "base": false,
+                "ativo": true,
+                "navigate": "/planoDeVoo/processamentoCts",
+                "seconds": 60000,
+                "time": "Preço Frete Entrega Extração"
+            }
+        ]
+
+    const precoFreteTransferencia = 
+    [
+        {
+            "nome": '2 - Preço Frete Transferência',
+            "rotaApi": '/PlanoDeVoo/frete/extracao/precoFreteTransferencia',
+            "rotaApiDownload": '/PlanoDeVoo/frete/extracao/precoFreteTransferencia/',
+            "baseDois": "Frete",
+            "navigateBase": "/planoDeVoo/themes/Frete",
+            "descricao": 'Descrição Frete Transferência',
+            "base": false,
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Plano De Voo",
+            "seconds": 60000,
+            "time": "Preço Frete Transferencia Extração"
+        }
      ]
-     const precoFreteTransferencia = */
 
 
     return (
@@ -242,15 +259,26 @@ export function ExtractArchive() {
                                                     {pisCalc.map(data => (
                                                         <ExtracDate data={data} />
                                                     ))}
-                                                </main> : 
+                                                </main> :
                                                 params.slug === "10 - ROB Calculo - Extração de Dados" ?
-                                                <main className="flex flex-1">
-                                                    {robCalc.map(data => (
-                                                        <ExtracDate data={data} />
-                                                    ))}
-                                                </main> : null
+                                                    <main className="flex flex-1">
+                                                        {robCalc.map(data => (
+                                                            <ExtracDate data={data} />
+                                                        ))}
+                                                    </main> : params.slug === "1 - Preço Frete Entrega" ?
+                                                        <main className="flex flex-1">
+                                                            {precoFreteEntrega.map(data => (
+                                                                <ExtracDate data={data} />
+                                                            ))}
+                                                        </main> : params.slug === "2 - Preço Frete Transferência" ? <main className="flex flex-1">
+                                                            {precoFreteTransferencia.map(data => (
+                                                                <ExtracDate data={data} />
+                                                            ))} 
+                                                        </main> : null
             }
         </>
 
     )
 }
+
+
