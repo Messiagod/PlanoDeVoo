@@ -14,8 +14,6 @@ export function ThemesNavigate() {
                 "descricao": '6 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
-
-
             },
             {
                 "rota": '/planoDeVoo/themes/Receita',
@@ -40,10 +38,10 @@ export function ThemesNavigate() {
                 "icon": <BookmarksSimple size={40} />
             },
             {
-                "rota": '',
+                "rota": '/planoDeVoo/themes/Processamento CTS',
                 "nome": '5 - Processamento CTS',
                 "descricao": '11 Itens',
-                "ativo": false,
+                "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
         ]
@@ -179,7 +177,7 @@ export function ThemesNavigate() {
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
             },
-            {   
+            {
                 "rota": '/planoDeVoo/extracao/2 - Impostos - Extração de Dados',
                 "nome": '2 - Impostos - Extração de Dados',
                 "descricao": 'Extrair dados',
@@ -299,95 +297,192 @@ export function ThemesNavigate() {
     const processamentoCts =
         [
             {
-                "rota": 'cofinsArquivo',
-                "nome": '1 - Cofins',
-                "descricao": 'Carregar Arquivo',
+                "rota": '/planoDeVoo/themes/GGF',
+                "nome": '1 - GGF',
+                "descricao": '2 Itens',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/themes/Custos Insumos',
+                "nome": '2 - Custos Insumos',
+                "descricao": '2 Itens',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/themes/Base Hierarquia',
+                "nome": '3 - Base Hierarquia',
+                "descricao": '5 Itens',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/themes/Custos CD',
+                "nome": '4 - Custos CD ',
+                "descricao": '2 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
 
             },
             {
-                "rota": 'icmsArquivo',
-                "nome": '2 - ICMS',
-                "descricao": 'Carregar Arquivo',
+                "rota": '/planoDeVoo/themes/Base QLP',
+                "nome": '5 - Base QLP',
+                "descricao": '5 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
-
             },
             {
-                "rota": 'pisArquivo',
-                "nome": '3- PIS',
-                "descricao": 'Carregar Arquivo',
+                "rota": '/planoDeVoo/themes/Base Multas Dist',
+                "nome": '6 - Base Multas Dist',
+                "descricao": '2 Itens',
                 "ativo": true,
                 "icon": <BookmarksSimple size={40} />
-
             },
-            {
-                "rota": 'freteArquivoUpload',
-                "nome": '4- Frete Terceiros ',
-                "descricao": 'Carregar Arquivo',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-
-            },
-            {
-                "rota": 'comissaoArquivo',
-                "nome": '5 - Comissão',
-                "descricao": 'Carregar Arquivo',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-
-            },
-            {
-                "rota": '',
-                "nome": '6 - Receita',
-                "descricao": 'Carregar Arquivo',
-                "ativo": false,
-                "icon": <BookmarksSimple size={40} />
-
-            },
-            {
-                "rota": 'verbasArquivo',
-                "nome": '7 - Verbas',
-                "descricao": 'Carregar Arquivo',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-
-            },
-            {
-                "rota": 'volumeArquivo',
-                "nome": '8 - Volume',
-                "descricao": 'Carregar Arquivo',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-
-            },
-            {
-                "rota": "cpvArquivo",
-                "nome": '9 - CPV',
-                "descricao": 'Carregar Arquivo',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-
-            },
-            {
-                "rota": "frotaArquivo",
-                "nome": '10 - Frete Frota',
-                "descricao": 'Carregar Arquivo',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />
-
-            },
-            {
-                "rota": "hierarquiaDeClientesArquivo",
-                "nome": '11 - Hierarquia de Clientes',
-                "descricao": 'Carregar Arquivo',
-                "ativo": true,
-                "icon": <BookmarksSimple size={40} />,
-
-            },
-
         ]
+    /* GGF */
+    const ggf =
+        [
+            {
+                "rota": '/planoDeVoo/carga/GGF',
+                "nome": '1 - GGF',
+                "descricao": 'Carga de dados',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
+            {
+                "rota": '/planoDeVoo/copia/GGF',
+                "nome": '2 - GGF',
+                "descricao": 'Atualização de Indicadores',
+                "ativo": true,
+                "icon": <BookmarksSimple size={40} />
+            },
+        ]
+    const custosInsumos = [
+        {
+            "rota": '/planoDeVoo/carga/Custos Insumos',
+            "nome": '1 - Custos Insumos',
+            "descricao": 'Carga de dados',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/copia/Custos Insumos',
+            "nome": '2 - Custos Insumos',
+            "descricao": 'Atualização de indicadores',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+    ]
+    const baseHierarquia = [
+        {
+            "rota": '/planoDeVoo/carga/Base Hierarquia Oficial',
+            "nome": '1 - Base Hierarquia Oficial',
+            "descricao": 'Carga de dados',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/carga/Base Plano de Contas',
+            "nome": '2 - Base Plano de Contas',
+            "descricao": 'Carga de dados',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/carga/Base Hierarquia Geral',
+            "nome": '3 - Base Hierarquia Geral',
+            "descricao": 'Carga de dados',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/carga/Depara N5 Regionais',
+            "nome": '4 - Depara N5 Regionais',
+            "descricao": 'Carga de dados',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/carga/Opex',
+            "nome": '5 - Opex',
+            "descricao": 'Carga de dados',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+    ]
+    const custosCd = [
+        {
+            "rota": '/planoDeVoo/copia/Custos CD Proprio',
+            "nome": '1 - Custos CD Próprio',
+            "descricao": 'Atualização de Indicadores',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+
+        },
+        {
+            "rota": '/planoDeVoo/copia/Custos CD Terceiros',
+            "nome": '2 - Custos CD Terceiros',
+            "descricao": 'Atualização de Indicadores',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+
+        },
+    ]
+    const baseQlp = [
+        {
+            "rota": '/planoDeVoo/carga/Base QLP Promotores PBI',
+            "nome": '1 - Base QLP Promotores PBI',
+            "descricao": 'Carga de dados',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/copia/Calculo de Lideranca Backoffice',
+            "nome": '2 - Calculo de Liderança',
+            "descricao": 'Backoffice',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/copia/Calculo de Lideranca Campo',
+            "nome": '3 - Calculo de Liderança',
+            "descricao": 'Campo',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/copia/Calculo de Lideranca Merchandising',
+            "nome": '4 - Calculo de Liderança Merchandising',
+            "descricao": 'Merchandising',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/copia/Calculo de Material',
+            "nome": '5 - Calculo de Material',
+            "descricao": 'Merchandising',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+    ]
+    const baseMultasDist = [
+        {
+            "rota": '/planoDeVoo/carga/Base Multas Dist',
+            "nome": '1 - Base Multas Dist',
+            "descricao": 'Carga de dados',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+        {
+            "rota": '/planoDeVoo/copia/Base Multas Dist',
+            "nome": '2 - Multas Logísticas',
+            "descricao": 'Cálculo de Multas',
+            "ativo": true,
+            "icon": <BookmarksSimple size={40} />
+        },
+    ]
+
 
     return (
         <main className="">
@@ -407,18 +502,18 @@ export function ThemesNavigate() {
                     </li>
                     {params.slug === "Demanda" ?
                         <li className="inline-flex items-center">
-                             <Link to={"/planoDeVoo/themes/Demanda"}className="text-3xl font-bold underline">
-                                    Demanda
-                                </Link>
+                            <Link to={"/planoDeVoo/themes/Demanda"} className="text-3xl font-bold underline">
+                                Demanda
+                            </Link>
                         </li> : params.slug === "Receita" ?
                             <li className="inline-flex items-center">
-                                <Link to={"/planoDeVoo/themes/Receita"}className="text-3xl font-bold underline">
+                                <Link to={"/planoDeVoo/themes/Receita"} className="text-3xl font-bold underline">
                                     Receita
                                 </Link>
                             </li> : params.slug === "Frete" ?
-                                 <Link to={"/planoDeVoo/themes/Frete"}className="text-3xl font-bold underline">
-                                 Frete
-                             </Link> : params.slug === "Conversao" ?
+                                <Link to={"/planoDeVoo/themes/Frete"} className="text-3xl font-bold underline">
+                                    Frete
+                                </Link> : params.slug === "Conversao" ?
                                     <>
                                         <li className="inline-flex items-center">
                                             <Link to={"/planoDeVoo/themes/Demanda"} className="text-3xl font-bold">
@@ -524,11 +619,142 @@ export function ThemesNavigate() {
                                                             <Temas data={data} />
                                                         ))
                                                     }
-                                                </div>  : null
+                                                </div> : params.slug === "GGF" ?
+                                                <div className='gap-8 m-8 grid grid-cols-4'>
+                                                    {
+                                                        ggf.map(data => (
+                                                            <Temas data={data} />
+                                                        ))
+                                                    }
+                                                </div> : params.slug === "Custos Insumos" ?
+                                                <div className='gap-8 m-8 grid grid-cols-4'>
+                                                    {
+                                                        custosInsumos.map(data => (
+                                                            <Temas data={data} />
+                                                        ))
+                                                    }
+                                                </div> : params.slug === "Base Hierarquia" ?
+                                                <div className='gap-8 m-8 grid grid-cols-4'>
+                                                    {
+                                                        baseHierarquia.map(data => (
+                                                            <Temas data={data} />
+                                                        ))
+                                                    }
+                                                </div> :  params.slug === "Custos CD" ?
+                                                <div className='gap-8 m-8 grid grid-cols-4'>
+                                                    {
+                                                        custosCd.map(data => (
+                                                            <Temas data={data} />
+                                                        ))
+                                                    }
+                                                </div> : params.slug === "Base QLP" ?
+                                                <div className='gap-8 m-8 grid grid-cols-4'>
+                                                    {
+                                                        baseQlp.map(data => (
+                                                            <Temas data={data} />
+                                                        ))
+                                                    }
+                                                </div> : params.slug === "Base Multas Dist" ?
+                                                <div className='gap-8 m-8 grid grid-cols-4'>
+                                                    {
+                                                        baseMultasDist.map(data => (
+                                                            <Temas data={data} />
+                                                        ))
+                                                    }
+                                                </div> : null
                 }
-
             </div>
-
+           
         </main>
     )
 }
+
+
+/*  {
+               "rota": 'cofinsArquivo',
+               "nome": '1 - Cofins',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": 'icmsArquivo',
+               "nome": '2 - ICMS',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": 'pisArquivo',
+               "nome": '3- PIS',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": 'freteArquivoUpload',
+               "nome": '4- Frete Terceiros ',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": 'comissaoArquivo',
+               "nome": '5 - Comissão',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": '',
+               "nome": '6 - Receita',
+               "descricao": 'Carregar Arquivo',
+               "ativo": false,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": 'verbasArquivo',
+               "nome": '7 - Verbas',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": 'volumeArquivo',
+               "nome": '8 - Volume',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": "cpvArquivo",
+               "nome": '9 - CPV',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": "frotaArquivo",
+               "nome": '10 - Frete Frota',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />
+
+           },
+           {
+               "rota": "hierarquiaDeClientesArquivo",
+               "nome": '11 - Hierarquia de Clientes',
+               "descricao": 'Carregar Arquivo',
+               "ativo": true,
+               "icon": <BookmarksSimple size={40} />,
+
+           }, */

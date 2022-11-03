@@ -132,11 +132,109 @@ export function CopySql() {
                 "time": "Verbas Contratuais e Pontuais"
             }
         ]
+    const ggf = [
+        {
+            "nome": 'GGF',
+            "rotaApi": '/update/GGF',
+            "descricao": 'GGF',
+            "base": 'Processamento CTS',
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "time": "Atualizacao de Indicadores - GGF"
+        }
+    ]
+    const custosInsumos = [
+        {
+            "nome": 'Custos Insumos',
+            "rotaApi": '/update/CustosInsumos',
+            "descricao": 'Descrição Custos Insumos',
+            "base": 'Processamento CTS',
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "time": "Custos Insumos - Atualizacao de Indicadores"
+        }
+    ]
+    const custosCdProprio = [
+        {
+            "nome": 'Custos CD Proprio',
+            "rotaApi": '/update/CustosCdProprio',
+            "descricao": 'Descrição Custos CD Proprio',
+            "base": 'Processamento CTS',
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "time": "Custos CD Proprio - Atualizacao de Indicadores"
+        }
+    ]
+    const custosCdTerceiros = [
+        {
+            "nome": 'Custos CD Terceiros',
+            "rotaApi": '/update/CustosCdTerceiros',
+            "descricao": 'Descrição Custos CD Terceiros',
+            "base": 'Processamento CTS',
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "time": "Custos CD Terceiros - Atualizacao de Indicadores"
+        }
+    ]
+    const calculoDeLideranca = [
+        {
+            "nome": 'Calculo de Liderança',
+            "rotaApi": '/calculation/CalculoLiderancaBackoffice',
+            "descricao": 'Descrição Calculo de Liderança - Backoffice',
+            "base": 'Processamento CTS',
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "time": "Calculo de Liderança - Backoffice"
+        }
+    ]
+    const calculoDeLiderancaCampo = [
+        {
+            "nome": 'Calculo de Liderança Campo',
+            "rotaApi": '/calculation/CalculoLiderancaCampo',
+            "descricao": 'Descrição Calculo de Liderança Campo',
+            "base": 'Processamento CTS',
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "time": "Calculo de Liderança Campo"
+        }
+    ]
+    const calculoDeLiderancaMerchandising = [
+        {
+            "nome": 'Calculo de Liderança Merchandising',
+            "rotaApi": '/calculation/CalculoLiderancaMerchandising',
+            "descricao": 'Descrição Base QLP Merchandising',
+            "base": 'Processamento CTS',
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "time": "Calculo de Liderança - Merchandising"
+        }
+    ]
+    const calculoDeMaterialMerchandising = [
+        {
+            "nome": 'Calculo de Material Merchandising',
+            "rotaApi": '/calculation/CalculoMaterialMerchandising',
+            "descricao": 'Descrição Calculo de Material',
+            "base": 'Processamento CTS',
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "time": "Calculo de Material - Merchandising"
+        }
+    ]
+    const baseMultasDist = [
+        {
+            "nome": 'Multas Logísticas',
+            "rotaApi": '/calculation/CalculoMultasLogisticas',
+            "descricao": 'Descrição Multas Logísticas',
+            "base": 'Processamento CTS',
+            "ativo": true,
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "time": "Multas Logísticas - Cálculo de Multas"
+        }
+    ]
 
     return (
 
         <>
-
             {params.slug === "2 - Volume Demanda Vendas" ?
                 <main className="flex flex-1">
                     {
@@ -199,7 +297,70 @@ export function CopySql() {
                                                         <ButtonSql data={data} />
                                                     ))
                                                 }
-                                            </main> : null
+                                            </main> : params.slug === "GGF" ?
+                                                <main className="flex flex-1">
+                                                    {
+                                                        ggf.map(data => (
+                                                            <ButtonSql data={data} />
+                                                        ))
+                                                    }
+                                                </main> : params.slug === "Custos Insumos" ?
+                                                    <main className="flex flex-1">
+                                                        {
+                                                            custosInsumos.map(data => (
+                                                                <ButtonSql data={data} />
+                                                            ))
+                                                        }
+                                                    </main> : params.slug === "Custos CD Proprio" ?
+                                                        <main className="flex flex-1">
+                                                            {
+                                                                custosCdProprio.map(data => (
+                                                                    <ButtonSql data={data} />
+                                                                ))
+                                                            }
+                                                        </main> : params.slug === "Custos CD Terceiros" ?
+                                                            <main className="flex flex-1">
+                                                                {
+                                                                    custosCdTerceiros.map(data => (
+                                                                        <ButtonSql data={data} />
+                                                                    ))
+                                                                }
+                                                            </main> : params.slug === "Calculo de Lideranca Backoffice" ?
+                                                                <main className="flex flex-1">
+                                                                    {
+                                                                        calculoDeLideranca.map(data => (
+                                                                            <ButtonSql data={data} />
+                                                                        ))
+                                                                    }
+                                                                </main> : params.slug === "Calculo de Lideranca Campo" ?
+                                                                    <main className="flex flex-1">
+                                                                        {
+                                                                            calculoDeLiderancaCampo.map(data => (
+                                                                                <ButtonSql data={data} />
+                                                                            ))
+                                                                        }
+                                                                    </main> : params.slug === "Calculo de Lideranca Merchandising" ?
+                                                                        <main className="flex flex-1">
+                                                                            {
+                                                                                calculoDeLiderancaMerchandising.map(data => (
+                                                                                    <ButtonSql data={data} />
+                                                                                ))
+                                                                            }
+                                                                        </main> : params.slug === "Calculo de Material" ?
+                                                                            <main className="flex flex-1">
+                                                                                {
+                                                                                    calculoDeMaterialMerchandising.map(data => (
+                                                                                        <ButtonSql data={data} />
+                                                                                    ))
+                                                                                }
+                                                                            </main> : params.slug === "Base Multas Dist" ?
+                                                                            <main className="flex flex-1">
+                                                                                {
+                                                                                    baseMultasDist.map(data => (
+                                                                                        <ButtonSql data={data} />
+                                                                                    ))
+                                                                                }
+                                                                            </main> : null
 
             }
         </>

@@ -167,17 +167,150 @@ export function UploadPage() {
         }
     ]
     /* PROCESSAMENTO CTS */
-    /*   const cofins =
-      const icms =
-      const pis =
-      const freteTerceiros = 
-      const comissao = 
-      const receita = 
-      const verbas = 
-      const volume = 
-      const cpv = 
-      const freteFrota = */
-
+    const ggf = [
+        {
+            "nomeBase": "GGF",
+            "navigateBase": "/planoDeVoo/themes/GGF",
+            "nome": 'GGF',
+            "rotaApi": '/CTS/upload/GGF',
+            "nomeArquivo": 'CTS/upload/GGF/CTS_modelo_GGF.csv',
+            "descricao": 'Descrição GGF',
+            "base": 'Processamento CTS',
+            "baseOne": "Plano de Voo",
+            "baseNavigate": "/planoDeVoo",
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "ativo": false,
+            "time": "Carga de dados - GGF"
+        }
+    ]
+    const custosInsumos = [
+        {
+            "nomeBase": "Custos Insumos",
+            "navigateBase": "/planoDeVoo/themes/Custos Insumos",
+            "nome": 'Custos Insumos',
+            "rotaApi": '/CTS/upload/CustosInsumos',
+            "nomeArquivo": 'CTS/upload/CustosInsumos/CTS_modelo_CustosInsumos.csv',
+            "descricao": 'Descrição Custos Insumos',
+            "base": 'Processamento CTS',
+            "baseOne": "Plano de Voo",
+            "baseNavigate": "/planoDeVoo",
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "ativo": false,
+            "time": "Custos Insumos - Carga de dados"
+        }
+    ]
+    const baseHierarquiaOficial = [
+        {
+            "nomeBase": "Base Hierarquia Oficial",
+            "navigateBase": "/planoDeVoo/themes/Base Hierarquia Oficial",
+            "nome": 'Base Hierarquia Oficial',
+            "rotaApi": '/CTS/upload/BaseHierarquiaOficial',
+            "nomeArquivo": 'CTS/upload/BaseHierarquiaOficial/CTS_modelo_BaseHierarquiaOficial.csv',
+            "descricao": 'Descrição Base Hierarquia Oficial',
+            "base": 'Processamento CTS',
+            "baseOne": "Plano de Voo",
+            "baseNavigate": "/planoDeVoo",
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "ativo": false,
+            "time": "Base Hierarquia Oficial - Carga de dados"
+        }
+    ]
+    const basePlanoDeContas = [
+        {
+            "nomeBase": "Base Plano de Contas",
+            "navigateBase": "/planoDeVoo/themes/Base Plano de Contas",
+            "nome": 'Base Plano de Contas',
+            "rotaApi": '/CTS/upload/BasePlanoDeContas',
+            "nomeArquivo": 'CTS/upload/BasePlanoDeContas/CTS_modelo_BasePlanoDeContas.csv',
+            "descricao": 'Descrição Base Plano de Contas',
+            "base": 'Processamento CTS',
+            "baseOne": "Plano de Voo",
+            "baseNavigate": "/planoDeVoo",
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "ativo": false,
+            "time": "Base Plano de Contas - Carga de dados"
+        }
+    ]
+    const baseHierarquiaGeral = [
+        {
+            "nomeBase": "Base Hierarquia Geral",
+            "navigateBase": "/planoDeVoo/themes/Base Hierarquia Geral",
+            "nome": 'Base Hierarquia Geral',
+            "rotaApi": '/CTS/upload/BaseHierarquiaGeral',
+            "nomeArquivo": 'CTS/upload/BaseHierarquiaGeral/CTS_modelo_BaseHierarquiaGeral.csv',
+            "descricao": 'Descrição Base Hierarquia Geral',
+            "base": 'Processamento CTS',
+            "baseOne": "Plano de Voo",
+            "baseNavigate": "/planoDeVoo",
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "ativo": false,
+            "time": "Base Hierarquia Geral - Carga de dados"
+        }
+    ]
+    const deparaRegionais = [
+        {
+            "nomeBase": "Depara N5 Regionais",
+            "navigateBase": "/planoDeVoo/themes/Depara N5 Regionais",
+            "nome": 'Depara N5 Regionais',
+            "rotaApi": '/CTS/upload/N5Regionais',
+            "nomeArquivo": 'CTS/upload/N5Regionais/CTS_modelo_DeparaN5Regionais.csv',
+            "descricao": 'Descrição Depara N5 Regionais',
+            "base": 'Processamento CTS',
+            "baseOne": "Plano de Voo",
+            "baseNavigate": "/planoDeVoo",
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "ativo": false,
+            "time": "Depara N5 Regionais - Carga de dados"
+        }
+    ]
+    const opex = [
+        {
+            "nomeBase": "Opex",
+            "navigateBase": "/planoDeVoo/themes/Opex",
+            "nome": 'Opex',
+            "rotaApi": '/CTS/upload/Opex',
+            "nomeArquivo": 'CTS/upload/Opex/CTS_modelo_Opex.csv',
+            "descricao": 'Descrição Opex',
+            "base": 'Processamento CTS',
+            "baseOne": "Plano de Voo",
+            "baseNavigate": "/planoDeVoo",
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "ativo": false,
+            "time": "Opex - Carga de dados"
+        }
+    ]
+    const baseQlpPromotoresBi = [
+        {
+            "nomeBase": "Base QLP Promotores PBI",
+            "navigateBase": "/planoDeVoo/themes/Base QLP Promotores PBI",
+            "nome": 'Base QLP Promotores PBI',
+            "rotaApi": '/CTS/upload/BaseQLPPromotoresPBI',
+            "nomeArquivo": 'CTS/upload/BaseQLPPromotoresPBI/CTS_modelo_BaseQLPPromotoresPBI.csv',
+            "descricao": 'Descrição Base QLP Promotores PBI',
+            "base": 'Processamento CTS',
+            "baseOne": "Plano de Voo",
+            "baseNavigate": "/planoDeVoo",
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "ativo": false,
+            "time": "Base QLP Promotores PBI - Carga de dados"
+        }
+    ]
+    const baseMultasDist = [
+        {
+            "nomeBase": "Base Multas Dist",
+            "navigateBase": "/planoDeVoo/themes/Base Multas Dist",
+            "nome": 'Base Multas Dist',
+            "rotaApi": '/CTS/upload/BaseMultasDistTotalVendas',
+            "nomeArquivo": 'CTS/upload/BaseMultasDistTotalVendas/CTS_modelo_BaseMultasDistTotalVendas.csv',
+            "descricao": 'Descrição Base Multas Dist',
+            "base": 'Processamento CTS',
+            "baseOne": "Plano de Voo",
+            "baseNavigate": "/planoDeVoo",
+            "navigate": "/planoDeVoo/themes/Processamento CTS",
+            "ativo": false,
+            "time": "Base Multas Dist Total Vendas - Carga de dados"
+        }
+    ]
     return (
         <>
             {params.slug === "1 -  Hierarquia de Clientes (ZSD112)" ?
@@ -250,10 +383,71 @@ export function UploadPage() {
                                                                 <Upload data={data} />
                                                             ))
                                                         }
-                                                    </main> : null
+                                                    </main> : params.slug === "GGF" ?
+                                                        <main className="flex flex-1">
+                                                            {
+                                                                ggf.map(data => (
+                                                                    <Upload data={data} />
+                                                                ))
+                                                            }
+                                                        </main> : params.slug === "Custos Insumos" ?
+                                                            <main className="flex flex-1">
+                                                                {
+                                                                    custosInsumos.map(data => (
+                                                                        <Upload data={data} />
+                                                                    ))
+                                                                }
+                                                            </main> : params.slug === "Base Hierarquia Oficial" ?
+                                                                <main className="flex flex-1">
+                                                                    {
+                                                                        baseHierarquiaOficial.map(data => (
+                                                                            <Upload data={data} />
+                                                                        ))
+                                                                    }
+                                                                </main> : params.slug === "Base Plano de Contas" ?
+                                                                    <main className="flex flex-1">
+                                                                        {
+                                                                            basePlanoDeContas.map(data => (
+                                                                                <Upload data={data} />
+                                                                            ))
+                                                                        }
+                                                                    </main> : params.slug === "Base Hierarquia Geral" ?
+                                                                        <main className="flex flex-1">
+                                                                            {
+                                                                                baseHierarquiaGeral.map(data => (
+                                                                                    <Upload data={data} />
+                                                                                ))
+                                                                            }
+                                                                        </main> : params.slug === "Depara N5 Regionais" ?
+                                                                            <main className="flex flex-1">
+                                                                                {
+                                                                                    deparaRegionais.map(data => (
+                                                                                        <Upload data={data} />
+                                                                                    ))
+                                                                                }
+                                                                            </main> : params.slug === "Opex" ?
+                                                                                <main className="flex flex-1">
+                                                                                    {
+                                                                                        opex.map(data => (
+                                                                                            <Upload data={data} />
+                                                                                        ))
+                                                                                    }
+                                                                                </main> : params.slug === "Base QLP Promotores PBI" ?
+                                                                                    <main className="flex flex-1">
+                                                                                        {
+                                                                                            baseQlpPromotoresBi.map(data => (
+                                                                                                <Upload data={data} />
+                                                                                            ))
+                                                                                        }
+                                                                                    </main> : params.slug === "Base Multas Dist" ?
+                                                                                    <main className="flex flex-1">
+                                                                                        {
+                                                                                            baseMultasDist.map(data => (
+                                                                                                <Upload data={data} />
+                                                                                            ))
+                                                                                        }
+                                                                                    </main> : null
             }
         </>
-
-
     )
 }

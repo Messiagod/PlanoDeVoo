@@ -42,7 +42,6 @@ export function ButtonSql({ data }) {
             .then((response) => {
                 console.log("resposta abaixo")
                 setRespostas(response.data)
-                console.log(response.data.tabelas)
                 setHeader(Object.keys(response.data.tabelas[0]))
                 setTableValues(Object.values(response.data.tabelas[0]))
                 const horaFim = new Date().toLocaleTimeString();
@@ -50,6 +49,7 @@ export function ButtonSql({ data }) {
                 setEtapa3(true)
                 setDivRespostas(true)
                 setProcess(false)
+
             }).catch((err) => {
                 if (err) {
                     console.log(err.response.data)
@@ -68,7 +68,6 @@ export function ButtonSql({ data }) {
             })
     }
     console.log("abaixo")
-    console.log(headerTable)
     console.log(tableValues)
 
     const uploadButton2 = async e => {
@@ -113,6 +112,15 @@ export function ButtonSql({ data }) {
                 }
             })
     }
+    /* 
+        const demo =  tableValues.map(data => (
+                <td class="py-4 px-6">
+                    {data}
+                </td>
+            )) */
+
+
+
 
     const [time, setTime] = useState('');
     useEffect(() => {
@@ -348,12 +356,17 @@ export function ButtonSql({ data }) {
                                         </tr> : null}
                                     </thead>
                                     <tbody>
-                                        <tr class="bg-black  ">
-                                            {tableValues.map(data => (
-                                                <td class="py-4 px-6">
-                                                    {data}
-                                                </td>
-                                            ))}
+                                        <tr class="bg-black">
+                                            {
+                                                tableValues.map(data => (
+                                                    data.map(data =>
+                                                        <tr class="bg-black">
+                                                            <td class="py-4 px-6">
+                                                                {data}
+                                                            </td>
+                                                        </tr>)
+                                                ))
+                                            }
                                         </tr>
                                     </tbody>
                                 </table>
@@ -363,8 +376,6 @@ export function ButtonSql({ data }) {
                         }
                     </>
                 }
-
-
             </div>
         </div>
     )
